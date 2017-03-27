@@ -1221,11 +1221,11 @@ mission = {
 	["goals"] = {
 	},
 	["groundControl"] = {
-		["isPilotControlVehicles"] = false,
+		["isPilotControlVehicles"] = true,
 		["roles"] = {
 			["artillery_commander"] = {
-				["blue"] = 0,
-				["red"] = 0,
+				["blue"] = 2,
+				["red"] = 2,
 			},
 			["forward_observer"] = {
 				["blue"] = 0,
@@ -1236,8 +1236,8 @@ mission = {
 				["red"] = 0,
 			},
 			["observer"] = {
-				["blue"] = 0,
-				["red"] = 0,
+				["blue"] = 2,
+				["red"] = 2,
 			},
 		},
 	},

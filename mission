@@ -9,6 +9,45 @@ mission = {
 				[1] = {
 					["id"] = 2,
 					["name"] = "USA",
+					["static"] = {
+						["group"] = {
+							[1] = {
+								["dead"] = false,
+								["groupId"] = 1,
+								["heading"] = 0,
+								["name"] = "DictKey_GroupName_6",
+								["route"] = {
+									["points"] = {
+										[1] = {
+											["action"] = "",
+											["alt"] = 0,
+											["formation_template"] = "",
+											["name"] = "",
+											["speed"] = 0,
+											["type"] = "",
+											["x"] = -394506,
+											["y"] = -55315.428571428,
+										},
+									},
+								},
+								["units"] = {
+									[1] = {
+										["canCargo"] = false,
+										["category"] = "GrassAirfields",
+										["heading"] = 0,
+										["lenght"] = 2000,
+										["name"] = "DictKey_GroupName_6",
+										["type"] = "GrassAirfield",
+										["unitId"] = 1,
+										["x"] = -394506,
+										["y"] = -55315.428571428,
+									},
+								},
+								["x"] = -394506,
+								["y"] = -55315.428571428,
+							},
+						},
+					},
 				},
 			},
 			["name"] = "blue",
@@ -112,7 +151,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 38,
+	["currentKey"] = 66,
 	["date"] = {
 		["Day"] = 14,
 		["Month"] = 11,
@@ -153,7 +192,7 @@ mission = {
 		["centerY"] = -73192.644174509,
 		["zoom"] = 5000,
 	},
-	["maxDictId"] = 5,
+	["maxDictId"] = 8,
 	["needModules"] = {
 	},
 	["pictureFileNameB"] = {

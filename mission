@@ -357,7 +357,7 @@ mission = {
 										},
 										["hardpoint_racks"] = true,
 										["heading"] = 5.235987755983,
-										["livery_id"] = "Army Standard",
+										["livery_id"] = "US ARMY 1972",
 										["name"] = "DictKey_UnitName_44",
 										["onboard_num"] = "052",
 										["payload"] = {

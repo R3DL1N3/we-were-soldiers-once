@@ -1,0 +1,259 @@
+mission = {
+	["coalition"] = {
+		["blue"] = {
+			["bullseye"] = {
+				["x"] = -409931.344,
+				["y"] = -14024.097,
+			},
+			["country"] = {
+				[1] = {
+					["id"] = 2,
+					["name"] = "USA",
+				},
+			},
+			["name"] = "blue",
+			["nav_points"] = {
+			},
+		},
+		["red"] = {
+			["bullseye"] = {
+				["x"] = -288293.969,
+				["y"] = -88022.641,
+			},
+			["country"] = {
+				[1] = {
+					["id"] = 27,
+					["name"] = "China",
+				},
+				[2] = {
+					["id"] = 0,
+					["name"] = "Russia",
+				},
+				[3] = {
+					["id"] = 49,
+					["name"] = "Vietnam",
+				},
+			},
+			["name"] = "red",
+			["nav_points"] = {
+			},
+		},
+	},
+	["coalitions"] = {
+		["blue"] = {
+			[1] = 2,
+		},
+		["neutrals"] = {
+			[1] = 18,
+			[10] = 63,
+			[11] = 28,
+			[12] = 26,
+			[13] = 13,
+			[14] = 29,
+			[15] = 62,
+			[16] = 30,
+			[17] = 5,
+			[18] = 16,
+			[19] = 6,
+			[2] = 21,
+			[20] = 31,
+			[21] = 61,
+			[22] = 32,
+			[23] = 33,
+			[24] = 60,
+			[25] = 17,
+			[26] = 34,
+			[27] = 35,
+			[28] = 15,
+			[29] = 20,
+			[3] = 23,
+			[30] = 36,
+			[31] = 59,
+			[32] = 37,
+			[33] = 58,
+			[34] = 57,
+			[35] = 56,
+			[36] = 55,
+			[37] = 38,
+			[38] = 12,
+			[39] = 39,
+			[4] = 65,
+			[40] = 54,
+			[41] = 40,
+			[42] = 41,
+			[43] = 42,
+			[44] = 43,
+			[45] = 44,
+			[46] = 45,
+			[47] = 19,
+			[48] = 9,
+			[49] = 53,
+			[5] = 24,
+			[50] = 46,
+			[51] = 22,
+			[52] = 47,
+			[53] = 52,
+			[54] = 10,
+			[55] = 51,
+			[56] = 3,
+			[57] = 4,
+			[58] = 7,
+			[59] = 1,
+			[6] = 11,
+			[60] = 50,
+			[61] = 48,
+			[7] = 64,
+			[8] = 25,
+			[9] = 8,
+		},
+		["red"] = {
+			[1] = 27,
+			[2] = 0,
+			[3] = 49,
+		},
+	},
+	["currentKey"] = 34,
+	["date"] = {
+		["Day"] = 1,
+		["Month"] = 6,
+		["Year"] = 2011,
+	},
+	["descriptionBlueTask"] = "DictKey_descriptionBlueTask_3",
+	["descriptionRedTask"] = "DictKey_descriptionRedTask_2",
+	["descriptionText"] = "DictKey_descriptionText_1",
+	["failures"] = {
+	},
+	["forcedOptions"] = {
+	},
+	["goals"] = {
+	},
+	["groundControl"] = {
+		["isPilotControlVehicles"] = false,
+		["roles"] = {
+			["artillery_commander"] = {
+				["blue"] = 0,
+				["red"] = 0,
+			},
+			["forward_observer"] = {
+				["blue"] = 0,
+				["red"] = 0,
+			},
+			["instructor"] = {
+				["blue"] = 0,
+				["red"] = 0,
+			},
+			["observer"] = {
+				["blue"] = 0,
+				["red"] = 0,
+			},
+		},
+	},
+	["map"] = {
+		["centerX"] = -396265.36793605,
+		["centerY"] = -73192.644174509,
+		["zoom"] = 5000,
+	},
+	["maxDictId"] = 4,
+	["needModules"] = {
+	},
+	["pictureFileNameB"] = {
+	},
+	["pictureFileNameR"] = {
+	},
+	["result"] = {
+		["blue"] = {
+			["actions"] = {
+			},
+			["conditions"] = {
+			},
+			["func"] = {
+			},
+		},
+		["offline"] = {
+			["actions"] = {
+			},
+			["conditions"] = {
+			},
+			["func"] = {
+			},
+		},
+		["red"] = {
+			["actions"] = {
+			},
+			["conditions"] = {
+			},
+			["func"] = {
+			},
+		},
+		["total"] = 0,
+	},
+	["sortie"] = "DictKey_sortie_4",
+	["start_time"] = 43200,
+	["theatre"] = "Nevada",
+	["trig"] = {
+		["actions"] = {
+		},
+		["conditions"] = {
+		},
+		["custom"] = {
+		},
+		["customStartup"] = {
+		},
+		["events"] = {
+		},
+		["flag"] = {
+		},
+		["func"] = {
+		},
+		["funcStartup"] = {
+		},
+	},
+	["triggers"] = {
+		["zones"] = {
+		},
+	},
+	["trigrules"] = {
+	},
+	["version"] = 13,
+	["weather"] = {
+		["atmosphere_type"] = 0,
+		["clouds"] = {
+			["base"] = 300,
+			["density"] = 0,
+			["iprecptns"] = 0,
+			["thickness"] = 200,
+		},
+		["cyclones"] = {
+		},
+		["enable_fog"] = true,
+		["fog"] = {
+			["density"] = 7,
+			["thickness"] = 0,
+			["visibility"] = 25,
+		},
+		["groundTurbulence"] = 0,
+		["name"] = "Winter, clean sky",
+		["qnh"] = 760,
+		["season"] = {
+			["temperature"] = 20,
+		},
+		["type_weather"] = 0,
+		["visibility"] = {
+			["distance"] = 80000,
+		},
+		["wind"] = {
+			["at2000"] = {
+				["dir"] = 0,
+				["speed"] = 0,
+			},
+			["at8000"] = {
+				["dir"] = 0,
+				["speed"] = 0,
+			},
+			["atGround"] = {
+				["dir"] = 0,
+				["speed"] = 0,
+			},
+		},
+	},
+}

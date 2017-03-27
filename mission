@@ -1125,6 +1125,44 @@ mission = {
 				[3] = {
 					["id"] = 49,
 					["name"] = "Vietnam",
+					["static"] = {
+						["group"] = {
+							[1] = {
+								["dead"] = false,
+								["groupId"] = 23,
+								["heading"] = 2.3038346126325,
+								["name"] = "DictKey_GroupName_93",
+								["route"] = {
+									["points"] = {
+										[1] = {
+											["action"] = "",
+											["alt"] = 0,
+											["formation_template"] = "",
+											["name"] = "",
+											["speed"] = 0,
+											["type"] = "",
+											["x"] = -396200.93936463,
+											["y"] = -72895.501317369,
+										},
+									},
+								},
+								["units"] = {
+									[1] = {
+										["canCargo"] = false,
+										["category"] = "Fortifications",
+										["heading"] = 2.3038346126325,
+										["name"] = "DictKey_GroupName_93",
+										["type"] = "outpost_road",
+										["unitId"] = 25,
+										["x"] = -396200.93936463,
+										["y"] = -72895.501317369,
+									},
+								},
+								["x"] = -396200.93936463,
+								["y"] = -72895.501317369,
+							},
+						},
+					},
 				},
 			},
 			["name"] = "red",
@@ -1205,7 +1243,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 4149,
+	["currentKey"] = 7163,
 	["date"] = {
 		["Day"] = 14,
 		["Month"] = 11,
@@ -1242,11 +1280,11 @@ mission = {
 		},
 	},
 	["map"] = {
-		["centerX"] = -394547.93936463,
-		["centerY"] = -55124.644174512,
+		["centerX"] = -396153.93936463,
+		["centerY"] = -72829.215603083,
 		["zoom"] = 1000,
 	},
-	["maxDictId"] = 85,
+	["maxDictId"] = 98,
 	["needModules"] = {
 	},
 	["pictureFileNameB"] = {
@@ -1291,6 +1329,9 @@ mission = {
 			[4] = "a_inc_flag(2, 1);",
 			[5] = "a_inc_flag(3, 1);",
 			[6] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_52\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_53\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_54\"));",
+			[7] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_86\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_90\"));",
+			[8] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_91\"));",
+			[9] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_89\")); mission.trig.func[9]=nil;",
 		},
 		["conditions"] = {
 			[1] = "return(true)",
@@ -1299,6 +1340,9 @@ mission = {
 			[4] = "return(c_time_since_flag(2, 20) )",
 			[5] = "return(c_time_since_flag(3, 30) )",
 			[6] = "return(c_time_since_flag(1, 1) )",
+			[7] = "return(c_time_since_flag(1, 1) )",
+			[8] = "return(c_time_since_flag(3, 1) )",
+			[9] = "return(c_time_since_flag(7, 10) )",
 		},
 		["custom"] = {
 		},
@@ -1313,6 +1357,9 @@ mission = {
 			[4] = true,
 			[5] = true,
 			[6] = true,
+			[7] = true,
+			[8] = true,
+			[9] = true,
 		},
 		["func"] = {
 			[2] = "if mission.trig.conditions[2]() then mission.trig.actions[2]() end",
@@ -1320,6 +1367,9 @@ mission = {
 			[4] = "if mission.trig.conditions[4]() then if not mission.trig.flag[4] then mission.trig.actions[4](); mission.trig.flag[4] = true;end; else mission.trig.flag[4] = false; end;",
 			[5] = "if mission.trig.conditions[5]() then if not mission.trig.flag[5] then mission.trig.actions[5](); mission.trig.flag[5] = true;end; else mission.trig.flag[5] = false; end;",
 			[6] = "if mission.trig.conditions[6]() then if not mission.trig.flag[6] then mission.trig.actions[6](); mission.trig.flag[6] = true;end; else mission.trig.flag[6] = false; end;",
+			[7] = "if mission.trig.conditions[7]() then if not mission.trig.flag[7] then mission.trig.actions[7](); mission.trig.flag[7] = true;end; else mission.trig.flag[7] = false; end;",
+			[8] = "if mission.trig.conditions[8]() then if not mission.trig.flag[8] then mission.trig.actions[8](); mission.trig.flag[8] = true;end; else mission.trig.flag[8] = false; end;",
+			[9] = "if mission.trig.conditions[9]() then mission.trig.actions[9]() end",
 		},
 		["funcStartup"] = {
 			[1] = "if mission.trig.conditions[1]() then mission.trig.actions[1]() end",
@@ -1382,6 +1432,48 @@ mission = {
 				["x"] = -394546.93936463,
 				["y"] = -55230.644174511,
 				["zoneId"] = 184,
+			},
+			[5] = {
+				["color"] = {
+					[1] = 1,
+					[2] = 1,
+					[3] = 1,
+					[4] = 0.15,
+				},
+				["hidden"] = false,
+				["name"] = "VPA",
+				["radius"] = 3030.6264,
+				["x"] = -396174.36793606,
+				["y"] = -73039.501317369,
+				["zoneId"] = 230,
+			},
+			[6] = {
+				["color"] = {
+					[1] = 1,
+					[2] = 1,
+					[3] = 1,
+					[4] = 0.15,
+				},
+				["hidden"] = false,
+				["name"] = "1/33 VPA",
+				["radius"] = 13.1064,
+				["x"] = -395787.79650748,
+				["y"] = -73490.644174512,
+				["zoneId"] = 231,
+			},
+			[7] = {
+				["color"] = {
+					[1] = 1,
+					[2] = 1,
+					[3] = 1,
+					[4] = 0.15,
+				},
+				["hidden"] = false,
+				["name"] = "3/33 VPA",
+				["radius"] = 13.1064,
+				["x"] = -396180.08222176,
+				["y"] = -73898.072745941,
+				["zoneId"] = 277,
 			},
 		},
 	},
@@ -1571,6 +1663,90 @@ mission = {
 					["predicate"] = "c_time_since_flag",
 					["seconds"] = 1,
 					["zone"] = 92,
+				},
+			},
+		},
+		[7] = {
+			["actions"] = {
+				[1] = {
+					["KeyDict_text"] = "DictKey_ActionText_86",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["predicate"] = "a_do_script",
+					["text"] = "DictKey_ActionText_86",
+				},
+				[2] = {
+					["KeyDict_text"] = "DictKey_ActionText_90",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["predicate"] = "a_do_script",
+					["text"] = "DictKey_ActionText_90",
+				},
+			},
+			["comment"] = "VPA Spawn Squad",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 1,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 1,
+					["zone"] = 92,
+				},
+			},
+		},
+		[8] = {
+			["actions"] = {
+				[1] = {
+					["KeyDict_text"] = "DictKey_ActionText_91",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["predicate"] = "a_do_script",
+					["text"] = "DictKey_ActionText_91",
+				},
+			},
+			["comment"] = "VPA Attack Units",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 3,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 1,
+					["zone"] = 92,
+				},
+			},
+		},
+		[9] = {
+			["actions"] = {
+				[1] = {
+					["KeyDict_text"] = "DictKey_ActionText_89",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["predicate"] = "a_do_script",
+					["text"] = "DictKey_ActionText_89",
+				},
+			},
+			["comment"] = "KIA Out",
+			["eventlist"] = "",
+			["predicate"] = "triggerOnce",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 7,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 10,
+					["zone"] = 46,
 				},
 			},
 		},

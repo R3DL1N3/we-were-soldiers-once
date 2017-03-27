@@ -1,7 +1,7 @@
 dictionary = {
-	["DictKey_ActionText_52"] = "cav.spawnChalk(Zone('B1/7 Cav Chalk 1'))",
-	["DictKey_ActionText_53"] = "cav.spawnChalk(Zone('B1/7 Cav Chalk 2'))",
-	["DictKey_ActionText_54"] = "cav.spawnChalk(Zone('B1/7 Cav Chalk 3'))",
+	["DictKey_ActionText_52"] = "cav.spawnChalk(Zone('1/7 Cav'))",
+	["DictKey_ActionText_53"] = "cav.spawnChalk(Zone('2/7 Cav'))",
+	["DictKey_ActionText_54"] = "cav.spawnChalk(Zone('2/5 Cav'))",
 	["DictKey_GroupName_12"] = "Firebase Falcon Command Post",
 	["DictKey_GroupName_15"] = "Firebase Falcon Fuel Depot",
 	["DictKey_GroupName_18"] = "Firebase Falcon Tent #1",

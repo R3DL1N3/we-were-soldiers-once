@@ -1,7 +1,7 @@
 cav = {
-  zone = Zone('B1/7 Cav'),
+  zone = Zone('Cav'),
   -- Names for chalks and troopers.
-  names = Names('B1/7 Cav Chalk #', 'B1/7 Cav Trooper #'),
+  names = Names('Cav Chalk #', 'Cav Trooper #'),
 }
 
 -- Spawns one chalk of Bravo company, 1st battalion, 7th Cavalry.

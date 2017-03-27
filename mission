@@ -112,7 +112,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 34,
+	["currentKey"] = 36,
 	["date"] = {
 		["Day"] = 1,
 		["Month"] = 6,
@@ -153,7 +153,7 @@ mission = {
 		["centerY"] = -73192.644174509,
 		["zoom"] = 5000,
 	},
-	["maxDictId"] = 4,
+	["maxDictId"] = 5,
 	["needModules"] = {
 	},
 	["pictureFileNameB"] = {
@@ -192,8 +192,10 @@ mission = {
 	["theatre"] = "Nevada",
 	["trig"] = {
 		["actions"] = {
+			[1] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\")); mission.trig.func[1]=nil;",
 		},
 		["conditions"] = {
+			[1] = "return(c_time_after(1) )",
 		},
 		["custom"] = {
 		},
@@ -202,8 +204,10 @@ mission = {
 		["events"] = {
 		},
 		["flag"] = {
+			[1] = true,
 		},
 		["func"] = {
+			[1] = "if mission.trig.conditions[1]() then mission.trig.actions[1]() end",
 		},
 		["funcStartup"] = {
 		},
@@ -213,6 +217,29 @@ mission = {
 		},
 	},
 	["trigrules"] = {
+		[1] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["file"] = "ResKey_Action_5",
+					["predicate"] = "a_do_script_file",
+				},
+			},
+			["comment"] = "Do Scripts",
+			["eventlist"] = "",
+			["predicate"] = "triggerOnce",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["predicate"] = "c_time_after",
+					["seconds"] = 1,
+					["zone"] = "",
+				},
+			},
+		},
 	},
 	["version"] = 13,
 	["weather"] = {

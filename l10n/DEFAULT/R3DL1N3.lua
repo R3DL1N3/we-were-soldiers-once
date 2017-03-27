@@ -74,6 +74,26 @@ function math.distancexz(p, q)
   return math.sqrt(dx * dx + dz * dz)
 end
 
+-- Answers the horizontal angle between two points, from the first point to the
+-- second point.
+function math.anglexz(p, q)
+  local dx = q.x - p.x
+  local dz = q.z - p.z
+  local angle = math.atan2(dz, dx)
+  if angle < 0 then
+    angle = 2 * math.pi + angle
+  end
+  return angle
+end
+
+-- Constructs a point delta on the x-z plane from an angle and radius.
+function math.deltaxz(angle, radius)
+  return {
+    x = math.cos(angle) * radius,
+    z = math.sin(angle) * radius,
+  }
+end
+
 --------------------------------------------------------------------------------
 --                                                                     metatable
 --------------------------------------------------------------------------------
@@ -530,8 +550,53 @@ function Units:randomizeXYInZone(zone)
   for _, unit in ipairs(self.units) do
     local angle = 2 * math.pi * math.random()
     local radius = zone.radius * math.random()
-    unit.x = zone.point.x + math.cos(angle) * radius
-    unit.y = zone.point.z + math.sin(angle) * radius
+    local delta = math.deltaxz(angle, radius)
+    unit.x = zone.point.x + delta.x
+    unit.y = zone.point.z + delta.z
+  end
+end
+
+function Units:translateXY(dx, dy)
+  for _, unit in ipairs(self.units) do
+    unit.x = unit.x + dx
+    unit.y = unit.y + dy
+  end
+end
+
+-- Rotates all the units by the given angle about the x-y plane's origin.
+function Units:rotateXY(angle)
+  local dx, dy = math.cos(angle), math.sin(angle)
+  for _, unit in ipairs(self.units) do
+    unit.x, unit.y = unit.x * dx - unit.y * dy, unit.x * dy + unit.y * dx
+  end
+end
+
+-- Finds the two-dimensional centre-point of all the units so far accumulated;
+-- or nil if no units.
+function Units:center()
+  local x, y, n = 0, 0, 0
+  for _, unit in ipairs(self.units) do
+    x, y, n = x + unit.x, y + unit.y, n + 1
+  end
+  if n == 0 then return nil end
+  return {x = x / n, y = y / n}
+end
+
+-- Forms the units into a square using the given displacement between units.
+function Units:formSquare(dx, dy)
+  local all = self:all()
+  local numberOfRows = math.floor(math.sqrt(#all))
+  for index, unit in ipairs(all) do
+    local column = (index - 1) % numberOfRows
+    local row = (index - 1 - column) / numberOfRows
+    unit.x = column * dx
+    unit.y = row * dy
+  end
+end
+
+function Units:setHeading(heading)
+  for _, unit in ipairs(self.units) do
+    unit.heading = heading
   end
 end
 

@@ -779,7 +779,7 @@ end
 
 -- Setter for unit's was-in-air state.
 function Unit:setWasInAir(was)
-  return wasInAir[self:getID()] = was
+  wasInAir[self:getID()] = was
 end
 
 -- Sets the new in-air status of this unit. Notifies the in-air functions,
@@ -791,7 +791,7 @@ function Unit:setInAir(inAir)
   local funcs = inAirFunctions[self:getID()]
   if funcs then
     for _, func in ipairs(funcs) do
-      if inAir != was then
+      if inAir ~= was then
         func(inAir, was)
       end
     end

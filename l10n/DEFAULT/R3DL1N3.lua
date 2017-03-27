@@ -852,6 +852,9 @@ end
 -- it is, and what it was. Does not notify until the status changes. Change
 -- includes changing from unknown to known (from nil to true or false).
 function Unit:setInAir(inAir)
+  if not inAir then
+    inAir = self:inAir()
+  end
   local was = self:wasInAir()
   local funcs = inAirFunctions[self:getID()]
   if funcs then
@@ -883,10 +886,14 @@ function Unit:removeInAirFunction(funcId)
 end
 
 -- Runs once every second. Samples the in-air status of all player units.
-Timer(function()
+local inAirTimer = Timer(function()
   for _, side in ipairs{coalition.side.NEUTRAL, coalition.side.RED, coalition.side.BLUE} do
     for _, unit in ipairs(coalition.getPlayers(side)) do
       unit:setInAir(unit:inAir())
     end
   end
-end):delay(1, true)
+end)
+
+function setInAirTimerDelay(seconds)
+  inAirTimer:delay(seconds, true)
+end

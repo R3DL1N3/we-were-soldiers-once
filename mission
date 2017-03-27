@@ -112,7 +112,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 36,
+	["currentKey"] = 38,
 	["date"] = {
 		["Day"] = 1,
 		["Month"] = 6,

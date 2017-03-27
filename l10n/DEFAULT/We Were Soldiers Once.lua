@@ -6,9 +6,7 @@ cav = {
 
 -- Spawns one chalk of Bravo company, 1st battalion, 7th Cavalry.
 function cav.spawnChalk(zone)
-  if #Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then
-    return
-  end
+  if #Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then return end
   local units = Units()
   units:addType('Soldier M4', 7)
   units:addType('Soldier M249', 1)

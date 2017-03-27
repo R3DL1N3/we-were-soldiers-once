@@ -114,9 +114,9 @@ mission = {
 	},
 	["currentKey"] = 38,
 	["date"] = {
-		["Day"] = 1,
-		["Month"] = 6,
-		["Year"] = 2011,
+		["Day"] = 14,
+		["Month"] = 11,
+		["Year"] = 1965,
 	},
 	["descriptionBlueTask"] = "DictKey_descriptionBlueTask_3",
 	["descriptionRedTask"] = "DictKey_descriptionRedTask_2",
@@ -188,7 +188,7 @@ mission = {
 		["total"] = 0,
 	},
 	["sortie"] = "DictKey_sortie_4",
-	["start_time"] = 43200,
+	["start_time"] = 38100,
 	["theatre"] = "Nevada",
 	["trig"] = {
 		["actions"] = {
@@ -243,7 +243,7 @@ mission = {
 	},
 	["version"] = 13,
 	["weather"] = {
-		["atmosphere_type"] = 0,
+		["atmosphere_type"] = 1,
 		["clouds"] = {
 			["base"] = 300,
 			["density"] = 0,
@@ -251,6 +251,14 @@ mission = {
 			["thickness"] = 200,
 		},
 		["cyclones"] = {
+			[1] = {
+				["centerX"] = -323707.70359737,
+				["centerZ"] = -201858.77666604,
+				["ellipticity"] = 0.95896879244585,
+				["pressure_excess"] = -1279,
+				["pressure_spread"] = 842553.16070292,
+				["rotation"] = 0.8031917238797,
+			},
 		},
 		["enable_fog"] = true,
 		["fog"] = {
@@ -262,7 +270,7 @@ mission = {
 		["name"] = "Winter, clean sky",
 		["qnh"] = 760,
 		["season"] = {
-			["temperature"] = 20,
+			["temperature"] = 22,
 		},
 		["type_weather"] = 0,
 		["visibility"] = {

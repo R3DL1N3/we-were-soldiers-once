@@ -1148,6 +1148,7 @@ mission = {
 								},
 								["start_time"] = 0,
 								["task"] = "Ground Nothing",
+								["taskSelected"] = true,
 								["tasks"] = {
 								},
 								["units"] = {

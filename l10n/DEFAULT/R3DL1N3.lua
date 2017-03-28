@@ -74,11 +74,12 @@ function math.distancexz(p, q)
   return math.sqrt(dx * dx + dz * dz)
 end
 
--- Answers the horizontal angle between two points, from the first point to the
--- second point.
-function math.anglexz(p, q)
+-- Answers the horizontal heading angle between two points, from the first point
+-- to the second point.
+function math.headingxz(p, q)
   local dx = q.x - p.x
   local dz = q.z - p.z
+  -- Flip the axes because 0 degrees corresponds to up, not right.
   local angle = math.atan2(dz, dx)
   if angle < 0 then
     angle = 2 * math.pi + angle
@@ -92,6 +93,16 @@ function math.deltaxz(angle, radius)
     x = math.cos(angle) * radius,
     z = math.sin(angle) * radius,
   }
+end
+
+-- Answers the square magnitude of the given 3-vector. Useful for comparing
+-- vector magnitudes; comparing squares is faster.
+function math.squaremagnitude(vec3)
+  return vec3.x * vec3.x + vec3.y * vec3.y + vec3.z * vec3.z
+end
+
+function math.magnitude(vec3)
+  return math.sqrt(math.squaremagnitude(vec3))
 end
 
 --------------------------------------------------------------------------------
@@ -344,16 +355,16 @@ end
 
 -- Answers all the tasked groups belonging to the given side and within the
 -- given category.
-function Group.tasked(side, category)
+function Group.tasked(side, category, filter)
   return Group.filtered(side, category, function(group)
-    return group:getController():hasTask()
+    return group:getSize() > 0 and group:getController():hasTask() and (filter == nil or filter(group))
   end)
 end
 
 -- Answers all the untasked groups.
-function Group.untasked(side, category)
+function Group.untasked(side, category, filter)
   return Group.filtered(side, category, function(group)
-    return not group:getController():hasTask()
+    return group:getSize() > 0 and not group:getController():hasTask() and (filter == nil or filter(group))
   end)
 end
 
@@ -363,9 +374,7 @@ end
 function Group.setTurningToUnitsTasksInZone(fromSide, toSide, category, zone)
   local units = Unit.allInZone(zone, toSide, category)
   if #units == 0 then return end
-  for group in Group.filtered(fromSide, category, function(group)
-    return not group:getController():hasTask()
-  end) do
+  for group in Group.untasked(fromSide, category) do
     group:setTurningToUnitsTask(units)
   end
 end
@@ -415,6 +424,21 @@ function Group:continueMoving()
   trigger.action.groupContinueMoving(self)
 end
 
+-- Groups are not coalition objects, and therefore cannot access their country.
+-- Instead, access the country via the group's first unit.
+function Group:country()
+  local unit = self:getUnit(1)
+  return unit and unit:getCountry()
+end
+
+-- Sorts the given groups by their centre-point distance from the given point.
+-- The first group becomes the closest group to the point, based on the centre.
+function Group.sortGroupsByCenterPoint(groups, point)
+  table.sort(groups, function(lhs, rhs)
+    return math.distancexz(lhs:centerPoint(), point) < math.distancexz(rhs:centerPoint(), point)
+  end)
+end
+
 --------------------------------------------------------------------------------
 --                                                                          Unit
 --------------------------------------------------------------------------------
@@ -432,6 +456,15 @@ end
 function Unit:height()
   local p = self:getPoint()
   return p.y - land.getHeight{x = p.x, z = p.z}
+end
+
+-- The unit's speed is the magnitude of its velocity vector.
+function Unit:speed()
+  return math.magnitude(self:getVelocity())
+end
+
+function Unit:heading()
+  return math.headingxz({x = 0, z = 0}, self:getPosition().x)
 end
 
 -- Returns the distance between two units, this unit and another given unit
@@ -563,7 +596,9 @@ function Units:translateXY(dx, dy)
   end
 end
 
--- Rotates all the units by the given angle about the x-y plane's origin.
+-- Rotates all the units to the given angle about the x-y plane's origin. Note,
+-- the angle is in radians relative to east; 0 means right. Hence, the argument
+-- name is angle not heading.
 function Units:rotateXY(angle)
   local dx, dy = math.cos(angle), math.sin(angle)
   for _, unit in ipairs(self.units) do
@@ -582,16 +617,39 @@ function Units:center()
   return {x = x / n, y = y / n}
 end
 
--- Forms the units into a square using the given displacement between units.
-function Units:formSquare(dx, dy)
-  local all = self:all()
-  local numberOfRows = math.floor(math.sqrt(#all))
-  for index, unit in ipairs(all) do
-    local column = (index - 1) % numberOfRows
-    local row = (index - 1 - column) / numberOfRows
+-- Automatically orientates the units. The columns face north and the middle of
+-- the units falls at the origin.
+function Units:formColumns(dx, dy, numberOfColumns)
+  for index, unit in ipairs(self:all()) do
+    local column = (index - 1) % numberOfColumns
+    local row = (index - 1 - column) / numberOfColumns
     unit.x = column * dx
     unit.y = row * dy
   end
+  local center = self:center()
+  self:translateXY(-center.x, -center.y)
+  self:rotateXY(math.pi / 2)
+end
+
+-- Forms the units into a square using the given displacement between units.
+function Units:formSquare(dx, dy)
+  self:formColumns(dx, dy, math.floor(math.sqrt(#self:all())))
+end
+
+-- Useful for when you want to form units within overlapping zones. The heading
+-- becomes the angle between the sub-zone's centre-point and that of the
+-- super-zone.
+function Units:formSquareInZones(subZone, superZone, dx, dy)
+  local heading
+  if math.distancexz(subZone.point, superZone.point) < superZone.radius then
+    heading = math.headingxz(subZone.point, superZone.point)
+  else
+    heading = 2 * math.pi * math.random()
+  end
+  self:formSquare(dx or 1, dy or 1)
+  self:rotateXY(heading)
+  self:translateXY(subZone.point.x, subZone.point.z)
+  self:setHeading(heading)
 end
 
 function Units:setHeading(heading)
@@ -682,7 +740,13 @@ function Units:addGroup(group)
   if not self.name then
     self.name = group:getName()
   end
-  for _, unit in ipairs(self:getUnits()) do
+  if not self.country then
+    self.country = group:country()
+  end
+  if not self.category then
+    self.category = group:getCategory()
+  end
+  for _, unit in ipairs(group:getUnits()) do
     self:add{
       type = unit:getTypeName(),
       name = unit:getName(),
@@ -827,6 +891,47 @@ end
 
 function Mission:pushTaskTo(controller)
   controller:pushTask(self:table())
+end
+
+--------------------------------------------------------------------------------
+--                                                                        chalks
+--------------------------------------------------------------------------------
+
+-- Creates an association between a unit and a chalk, a Units instance.
+local chalks = {}
+
+-- Answers this unit's chalk, or nil if the unit has no chalk.
+function Unit:chalk()
+  return chalks[self:getID()]
+end
+
+function Unit:setChalk(units)
+  chalks[self:getID()] = units
+end
+
+-- Embarks the given group. Destroys the group.
+function Unit:embarkGroup(group)
+  local units = Units()
+  units:addGroup(group)
+  self:setChalk(units)
+  group:destroy()
+  return units
+end
+
+-- Disembarks when crashing as well as when landing. Does nothing if the unit
+-- has no chalk. The disembarked chalk forms two columns alongside the unit,
+-- pointing in the unit's heading direction.
+function Unit:disembarkChalk(dx, dy, probability)
+  local chalk = self:chalk()
+  if not chalk then return end
+  self:setChalk(nil)
+  chalk:formColumns(dx, dy, 2)
+  chalk:translateXY(self:getPoint().x, self:getPoint().z)
+  chalk:setHeading(self:heading())
+  if probability then
+    chalk:setProbability(probability)
+  end
+  chalk:spawn()
 end
 
 --------------------------------------------------------------------------------

@@ -22,6 +22,42 @@
 --
 --------------------------------------------------------------------------------
 
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_LAND then
+    -- Filters out brief landings, such as when a helicopter skids the ground
+    -- in-flight. That does not count as a landing. The initiator's speed must
+    -- be less than 10 metres per second. The chalk will not embark or disembark
+    -- if you land too quickly.
+    if event.initiator:speed() < 10 then
+      trigger.action.outText(event.initiator:getName() .. ' landed', 3)
+      local chalk = event.initiator:chalk()
+      if chalk then
+        event.initiator:disembarkChalk(14.63 / 2, 1)
+        local text = event.initiator:getName() .. ' disembarked ' .. chalk.name
+        trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
+      elseif string.find(event.initiator:getName(), 'Gunship') == 1 then
+        local zone = {point = event.initiator:getPoint(), radius = 14.63 * 2}
+        local groups = table.fromiter(Group.untasked(country.id.USA, Group.Category.GROUND, function(group)
+          return cav.names:includesGroup(group) and group:inZone(zone)
+        end))
+        if #groups > 0 then
+          Group.sortGroupsByCenterPoint(groups, zone.point)
+          chalk = event.initiator:embarkGroup(groups[1])
+          local text = event.initiator:getName() .. ' embarked ' .. chalk.name
+          trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
+        end
+      end
+    end
+  elseif event.id == world.event.S_EVENT_CRASH then
+    trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
+    event.initiator:disembarkChalk(14.63, 1, math.random())
+  end
+end)
+
+--------------------------------------------------------------------------------
+--                                                                           kia
+--------------------------------------------------------------------------------
+
 kia = {}
 
 world.addEventFunction(function(event)
@@ -59,19 +95,8 @@ function cav.spawnChalk(zone)
   units:addType('Soldier M249', 1)
   units:setExcellentSkill()
   units:setRandomTransportable(false)
-  local angle
-  if math.distancexz(zone.point, cav.zone.point) < cav.zone.radius then
-    angle = math.anglexz(zone.point, cav.zone.point)
-  else
-    angle = 2 * math.pi * math.random()
-  end
-  units:formSquare(1, 1)
-  local center = units:center()
-  units:translateXY(-center.x, -center.y)
-  units:rotateXY(angle)
-  units:translateXY(zone.point.x, zone.point.z)
-  units:setHeading(angle)
   cav.names:applyTo(units)
+  units:formSquareInZones(zone, cav.zone)
   units:spawn(country.id.USA, Group.Category.GROUND)
 end
 
@@ -92,19 +117,8 @@ function vpa.spawnSquad(zone)
   units:addType('Paratrooper RPG-16', 1)
   units:setGoodSkill()
   units:setRandomTransportable(false)
-  local angle
-  if math.distancexz(zone.point, vpa.zone.point) < vpa.zone.radius then
-    angle = math.anglexz(zone.point, vpa.zone.point)
-  else
-    angle = 2 * math.pi * math.random()
-  end
-  units:formSquare(1, 1)
-  local center = units:center()
-  units:translateXY(-center.x, -center.y)
-  units:rotateXY(angle)
-  units:translateXY(zone.point.x, zone.point.z)
-  units:setHeading(angle)
   vpa.names:applyTo(units)
+  units:formSquareInZones(zone, vpa.zone)
   units:spawn(country.id.RUSSIA, Group.Category.GROUND)
 end
 

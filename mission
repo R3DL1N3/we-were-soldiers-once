@@ -1100,6 +1100,101 @@ mission = {
 								["x"] = -394504.65365034,
 								["y"] = -55328.072745939,
 							},
+							[2] = {
+								["groupId"] = 24,
+								["hidden"] = false,
+								["name"] = "DictKey_GroupName_99",
+								["route"] = {
+									["points"] = {
+										[1] = {
+											["ETA"] = 0,
+											["ETA_locked"] = true,
+											["action"] = "Off Road",
+											["alt"] = 1440,
+											["alt_type"] = "BARO",
+											["formation_template"] = "",
+											["name"] = "DictKey_WptName_101",
+											["speed"] = 5.5555555555556,
+											["speed_locked"] = true,
+											["task"] = {
+												["id"] = "ComboTask",
+												["params"] = {
+													["tasks"] = {
+														[1] = {
+															["auto"] = true,
+															["enabled"] = true,
+															["id"] = "WrappedAction",
+															["number"] = 1,
+															["params"] = {
+																["action"] = {
+																	["id"] = "EPLRS",
+																	["params"] = {
+																		["groupId"] = 1,
+																		["value"] = true,
+																	},
+																},
+															},
+														},
+													},
+												},
+											},
+											["type"] = "Turning Point",
+											["x"] = -394670.36793606,
+											["y"] = -55672.358460227,
+										},
+									},
+									["spans"] = {
+									},
+								},
+								["start_time"] = 0,
+								["task"] = "Ground Nothing",
+								["tasks"] = {
+								},
+								["units"] = {
+									[1] = {
+										["heading"] = 4.939281783144,
+										["name"] = "DictKey_UnitName_100",
+										["playerCanDrive"] = true,
+										["skill"] = "High",
+										["transportable"] = {
+											["randomTransportable"] = false,
+										},
+										["type"] = "M-109",
+										["unitId"] = 26,
+										["x"] = -394670.36793606,
+										["y"] = -55672.358460227,
+									},
+									[2] = {
+										["heading"] = 4.939281783144,
+										["name"] = "DictKey_UnitName_102",
+										["playerCanDrive"] = true,
+										["skill"] = "High",
+										["transportable"] = {
+											["randomTransportable"] = false,
+										},
+										["type"] = "M-109",
+										["unitId"] = 27,
+										["x"] = -394679.36597824,
+										["y"] = -55633.383657636,
+									},
+									[3] = {
+										["heading"] = 4.939281783144,
+										["name"] = "DictKey_UnitName_103",
+										["playerCanDrive"] = true,
+										["skill"] = "High",
+										["transportable"] = {
+											["randomTransportable"] = false,
+										},
+										["type"] = "M-109",
+										["unitId"] = 28,
+										["x"] = -394688.36402041,
+										["y"] = -55594.408855044,
+									},
+								},
+								["visible"] = false,
+								["x"] = -394670.36793606,
+								["y"] = -55672.358460227,
+							},
 						},
 					},
 				},

@@ -1218,6 +1218,75 @@ mission = {
 				[2] = {
 					["id"] = 0,
 					["name"] = "Russia",
+					["vehicle"] = {
+						["group"] = {
+							[1] = {
+								["groupId"] = 30,
+								["hidden"] = false,
+								["name"] = "DictKey_GroupName_120",
+								["route"] = {
+									["points"] = {
+										[1] = {
+											["ETA"] = 0,
+											["ETA_locked"] = true,
+											["action"] = "Off Road",
+											["alt"] = 2796,
+											["alt_type"] = "BARO",
+											["formation_template"] = "",
+											["name"] = "DictKey_WptName_122",
+											["speed"] = 5.5555555555556,
+											["speed_locked"] = true,
+											["task"] = {
+												["id"] = "ComboTask",
+												["params"] = {
+													["tasks"] = {
+													},
+												},
+											},
+											["type"] = "Turning Point",
+											["x"] = -394390.93936463,
+											["y"] = -75626.929888799,
+										},
+									},
+									["spans"] = {
+										[1] = {
+											[1] = {
+												["x"] = -394408.65365034,
+												["y"] = -75670.929888799,
+											},
+											[2] = {
+												["x"] = -394408.08222177,
+												["y"] = -75672.072745942,
+											},
+										},
+									},
+								},
+								["start_time"] = 0,
+								["task"] = "Ground Nothing",
+								["taskSelected"] = true,
+								["tasks"] = {
+								},
+								["units"] = {
+									[1] = {
+										["heading"] = 5.3756140961425,
+										["name"] = "DictKey_UnitName_121",
+										["playerCanDrive"] = true,
+										["skill"] = "Average",
+										["transportable"] = {
+											["randomTransportable"] = false,
+										},
+										["type"] = "Ural-375 ZU-23",
+										["unitId"] = 34,
+										["x"] = -394390.93936463,
+										["y"] = -75626.929888799,
+									},
+								},
+								["visible"] = false,
+								["x"] = -394390.93936463,
+								["y"] = -75626.929888799,
+							},
+						},
+					},
 				},
 				[3] = {
 					["id"] = 49,
@@ -1512,7 +1581,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 12254,
+	["currentKey"] = 12650,
 	["date"] = {
 		["Day"] = 14,
 		["Month"] = 11,
@@ -1549,11 +1618,11 @@ mission = {
 		},
 	},
 	["map"] = {
-		["centerX"] = -396153.93936463,
-		["centerY"] = -72829.215603083,
-		["zoom"] = 1000,
+		["centerX"] = -394476.93936463,
+		["centerY"] = -75515.50131737,
+		["zoom"] = 2000,
 	},
-	["maxDictId"] = 119,
+	["maxDictId"] = 124,
 	["needModules"] = {
 	},
 	["pictureFileNameB"] = {

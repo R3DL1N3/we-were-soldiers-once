@@ -1669,7 +1669,7 @@ mission = {
 			[6] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_52\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_53\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_54\"));",
 			[7] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_86\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_90\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_107\"));",
 			[8] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_91\"));",
-			[9] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_89\")); mission.trig.func[9]=nil;",
+			[9] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_89\"));",
 		},
 		["conditions"] = {
 			[1] = "return(true)",
@@ -1707,7 +1707,7 @@ mission = {
 			[6] = "if mission.trig.conditions[6]() then if not mission.trig.flag[6] then mission.trig.actions[6](); mission.trig.flag[6] = true;end; else mission.trig.flag[6] = false; end;",
 			[7] = "if mission.trig.conditions[7]() then if not mission.trig.flag[7] then mission.trig.actions[7](); mission.trig.flag[7] = true;end; else mission.trig.flag[7] = false; end;",
 			[8] = "if mission.trig.conditions[8]() then if not mission.trig.flag[8] then mission.trig.actions[8](); mission.trig.flag[8] = true;end; else mission.trig.flag[8] = false; end;",
-			[9] = "if mission.trig.conditions[9]() then mission.trig.actions[9]() end",
+			[9] = "if mission.trig.conditions[9]() then if not mission.trig.flag[9] then mission.trig.actions[9](); mission.trig.flag[9] = true;end; else mission.trig.flag[9] = false; end;",
 		},
 		["funcStartup"] = {
 			[1] = "if mission.trig.conditions[1]() then mission.trig.actions[1]() end",
@@ -2100,7 +2100,7 @@ mission = {
 			},
 			["comment"] = "KIA Out",
 			["eventlist"] = "",
-			["predicate"] = "triggerOnce",
+			["predicate"] = "triggerFront",
 			["rules"] = {
 				[1] = {
 					["coalitionlist"] = "red",

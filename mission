@@ -428,6 +428,7 @@ mission = {
 									[1] = {
 										["canCargo"] = false,
 										["category"] = "GrassAirfields",
+										["grassairfield_callsign_id"] = 1,
 										["heading"] = 0,
 										["lenght"] = 2000,
 										["name"] = "DictKey_GroupName_6",

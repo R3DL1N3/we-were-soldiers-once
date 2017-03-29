@@ -1581,7 +1581,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 12650,
+	["currentKey"] = 12902,
 	["date"] = {
 		["Day"] = 14,
 		["Month"] = 11,
@@ -1622,7 +1622,7 @@ mission = {
 		["centerY"] = -75515.50131737,
 		["zoom"] = 2000,
 	},
-	["maxDictId"] = 124,
+	["maxDictId"] = 125,
 	["needModules"] = {
 	},
 	["pictureFileNameB"] = {

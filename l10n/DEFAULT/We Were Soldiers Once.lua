@@ -23,34 +23,25 @@
 --------------------------------------------------------------------------------
 
 world.addEventFunction(function(event)
-  if event.id == world.event.S_EVENT_LAND then
-    -- Filters out brief landings, such as when a helicopter skids the ground
-    -- in-flight. That does not count as a landing. The initiator's speed must
-    -- be less than 10 metres per second. The chalk will not embark or disembark
-    -- if you land too quickly.
-    if event.initiator:speed() < 10 then
-      trigger.action.outText(event.initiator:getName() .. ' landed', 3)
-      local chalk = event.initiator:chalk()
-      if chalk then
-        event.initiator:disembarkChalk(14.63 / 2, 1)
-        local text = event.initiator:getName() .. ' disembarked ' .. chalk.name
+  if event.id == world.event.S_EVENT_LANDED then
+    trigger.action.outText(event.initiator:getName() .. ' landed', 3)
+    local chalk = event.initiator:chalk()
+    if chalk then
+      event.initiator:disembarkChalk()
+      local text = event.initiator:getName() .. ' disembarked ' .. chalk.name
+      trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
+    elseif string.find(event.initiator:getName(), 'Gunship') == 1 then
+      local zone = {point = event.initiator:getPoint(),
+        radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 1.5}
+      local groups = cav.names:untaskedGroupsInZone(zone, coalition.side.BLUE, Group.Category.GROUND)
+      if #groups > 0 then
+        chalk = event.initiator:embarkGroup(groups[1])
+        local text = event.initiator:getName() .. ' embarked ' .. chalk.name
         trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-      elseif string.find(event.initiator:getName(), 'Gunship') == 1 then
-        local zone = {point = event.initiator:getPoint(), radius = 14.63 * 2}
-        local groups = table.fromiter(Group.untasked(country.id.USA, Group.Category.GROUND, function(group)
-          return cav.names:includesGroup(group) and group:inZone(zone)
-        end))
-        if #groups > 0 then
-          Group.sortGroupsByCenterPoint(groups, zone.point)
-          chalk = event.initiator:embarkGroup(groups[1])
-          local text = event.initiator:getName() .. ' embarked ' .. chalk.name
-          trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-        end
       end
     end
   elseif event.id == world.event.S_EVENT_CRASH then
     trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
-    event.initiator:disembarkChalk(14.63, 1, math.random())
   end
 end)
 
@@ -63,6 +54,7 @@ kia = {}
 world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_DEAD then
     local unit = event.initiator
+    if not unit.getCoalition then return end
     local side = unit:getCoalition()
     kia[side] = (kia[side] or 0) + 1
     UserFlag['7'] = (UserFlag['7'] or 0) + 1
@@ -87,16 +79,24 @@ cav = {
 }
 
 -- Spawns one chalk of Bravo company, 1st battalion, 7th Cavalry.
-function cav.spawnChalk(zone)
-  if #Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then return end
+function cav.spawnChalk(fromZone, toZone)
+  if #Unit.allInZone(fromZone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then return end
   if cav.names.unitCounter.counter >= 1000 then return end
+  if #table.fromiter(Group.filtered(coalition.side.BLUE, Group.Category.GROUND)) >= 15 then return end
   local units = Units()
   units:addType('Soldier M4', 7)
   units:addType('Soldier M249', 1)
   units:setExcellentSkill()
   units:setRandomTransportable(false)
   cav.names:applyTo(units)
-  units:formSquareInZones(zone, cav.zone)
+  units:formSquareInZones(fromZone, cav.zone)
+  if toZone then
+    local mission = Mission()
+    local unit = units:all()[1]
+    mission:addTurningPoint(unit.x, unit.y)
+    mission:turningToPoint(toZone.point)
+    units.route = {points = mission:waypoints()}
+  end
   units:spawn(country.id.USA, Group.Category.GROUND)
 end
 
@@ -112,6 +112,7 @@ vpa = {
 function vpa.spawnSquad(zone)
   if #Unit.allInZone(zone, coalition.side.RED, Group.Category.GROUND) ~= 0 then return end
   if vpa.names.unitCounter.counter >= 2500 then return end
+  if #table.fromiter(Group.filtered(coalition.side.RED, Group.Category.GROUND)) >= 30 then return end
   local units = Units()
   units:addType('Infantry AK', 7)
   units:addType('Paratrooper RPG-16', 1)

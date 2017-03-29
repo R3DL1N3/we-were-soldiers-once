@@ -289,10 +289,15 @@ end
 
 -- Timer firing arrives here. Sets up the timer's `time`, fires the timer
 -- function, and sets up a repeat if necessary.
+--
+-- Only returns the next firing time if the timer has not been removed and the
+-- timer repeats.
 function Timer:fire(time)
   self.time = time
   self:fired()
-  return self.repeats and time + self.seconds
+  if self.id and self.repeats then
+    return time + self.seconds
+  end
 end
 
 --------------------------------------------------------------------------------
@@ -628,7 +633,6 @@ function Units:formColumns(dx, dy, numberOfColumns)
   end
   local center = self:center()
   self:translateXY(-center.x, -center.y)
-  self:rotateXY(math.pi / 2)
 end
 
 -- Forms the units into a square using the given displacement between units.
@@ -725,9 +729,12 @@ function Units:spawn(country, category)
   -- exist together at the same time. This assumes, of course, that the order of
   -- the spawned units matched the order of the configured units. This will fail
   -- if this assumption is wrong for any reason. The index for the spawned units
-  -- must correspond to the index for the `self` units.
-  for index, unit in ipairs(group:getUnits()) do
-    unit:setSkill(self.units[index].skill)
+  -- must correspond to the index for the `self` units. This is only possible
+  -- when spawning succeeds.
+  if group and group:isExist() then
+    for index, unit in ipairs(group:getUnits()) do
+      unit:setSkill(self.units[index].skill)
+    end
   end
   return group
 end
@@ -833,6 +840,18 @@ function Names:includesUnit(unit)
   return string.find(unit:getName(), self.unitPrefix) == 1
 end
 
+-- Answers all untasked groups within the given zone that match this naming
+-- scheme. Sorts the groups by their horizontal distance from the zone centre.
+-- Closest appears first. You must also specify the country, but the category is
+-- optional. Answers all categories if unspecified.
+function Names:untaskedGroupsInZone(zone, side, category)
+  local groups = table.fromiter(Group.untasked(side, category, function(group)
+    return self:includesGroup(group) and group:inZone(zone)
+  end))
+  Group.sortGroupsByCenterPoint(groups, zone.point)
+  return groups
+end
+
 --------------------------------------------------------------------------------
 --                                                                       Mission
 --------------------------------------------------------------------------------
@@ -894,6 +913,86 @@ function Mission:pushTaskTo(controller)
 end
 
 --------------------------------------------------------------------------------
+--                                                                       landing
+--------------------------------------------------------------------------------
+
+world.event.S_EVENT_LANDING = 'S_EVENT_LANDING'
+world.event.S_EVENT_LANDED = 'S_EVENT_LANDED'
+
+local landingTimers = {}
+local landingTimeInterval = 1
+local landingSpeedThreshold = 1
+
+function Unit:landingTimer()
+  return landingTimers[self:getID()]
+end
+
+function Unit:setLandingTimer(timer)
+  landingTimers[self:getID()] = timer
+end
+
+-- Note, not landing is not necessarily the same as landed. Took off is also not
+-- landing, as well as not landed.
+function Unit:isLanding()
+  return self:landingTimer() ~= nil
+end
+
+function Unit:startLanding()
+  local timer = Timer(function(timer)
+    -- Filters out brief landings, such as when a helicopter skids the ground
+    -- in-flight. That does not count as a landing. The initiator's speed must
+    -- be less than 1 metres per second, by default. The chalk will not embark
+    -- or disembark if you land too quickly.
+    local speed = self:speed()
+    local landed = speed < landingSpeedThreshold
+    if landed then
+      timer:remove()
+    end
+    -- Invokes a world event during a world event.
+    world.onEvent{
+      id = landed and world.event.S_EVENT_LANDED or world.event.S_EVENT_LANDING,
+      initiator = self,
+      speed = speed,
+      time = timer.time,
+    }
+  end)
+  self:setLandingTimer(timer)
+  timer:delay(landingTimeInterval, true)
+end
+
+function Unit:stopLanding()
+  local timer = self:landingTimer()
+  if timer then
+    timer:remove()
+    self:setLandingTimer(nil)
+  end
+end
+
+function Unit.setLandingTimeInterval(seconds)
+  landingTimeInterval = seconds
+end
+
+function Unit.setLandingSpeedThreshold(speed)
+  landingSpeedThreshold = speed
+end
+
+-- Start a timer when a slick, a helicopter carrying a chalk, lands. Start
+-- checking the unit speed.
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_TAKEOFF then
+    event.initiator:stopLanding()
+  elseif event.id == world.event.S_EVENT_LAND then
+    event.initiator:startLanding()
+  elseif event.id == world.event.S_EVENT_CRASH then
+    event.initiator:startLanding()
+  elseif event.id == world.event.S_EVENT_EJECTION then
+    event.initiator:stopLanding()
+  elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
+    event.initiator:stopLanding()
+  end
+end)
+
+--------------------------------------------------------------------------------
 --                                                                        chalks
 --------------------------------------------------------------------------------
 
@@ -920,85 +1019,36 @@ end
 
 -- Disembarks when crashing as well as when landing. Does nothing if the unit
 -- has no chalk. The disembarked chalk forms two columns alongside the unit,
--- pointing in the unit's heading direction.
-function Unit:disembarkChalk(dx, dy, probability)
+-- pointing in the unit's heading direction. Uses the unit's rotor diameter as
+-- the default distance between the two columns.
+function Unit:disembarkChalk(dx, dy)
   local chalk = self:chalk()
   if not chalk then return end
   self:setChalk(nil)
-  chalk:formColumns(dx, dy, 2)
+  if not dx then
+    dx = (self:getDesc().rotor_diameter or 14.63) / 2
+  end
+  chalk:formColumns(dx, dy or 1, 2)
   chalk:translateXY(self:getPoint().x, self:getPoint().z)
   chalk:setHeading(self:heading())
-  if probability then
-    chalk:setProbability(probability)
-  end
   chalk:spawn()
 end
 
---------------------------------------------------------------------------------
---                                                                         inAir
---------------------------------------------------------------------------------
-
-local wasInAir = {}
-
-local inAirFunctions = {}
-
--- Answers true if the unit was in the air at the last sampling.
-function Unit:wasInAir()
-  return wasInAir[self:getID()]
-end
-
--- Setter for unit's was-in-air state.
-function Unit:setWasInAir(was)
-  wasInAir[self:getID()] = was
-end
-
--- Sets the new in-air status of this unit. Notifies the in-air functions,
--- passing the current in-air status as well as the previous in-air status: what
--- it is, and what it was. Does not notify until the status changes. Change
--- includes changing from unknown to known (from nil to true or false).
-function Unit:setInAir(inAir)
-  if not inAir then
-    inAir = self:inAir()
-  end
-  local was = self:wasInAir()
-  local funcs = inAirFunctions[self:getID()]
-  if funcs then
-    for _, func in ipairs(funcs) do
-      if inAir ~= was then
-        func(inAir, was)
-      end
-    end
-  end
-  self:setWasInAir(inAir)
-end
-
--- Adds an in-air function for this unit. Answers a function identifier number.
--- Use this to remove the function subsequently, whenever necessary.
-function Unit:addInAirFunction(func)
-  local funcs = inAirFunctions[self:getID()]
-  if not funcs then
-    funcs = {}
-    inAirFunctions[self:getID()] = funcs
-  end
-  return table.insert(funcs, func)
-end
-
-function Unit:removeInAirFunction(funcId)
-  local funcs = inAirFunctions[self:getID()]
-  if funcs then
-    table.remove(funcs, funcId)
-  end
-end
-
--- Runs once every second. Samples the in-air status of all player units.
-local inAirTimer = Timer(function()
-  for _, side in ipairs{coalition.side.NEUTRAL, coalition.side.RED, coalition.side.BLUE} do
-    for _, unit in ipairs(coalition.getPlayers(side)) do
-      unit:setInAir(unit:inAir())
-    end
+-- Adjust the chalk when bad things happen. Do sensible things in response.
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_CRASH then
+    local chalk = event.initiator:chalk()
+    if not chalk then return end
+    event.initiator:setChalk(nil)
+    chalk:setProbability(math.random())
+    chalk:randomizeXYInZone{
+      point = event.initiator:getPoint(),
+      radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 2}
+    chalk:randomizeHeading()
+    chalk:spawn()
+  elseif event.id == world.event.S_EVENT_EJECTION then
+    event.initiator:setChalk(nil)
+  elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
+    event.initiator:setChalk(nil)
   end
 end)
-
-function setInAirTimerDelay(seconds)
-  inAirTimer:delay(seconds, true)
-end

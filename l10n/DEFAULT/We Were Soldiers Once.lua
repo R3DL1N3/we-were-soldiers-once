@@ -124,7 +124,7 @@ cav = {
 function cav.spawnChalk(fromZone, toZone)
   if #Unit.allInZone(fromZone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then return end
   if cav.names.unitCounter.counter >= 1000 then return end
-  if #table.fromiter(Group.filtered(coalition.side.BLUE, Group.Category.GROUND)) >= 15 then return end
+  if #table.fromiter(Unit.filtered(coalition.side.BLUE, Group.Category.GROUND)) >= 150 then return end
   local units = Units()
   units:addType('Soldier M4', 7)
   units:addType('Soldier M249', 1)
@@ -154,7 +154,7 @@ vpa = {
 function vpa.spawnSquad(zone)
   if #Unit.allInZone(zone, coalition.side.RED, Group.Category.GROUND) ~= 0 then return end
   if vpa.names.unitCounter.counter >= 2500 then return end
-  if #table.fromiter(Group.filtered(coalition.side.RED, Group.Category.GROUND)) >= 30 then return end
+  if #table.fromiter(Unit.filtered(coalition.side.RED, Group.Category.GROUND)) >= 300 then return end
   local units = Units()
   units:addType('Infantry AK', 7)
   units:addType('Paratrooper RPG-16', 1)

@@ -83,7 +83,8 @@ world.addEventFunction(function(event)
   elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
     event.initiator:addScore('leaves', -25)
   elseif event.id == world.event.S_EVENT_HIT then
-    if event.target:getLife() == 0 then
+    event.initiator:addScore('hits', 1)
+    if event.target:getLife() < 1 then
       event.initiator:addScore('kills', 1)
     end
   end

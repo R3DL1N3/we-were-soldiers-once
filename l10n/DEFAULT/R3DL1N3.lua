@@ -987,7 +987,7 @@ world.addEventFunction(function(event)
   elseif event.id == world.event.S_EVENT_LAND then
     event.initiator:startLanding()
   elseif event.id == world.event.S_EVENT_CRASH then
-    event.initiator:startLanding()
+    event.initiator:stopLanding()
   elseif event.id == world.event.S_EVENT_EJECTION then
     event.initiator:stopLanding()
   elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then

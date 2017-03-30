@@ -2085,6 +2085,8 @@ mission = {
 		["actions"] = {
 			[1] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",
 			[10] = "a_inc_flag(7, 1);",
+			[11] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_139\"));",
+			[12] = "a_inc_flag(77, 1);",
 			[2] = "a_set_flag(1);a_set_flag(2);a_set_flag(3); mission.trig.func[2]=nil;",
 			[3] = "a_inc_flag(1, 1);",
 			[4] = "a_inc_flag(2, 1);",
@@ -2097,6 +2099,8 @@ mission = {
 		["conditions"] = {
 			[1] = "return(true)",
 			[10] = "return(c_time_since_flag(7, 300) )",
+			[11] = "return(c_time_since_flag(77, 10) )",
+			[12] = "return(c_time_since_flag(77, 300) )",
 			[2] = "return(c_time_after(3) )",
 			[3] = "return(c_time_since_flag(1, 10) )",
 			[4] = "return(c_time_since_flag(2, 20) )",
@@ -2115,6 +2119,8 @@ mission = {
 		["flag"] = {
 			[1] = true,
 			[10] = true,
+			[11] = true,
+			[12] = true,
 			[2] = true,
 			[3] = true,
 			[4] = true,
@@ -2126,6 +2132,8 @@ mission = {
 		},
 		["func"] = {
 			[10] = "if mission.trig.conditions[10]() then if not mission.trig.flag[10] then mission.trig.actions[10](); mission.trig.flag[10] = true;end; else mission.trig.flag[10] = false; end;",
+			[11] = "if mission.trig.conditions[11]() then if not mission.trig.flag[11] then mission.trig.actions[11](); mission.trig.flag[11] = true;end; else mission.trig.flag[11] = false; end;",
+			[12] = "if mission.trig.conditions[12]() then if not mission.trig.flag[12] then mission.trig.actions[12](); mission.trig.flag[12] = true;end; else mission.trig.flag[12] = false; end;",
 			[2] = "if mission.trig.conditions[2]() then mission.trig.actions[2]() end",
 			[3] = "if mission.trig.conditions[3]() then if not mission.trig.flag[3] then mission.trig.actions[3](); mission.trig.flag[3] = true;end; else mission.trig.flag[3] = false; end;",
 			[4] = "if mission.trig.conditions[4]() then if not mission.trig.flag[4] then mission.trig.actions[4](); mission.trig.flag[4] = true;end; else mission.trig.flag[4] = false; end;",
@@ -2300,6 +2308,56 @@ mission = {
 				[1] = {
 					["coalitionlist"] = "red",
 					["flag"] = 7,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 300,
+					["zone"] = 46,
+				},
+			},
+		},
+		[11] = {
+			["actions"] = {
+				[1] = {
+					["KeyDict_text"] = "DictKey_ActionText_139",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["predicate"] = "a_do_script",
+					["text"] = "DictKey_ActionText_139",
+				},
+			},
+			["comment"] = "Scores Out 10 Seconds",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 77,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 10,
+					["zone"] = 46,
+				},
+			},
+		},
+		[12] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["flag"] = 77,
+					["predicate"] = "a_inc_flag",
+					["value"] = 1,
+				},
+			},
+			["comment"] = "Scores Out 300 Seconds",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 77,
 					["predicate"] = "c_time_since_flag",
 					["seconds"] = 300,
 					["zone"] = 46,

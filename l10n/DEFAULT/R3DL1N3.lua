@@ -840,13 +840,13 @@ function Names:includesUnit(unit)
   return string.find(unit:getName(), self.unitPrefix) == 1
 end
 
--- Answers all untasked groups within the given zone that match this naming
--- scheme. Sorts the groups by their horizontal distance from the zone centre.
--- Closest appears first. You must also specify the country, but the category is
--- optional. Answers all categories if unspecified.
-function Names:untaskedGroupsInZone(zone, side, category)
-  local groups = table.fromiter(Group.untasked(side, category, function(group)
-    return self:includesGroup(group) and group:inZone(zone)
+-- Answers all groups within the given zone that match this naming scheme. Sorts
+-- the groups by their horizontal distance from the zone centre. Closest appears
+-- first. You must also specify the country, but the category is optional.
+-- Answers all categories if unspecified.
+function Names:groupsInZone(zone, side, category, filter)
+  local groups = table.fromiter(Group.filtered(side, category, function(group)
+    return self:includesGroup(group) and group:inZone(zone) and (filter == nil or filter(group))
   end))
   Group.sortGroupsByCenterPoint(groups, zone.point)
   return groups

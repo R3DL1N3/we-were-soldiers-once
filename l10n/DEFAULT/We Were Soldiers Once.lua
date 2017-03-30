@@ -22,6 +22,39 @@
 --
 --------------------------------------------------------------------------------
 
+scores = {}
+
+function Unit:score(key, value)
+  local playerName = self:getPlayerName()
+  if not playerName then return end
+  local playerScores = scores[playerName]
+  if not playerScores then
+    playerScores = {}
+    scores[playerName] = playerScores
+  end
+  playerScores[key] = (playerScores[key] or 0) + value
+  UserFlag['77'] = (UserFlag['77'] or 0) + 1
+end
+
+function Unit:addScore(key, score)
+  self:score(key, 1)
+  self:score('score', score)
+end
+
+-- Periodically outputs player scores to all sides.
+function outScores(seconds)
+  local lines = {}
+  for playerName, playerScores in pairs(scores) do
+    local line = {}
+    table.insert(line, playerName)
+    for key, value in pairs(playerScores) do
+      table.insert(line, key .. ':' .. value)
+    end
+    table.insert(lines, table.concat(line, ' '))
+  end
+  trigger.action.outText(table.concat(lines, '\n'), seconds or 10)
+end
+
 world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_LANDED then
     trigger.action.outText(event.initiator:getName() .. ' landed', 3)
@@ -42,6 +75,16 @@ world.addEventFunction(function(event)
     end
   elseif event.id == world.event.S_EVENT_CRASH then
     trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
+    event.initiator:addScore('crashes', -50)
+  elseif event.id == world.event.S_EVENT_EJECTION then
+    trigger.action.outText(event.initiator:getName() .. ' ejected', 3)
+    event.initiator:addScore('ejects', -10)
+  elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
+    event.initiator:addScore('leaves', -25)
+  elseif event.id == world.event.S_EVENT_HIT then
+    if event.target:getLife() == 0 then
+      event.initiator:addScore('kills', 1)
+    end
   end
 end)
 

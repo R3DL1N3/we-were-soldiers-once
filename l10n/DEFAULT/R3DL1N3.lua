@@ -940,6 +940,7 @@ function Unit:isLanding()
 end
 
 function Unit:startLanding()
+  -- Stop landing before starting!
   self:stopLanding()
   local timer = Timer(function(timer)
     -- Filters out brief landings, such as when a helicopter skids the ground

@@ -940,6 +940,7 @@ function Unit:isLanding()
 end
 
 function Unit:startLanding()
+  self:stopLanding()
   local timer = Timer(function(timer)
     -- Filters out brief landings, such as when a helicopter skids the ground
     -- in-flight. That does not count as a landing. The initiator's speed must

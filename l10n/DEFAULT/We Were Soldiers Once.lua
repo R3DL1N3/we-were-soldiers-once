@@ -120,7 +120,7 @@ cav = {
   names = Names('Cav Chalk #', 'Cav Trooper #'),
 }
 
--- Spawns one chalk of Bravo company, 1st battalion, 7th Cavalry.
+-- Spawns one chalk of Cavalry.
 function cav.spawnChalk(fromZone, toZone)
   if #Unit.allInZone(fromZone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then return end
   if cav.names.unitCounter.counter >= 1000 then return end

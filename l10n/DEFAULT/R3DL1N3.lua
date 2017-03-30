@@ -297,6 +297,8 @@ function Timer:fire(time)
   self:fired()
   if self.id and self.repeats then
     return time + self.seconds
+  else
+    self.id = nil
   end
 end
 

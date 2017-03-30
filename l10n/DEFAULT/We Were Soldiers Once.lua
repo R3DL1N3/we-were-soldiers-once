@@ -62,7 +62,7 @@ world.addEventFunction(function(event)
       event.initiator:disembarkChalk()
       local text = event.initiator:getName() .. ' disembarked ' .. chalk.name
       trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-    elseif string.find(event.initiator:getName(), 'Gunship') == 1 then
+    elseif string.find(event.initiator:getName(), 'Slick') == 1 then
       local zone = {point = event.initiator:getPoint(),
         radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 1.5}
       local groups = cav.names:untaskedGroupsInZone(zone, coalition.side.BLUE, Group.Category.GROUND)

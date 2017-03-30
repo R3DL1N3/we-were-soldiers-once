@@ -83,9 +83,12 @@ world.addEventFunction(function(event)
   elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
     event.initiator:addScore('leaves', -25)
   elseif event.id == world.event.S_EVENT_HIT then
-    event.initiator:addScore('hits', 1)
-    if event.target:getLife() < 1 then
-      event.initiator:addScore('kills', 1)
+    -- Sometimes there is no initiator. Just ignore it in that case.
+    if event.initiator then
+      event.initiator:addScore('hits', 1)
+      if event.target:getLife() < 1 then
+        event.initiator:addScore('kills', event.initiator:getLife0())
+      end
     end
   end
 end)

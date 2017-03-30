@@ -2003,7 +2003,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 14916,
+	["currentKey"] = 15058,
 	["date"] = {
 		["Day"] = 14,
 		["Month"] = 11,
@@ -2044,7 +2044,7 @@ mission = {
 		["centerY"] = -67810.072745943,
 		["zoom"] = 50000,
 	},
-	["maxDictId"] = 139,
+	["maxDictId"] = 147,
 	["needModules"] = {
 	},
 	["pictureFileNameB"] = {
@@ -2084,31 +2084,49 @@ mission = {
 	["trig"] = {
 		["actions"] = {
 			[1] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",
-			[10] = "a_inc_flag(7, 1);",
-			[11] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_139\"));",
-			[12] = "a_inc_flag(77, 1);",
-			[2] = "a_set_flag(1);a_set_flag(2);a_set_flag(3); mission.trig.func[2]=nil;",
+			[10] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_89\"));",
+			[11] = "a_inc_flag(7, 1);",
+			[12] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_139\"));",
+			[13] = "a_inc_flag(77, 1);",
+			[14] = "a_set_flag_random(33, 1, 9);",
+			[15] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_141\"));",
+			[16] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_142\"));",
+			[17] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_143\"));",
+			[18] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_144\"));",
+			[19] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_145\"));",
+			[2] = "a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30); mission.trig.func[2]=nil;",
+			[20] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_146\"));",
+			[21] = "a_out_sound_s(\"blue\", getValueResourceByKey(\"ResKey_Action_147\"));",
 			[3] = "a_inc_flag(1, 1);",
 			[4] = "a_inc_flag(2, 1);",
 			[5] = "a_inc_flag(3, 1);",
-			[6] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_52\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_53\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_54\"));",
-			[7] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_86\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_90\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_107\"));",
-			[8] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_91\"));",
-			[9] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_89\"));",
+			[6] = "a_inc_flag(30, 1);",
+			[7] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_52\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_53\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_54\"));",
+			[8] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_86\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_90\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_107\"));",
+			[9] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_91\"));",
 		},
 		["conditions"] = {
 			[1] = "return(true)",
-			[10] = "return(c_time_since_flag(7, 300) )",
-			[11] = "return(c_time_since_flag(77, 10) )",
-			[12] = "return(c_time_since_flag(77, 300) )",
+			[10] = "return(c_time_since_flag(7, 10) )",
+			[11] = "return(c_time_since_flag(7, 300) )",
+			[12] = "return(c_time_since_flag(77, 10) )",
+			[13] = "return(c_time_since_flag(77, 300) )",
+			[14] = "return(c_time_since_flag(30, 10) )",
+			[15] = "return(c_flag_equals(33, 1) )",
+			[16] = "return(c_flag_equals(33, 2) )",
+			[17] = "return(c_flag_equals(33, 3) )",
+			[18] = "return(c_flag_equals(33, 4) )",
+			[19] = "return(c_flag_equals(33, 5) )",
 			[2] = "return(c_time_after(3) )",
+			[20] = "return(c_flag_equals(33, 6) )",
+			[21] = "return(c_flag_equals(33, 7) )",
 			[3] = "return(c_time_since_flag(1, 10) )",
 			[4] = "return(c_time_since_flag(2, 20) )",
 			[5] = "return(c_time_since_flag(3, 30) )",
-			[6] = "return(c_time_since_flag(1, 1) )",
+			[6] = "return(c_time_since_flag(30, 300) )",
 			[7] = "return(c_time_since_flag(1, 1) )",
-			[8] = "return(c_time_since_flag(3, 1) )",
-			[9] = "return(c_time_since_flag(7, 10) )",
+			[8] = "return(c_time_since_flag(1, 1) )",
+			[9] = "return(c_time_since_flag(3, 1) )",
 		},
 		["custom"] = {
 		},
@@ -2121,7 +2139,16 @@ mission = {
 			[10] = true,
 			[11] = true,
 			[12] = true,
+			[13] = true,
+			[14] = true,
+			[15] = true,
+			[16] = true,
+			[17] = true,
+			[18] = true,
+			[19] = true,
 			[2] = true,
+			[20] = true,
+			[21] = true,
 			[3] = true,
 			[4] = true,
 			[5] = true,
@@ -2134,7 +2161,16 @@ mission = {
 			[10] = "if mission.trig.conditions[10]() then if not mission.trig.flag[10] then mission.trig.actions[10](); mission.trig.flag[10] = true;end; else mission.trig.flag[10] = false; end;",
 			[11] = "if mission.trig.conditions[11]() then if not mission.trig.flag[11] then mission.trig.actions[11](); mission.trig.flag[11] = true;end; else mission.trig.flag[11] = false; end;",
 			[12] = "if mission.trig.conditions[12]() then if not mission.trig.flag[12] then mission.trig.actions[12](); mission.trig.flag[12] = true;end; else mission.trig.flag[12] = false; end;",
+			[13] = "if mission.trig.conditions[13]() then if not mission.trig.flag[13] then mission.trig.actions[13](); mission.trig.flag[13] = true;end; else mission.trig.flag[13] = false; end;",
+			[14] = "if mission.trig.conditions[14]() then if not mission.trig.flag[14] then mission.trig.actions[14](); mission.trig.flag[14] = true;end; else mission.trig.flag[14] = false; end;",
+			[15] = "if mission.trig.conditions[15]() then if not mission.trig.flag[15] then mission.trig.actions[15](); mission.trig.flag[15] = true;end; else mission.trig.flag[15] = false; end;",
+			[16] = "if mission.trig.conditions[16]() then if not mission.trig.flag[16] then mission.trig.actions[16](); mission.trig.flag[16] = true;end; else mission.trig.flag[16] = false; end;",
+			[17] = "if mission.trig.conditions[17]() then if not mission.trig.flag[17] then mission.trig.actions[17](); mission.trig.flag[17] = true;end; else mission.trig.flag[17] = false; end;",
+			[18] = "if mission.trig.conditions[18]() then if not mission.trig.flag[18] then mission.trig.actions[18](); mission.trig.flag[18] = true;end; else mission.trig.flag[18] = false; end;",
+			[19] = "if mission.trig.conditions[19]() then if not mission.trig.flag[19] then mission.trig.actions[19](); mission.trig.flag[19] = true;end; else mission.trig.flag[19] = false; end;",
 			[2] = "if mission.trig.conditions[2]() then mission.trig.actions[2]() end",
+			[20] = "if mission.trig.conditions[20]() then if not mission.trig.flag[20] then mission.trig.actions[20](); mission.trig.flag[20] = true;end; else mission.trig.flag[20] = false; end;",
+			[21] = "if mission.trig.conditions[21]() then if not mission.trig.flag[21] then mission.trig.actions[21](); mission.trig.flag[21] = true;end; else mission.trig.flag[21] = false; end;",
 			[3] = "if mission.trig.conditions[3]() then if not mission.trig.flag[3] then mission.trig.actions[3](); mission.trig.flag[3] = true;end; else mission.trig.flag[3] = false; end;",
 			[4] = "if mission.trig.conditions[4]() then if not mission.trig.flag[4] then mission.trig.actions[4](); mission.trig.flag[4] = true;end; else mission.trig.flag[4] = false; end;",
 			[5] = "if mission.trig.conditions[5]() then if not mission.trig.flag[5] then mission.trig.actions[5](); mission.trig.flag[5] = true;end; else mission.trig.flag[5] = false; end;",
@@ -2292,6 +2328,31 @@ mission = {
 		[10] = {
 			["actions"] = {
 				[1] = {
+					["KeyDict_text"] = "DictKey_ActionText_89",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["predicate"] = "a_do_script",
+					["text"] = "DictKey_ActionText_89",
+				},
+			},
+			["comment"] = "KIA Out 10 Seconds",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 7,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 10,
+					["zone"] = 46,
+				},
+			},
+		},
+		[11] = {
+			["actions"] = {
+				[1] = {
 					["ai_task"] = {
 						[1] = "",
 						[2] = "",
@@ -2314,7 +2375,7 @@ mission = {
 				},
 			},
 		},
-		[11] = {
+		[12] = {
 			["actions"] = {
 				[1] = {
 					["KeyDict_text"] = "DictKey_ActionText_139",
@@ -2339,7 +2400,7 @@ mission = {
 				},
 			},
 		},
-		[12] = {
+		[13] = {
 			["actions"] = {
 				[1] = {
 					["ai_task"] = {
@@ -2361,6 +2422,182 @@ mission = {
 					["predicate"] = "c_time_since_flag",
 					["seconds"] = 300,
 					["zone"] = 46,
+				},
+			},
+		},
+		[14] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["flag"] = 33,
+					["max_value"] = 9,
+					["min_value"] = 1,
+					["predicate"] = "a_set_flag_random",
+				},
+			},
+			["comment"] = "Music",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 30,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 10,
+					["zone"] = 231,
+				},
+			},
+		},
+		[15] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_141",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "Garryowen",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 1,
+					["zone"] = 231,
+				},
+			},
+		},
+		[16] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_142",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "Hold Me Thrill Me Kiss Me",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 2,
+					["zone"] = 231,
+				},
+			},
+		},
+		[17] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_143",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "Sgt MacKenzie",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 3,
+					["zone"] = 231,
+				},
+			},
+		},
+		[18] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_144",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "Good Morning Vietnam",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 4,
+					["zone"] = 231,
+				},
+			},
+		},
+		[19] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_145",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "We've Gotta Get Out Of This Place",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 5,
+					["zone"] = 231,
 				},
 			},
 		},
@@ -2396,6 +2633,16 @@ mission = {
 					["predicate"] = "a_set_flag",
 					["text"] = "DictKey_ActionText_51",
 				},
+				[4] = {
+					["KeyDict_text"] = "DictKey_ActionText_140",
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["flag"] = 30,
+					["predicate"] = "a_set_flag",
+					["text"] = "DictKey_ActionText_140",
+				},
 			},
 			["comment"] = "After 3 Seconds",
 			["eventlist"] = "",
@@ -2406,6 +2653,66 @@ mission = {
 					["predicate"] = "c_time_after",
 					["seconds"] = 3,
 					["zone"] = 92,
+				},
+			},
+		},
+		[20] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_146",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "Fortunate Son",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 6,
+					["zone"] = 231,
+				},
+			},
+		},
+		[21] = {
+			["actions"] = {
+				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["argument"] = 0,
+					["coalitionlist"] = "blue",
+					["file"] = "ResKey_Action_147",
+					["object"] = 14,
+					["predicate"] = "a_out_sound_s",
+					["speed"] = 1,
+					["start"] = 0,
+					["stop"] = 1,
+				},
+			},
+			["comment"] = "Paint It Black",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 33,
+					["predicate"] = "c_flag_equals",
+					["value"] = 7,
+					["zone"] = 231,
 				},
 			},
 		},
@@ -2487,6 +2794,31 @@ mission = {
 		[6] = {
 			["actions"] = {
 				[1] = {
+					["ai_task"] = {
+						[1] = "",
+						[2] = "",
+					},
+					["flag"] = 30,
+					["predicate"] = "a_inc_flag",
+					["value"] = 1,
+				},
+			},
+			["comment"] = "Every 300 Seconds",
+			["eventlist"] = "",
+			["predicate"] = "triggerFront",
+			["rules"] = {
+				[1] = {
+					["coalitionlist"] = "red",
+					["flag"] = 30,
+					["predicate"] = "c_time_since_flag",
+					["seconds"] = 300,
+					["zone"] = 92,
+				},
+			},
+		},
+		[7] = {
+			["actions"] = {
+				[1] = {
 					["KeyDict_text"] = "DictKey_ActionText_52",
 					["ai_task"] = {
 						[1] = "",
@@ -2527,7 +2859,7 @@ mission = {
 				},
 			},
 		},
-		[7] = {
+		[8] = {
 			["actions"] = {
 				[1] = {
 					["KeyDict_text"] = "DictKey_ActionText_86",
@@ -2570,7 +2902,7 @@ mission = {
 				},
 			},
 		},
-		[8] = {
+		[9] = {
 			["actions"] = {
 				[1] = {
 					["KeyDict_text"] = "DictKey_ActionText_91",
@@ -2592,31 +2924,6 @@ mission = {
 					["predicate"] = "c_time_since_flag",
 					["seconds"] = 1,
 					["zone"] = 92,
-				},
-			},
-		},
-		[9] = {
-			["actions"] = {
-				[1] = {
-					["KeyDict_text"] = "DictKey_ActionText_89",
-					["ai_task"] = {
-						[1] = "",
-						[2] = "",
-					},
-					["predicate"] = "a_do_script",
-					["text"] = "DictKey_ActionText_89",
-				},
-			},
-			["comment"] = "KIA Out 10 Seconds",
-			["eventlist"] = "",
-			["predicate"] = "triggerFront",
-			["rules"] = {
-				[1] = {
-					["coalitionlist"] = "red",
-					["flag"] = 7,
-					["predicate"] = "c_time_since_flag",
-					["seconds"] = 10,
-					["zone"] = 46,
 				},
 			},
 		},

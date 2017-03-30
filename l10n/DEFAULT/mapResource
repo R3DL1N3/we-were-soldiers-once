@@ -1,4 +1,11 @@
 mapResource = {
+	["ResKey_Action_141"] = "Garryowen.ogg",
+	["ResKey_Action_142"] = "Hold Me Thrill Me Kiss Me.ogg",
+	["ResKey_Action_143"] = "Sgt MacKenzie.ogg",
+	["ResKey_Action_144"] = "Good Morning Vietnam.ogg",
+	["ResKey_Action_145"] = "We've Gotta Get Out Of This Place.ogg",
+	["ResKey_Action_146"] = "Fortunate Son.ogg",
+	["ResKey_Action_147"] = "Paint It Black.ogg",
 	["ResKey_Action_46"] = "We Were Soldiers Once.lua",
 	["ResKey_Action_5"] = "R3DL1N3.lua",
 }

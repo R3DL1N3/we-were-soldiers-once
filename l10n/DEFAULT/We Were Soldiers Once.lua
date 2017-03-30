@@ -165,11 +165,15 @@ function vpa.spawnSquad(zone)
   units:spawn(country.id.RUSSIA, Group.Category.GROUND)
 end
 
+-- Directs all VPA groups to attack blue units within the given zone, the Chu
+-- Pong mountain area.
 function vpa.attackInZone(zone)
   if #coalition.getPlayers(coalition.side.RED) > 0 then return end
   local units = Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND)
   if #units == 0 then return end
-  for group in Group.untasked(coalition.side.RED, Group.Category.GROUND) do
+  for group in Group.filtered(coalition.side.RED, Group.Category.GROUND, function(group)
+    return vpa.names:includesGroup(group)
+  end) do
     group:setTurningToUnitsTask(units)
   end
 end

@@ -74,6 +74,37 @@ function math.distancexz(p, q)
   return math.sqrt(dx * dx + dz * dz)
 end
 
+-- Answers the horizontal heading angle between two points, from the first point
+-- to the second point.
+function math.headingxz(p, q)
+  local dx = q.x - p.x
+  local dz = q.z - p.z
+  -- Flip the axes because 0 degrees corresponds to up, not right.
+  local angle = math.atan2(dz, dx)
+  if angle < 0 then
+    angle = 2 * math.pi + angle
+  end
+  return angle
+end
+
+-- Constructs a point delta on the x-z plane from an angle and radius.
+function math.deltaxz(angle, radius)
+  return {
+    x = math.cos(angle) * radius,
+    z = math.sin(angle) * radius,
+  }
+end
+
+-- Answers the square magnitude of the given 3-vector. Useful for comparing
+-- vector magnitudes; comparing squares is faster.
+function math.squaremagnitude(vec3)
+  return vec3.x * vec3.x + vec3.y * vec3.y + vec3.z * vec3.z
+end
+
+function math.magnitude(vec3)
+  return math.sqrt(math.squaremagnitude(vec3))
+end
+
 --------------------------------------------------------------------------------
 --                                                                     metatable
 --------------------------------------------------------------------------------
@@ -258,10 +289,17 @@ end
 
 -- Timer firing arrives here. Sets up the timer's `time`, fires the timer
 -- function, and sets up a repeat if necessary.
+--
+-- Only returns the next firing time if the timer has not been removed and the
+-- timer repeats.
 function Timer:fire(time)
   self.time = time
   self:fired()
-  return self.repeats and time + self.seconds
+  if self.id and self.repeats then
+    return time + self.seconds
+  else
+    self.id = nil
+  end
 end
 
 --------------------------------------------------------------------------------
@@ -324,16 +362,16 @@ end
 
 -- Answers all the tasked groups belonging to the given side and within the
 -- given category.
-function Group.tasked(side, category)
+function Group.tasked(side, category, filter)
   return Group.filtered(side, category, function(group)
-    return group:getController():hasTask()
+    return group:getSize() > 0 and group:getController():hasTask() and (filter == nil or filter(group))
   end)
 end
 
 -- Answers all the untasked groups.
-function Group.untasked(side, category)
+function Group.untasked(side, category, filter)
   return Group.filtered(side, category, function(group)
-    return not group:getController():hasTask()
+    return group:getSize() > 0 and not group:getController():hasTask() and (filter == nil or filter(group))
   end)
 end
 
@@ -343,9 +381,7 @@ end
 function Group.setTurningToUnitsTasksInZone(fromSide, toSide, category, zone)
   local units = Unit.allInZone(zone, toSide, category)
   if #units == 0 then return end
-  for group in Group.filtered(fromSide, category, function(group)
-    return not group:getController():hasTask()
-  end) do
+  for group in Group.untasked(fromSide, category) do
     group:setTurningToUnitsTask(units)
   end
 end
@@ -395,6 +431,21 @@ function Group:continueMoving()
   trigger.action.groupContinueMoving(self)
 end
 
+-- Groups are not coalition objects, and therefore cannot access their country.
+-- Instead, access the country via the group's first unit.
+function Group:country()
+  local unit = self:getUnit(1)
+  return unit and unit:getCountry()
+end
+
+-- Sorts the given groups by their centre-point distance from the given point.
+-- The first group becomes the closest group to the point, based on the centre.
+function Group.sortGroupsByCenterPoint(groups, point)
+  table.sort(groups, function(lhs, rhs)
+    return math.distancexz(lhs:centerPoint(), point) < math.distancexz(rhs:centerPoint(), point)
+  end)
+end
+
 --------------------------------------------------------------------------------
 --                                                                          Unit
 --------------------------------------------------------------------------------
@@ -412,6 +463,15 @@ end
 function Unit:height()
   local p = self:getPoint()
   return p.y - land.getHeight{x = p.x, z = p.z}
+end
+
+-- The unit's speed is the magnitude of its velocity vector.
+function Unit:speed()
+  return math.magnitude(self:getVelocity())
+end
+
+function Unit:heading()
+  return math.headingxz({x = 0, z = 0}, self:getPosition().x)
 end
 
 -- Returns the distance between two units, this unit and another given unit
@@ -530,8 +590,77 @@ function Units:randomizeXYInZone(zone)
   for _, unit in ipairs(self.units) do
     local angle = 2 * math.pi * math.random()
     local radius = zone.radius * math.random()
-    unit.x = zone.point.x + math.cos(angle) * radius
-    unit.y = zone.point.z + math.sin(angle) * radius
+    local delta = math.deltaxz(angle, radius)
+    unit.x = zone.point.x + delta.x
+    unit.y = zone.point.z + delta.z
+  end
+end
+
+function Units:translateXY(dx, dy)
+  for _, unit in ipairs(self.units) do
+    unit.x = unit.x + dx
+    unit.y = unit.y + dy
+  end
+end
+
+-- Rotates all the units to the given angle about the x-y plane's origin. Note,
+-- the angle is in radians relative to east; 0 means right. Hence, the argument
+-- name is angle not heading.
+function Units:rotateXY(angle)
+  local dx, dy = math.cos(angle), math.sin(angle)
+  for _, unit in ipairs(self.units) do
+    unit.x, unit.y = unit.x * dx - unit.y * dy, unit.x * dy + unit.y * dx
+  end
+end
+
+-- Finds the two-dimensional centre-point of all the units so far accumulated;
+-- or nil if no units.
+function Units:center()
+  local x, y, n = 0, 0, 0
+  for _, unit in ipairs(self.units) do
+    x, y, n = x + unit.x, y + unit.y, n + 1
+  end
+  if n == 0 then return nil end
+  return {x = x / n, y = y / n}
+end
+
+-- Automatically orientates the units. The columns face north and the middle of
+-- the units falls at the origin.
+function Units:formColumns(dx, dy, numberOfColumns)
+  for index, unit in ipairs(self:all()) do
+    local column = (index - 1) % numberOfColumns
+    local row = (index - 1 - column) / numberOfColumns
+    unit.x = column * dx
+    unit.y = row * dy
+  end
+  local center = self:center()
+  self:translateXY(-center.x, -center.y)
+end
+
+-- Forms the units into a square using the given displacement between units.
+function Units:formSquare(dx, dy)
+  self:formColumns(dx, dy, math.floor(math.sqrt(#self:all())))
+end
+
+-- Useful for when you want to form units within overlapping zones. The heading
+-- becomes the angle between the sub-zone's centre-point and that of the
+-- super-zone.
+function Units:formSquareInZones(subZone, superZone, dx, dy)
+  local heading
+  if math.distancexz(subZone.point, superZone.point) < superZone.radius then
+    heading = math.headingxz(subZone.point, superZone.point)
+  else
+    heading = 2 * math.pi * math.random()
+  end
+  self:formSquare(dx or 1, dy or 1)
+  self:rotateXY(heading)
+  self:translateXY(subZone.point.x, subZone.point.z)
+  self:setHeading(heading)
+end
+
+function Units:setHeading(heading)
+  for _, unit in ipairs(self.units) do
+    unit.heading = heading
   end
 end
 
@@ -602,9 +731,12 @@ function Units:spawn(country, category)
   -- exist together at the same time. This assumes, of course, that the order of
   -- the spawned units matched the order of the configured units. This will fail
   -- if this assumption is wrong for any reason. The index for the spawned units
-  -- must correspond to the index for the `self` units.
-  for index, unit in ipairs(group:getUnits()) do
-    unit:setSkill(self.units[index].skill)
+  -- must correspond to the index for the `self` units. This is only possible
+  -- when spawning succeeds.
+  if group and group:isExist() then
+    for index, unit in ipairs(group:getUnits()) do
+      unit:setSkill(self.units[index].skill)
+    end
   end
   return group
 end
@@ -617,7 +749,13 @@ function Units:addGroup(group)
   if not self.name then
     self.name = group:getName()
   end
-  for _, unit in ipairs(self:getUnits()) do
+  if not self.country then
+    self.country = group:country()
+  end
+  if not self.category then
+    self.category = group:getCategory()
+  end
+  for _, unit in ipairs(group:getUnits()) do
     self:add{
       type = unit:getTypeName(),
       name = unit:getName(),
@@ -704,6 +842,18 @@ function Names:includesUnit(unit)
   return string.find(unit:getName(), self.unitPrefix) == 1
 end
 
+-- Answers all groups within the given zone that match this naming scheme. Sorts
+-- the groups by their horizontal distance from the zone centre. Closest appears
+-- first. You must also specify the country, but the category is optional.
+-- Answers all categories if unspecified.
+function Names:groupsInZone(zone, side, category, filter)
+  local groups = table.fromiter(Group.filtered(side, category, function(group)
+    return self:includesGroup(group) and group:inZone(zone) and (filter == nil or filter(group))
+  end))
+  Group.sortGroupsByCenterPoint(groups, zone.point)
+  return groups
+end
+
 --------------------------------------------------------------------------------
 --                                                                       Mission
 --------------------------------------------------------------------------------
@@ -765,63 +915,144 @@ function Mission:pushTaskTo(controller)
 end
 
 --------------------------------------------------------------------------------
---                                                                         inAir
+--                                                                       landing
 --------------------------------------------------------------------------------
 
-local wasInAir = {}
+world.event.S_EVENT_LANDING = 'S_EVENT_LANDING'
+world.event.S_EVENT_LANDED = 'S_EVENT_LANDED'
 
-local inAirFunctions = {}
+local landingTimers = {}
+local landingTimeInterval = 1
+local landingSpeedThreshold = 1
 
--- Answers true if the unit was in the air at the last sampling.
-function Unit:wasInAir()
-  return wasInAir[self:getID()]
+function Unit:landingTimer()
+  return landingTimers[self:getID()]
 end
 
--- Setter for unit's was-in-air state.
-function Unit:setWasInAir(was)
-  return wasInAir[self:getID()] = was
+function Unit:setLandingTimer(timer)
+  landingTimers[self:getID()] = timer
 end
 
--- Sets the new in-air status of this unit. Notifies the in-air functions,
--- passing the current in-air status as well as the previous in-air status: what
--- it is, and what it was. Does not notify until the status changes. Change
--- includes changing from unknown to known (from nil to true or false).
-function Unit:setInAir(inAir)
-  local was = self:wasInAir()
-  local funcs = inAirFunctions[self:getID()]
-  if funcs then
-    for _, func in ipairs(funcs) do
-      if inAir != was then
-        func(inAir, was)
-      end
+-- Note, not landing is not necessarily the same as landed. Took off is also not
+-- landing, as well as not landed.
+function Unit:isLanding()
+  return self:landingTimer() ~= nil
+end
+
+function Unit:startLanding()
+  -- Stop landing before starting!
+  self:stopLanding()
+  local timer = Timer(function(timer)
+    -- Filters out brief landings, such as when a helicopter skids the ground
+    -- in-flight. That does not count as a landing. The initiator's speed must
+    -- be less than 1 metres per second, by default. The chalk will not embark
+    -- or disembark if you land too quickly.
+    local speed = self:speed()
+    local landed = speed < landingSpeedThreshold
+    if landed then
+      timer:remove()
     end
-  end
-  self:setWasInAir(inAir)
+    -- Invokes a world event during a world event.
+    world.onEvent{
+      id = landed and world.event.S_EVENT_LANDED or world.event.S_EVENT_LANDING,
+      initiator = self,
+      speed = speed,
+      time = timer.time,
+    }
+  end)
+  self:setLandingTimer(timer)
+  timer:delay(landingTimeInterval, true)
 end
 
--- Adds an in-air function for this unit. Answers a function identifier number.
--- Use this to remove the function subsequently, whenever necessary.
-function Unit:addInAirFunction(func)
-  local funcs = inAirFunctions[self:getID()]
-  if not funcs then
-    funcs = {}
-    inAirFunctions[self:getID()] = funcs
-  end
-  return table.insert(funcs, func)
-end
-
-function Unit:removeInAirFunction(funcId)
-  local funcs = inAirFunctions[self:getID()]
-  if funcs then
-    table.remove(funcs, funcId)
+function Unit:stopLanding()
+  local timer = self:landingTimer()
+  if timer then
+    timer:remove()
+    self:setLandingTimer(nil)
   end
 end
 
--- Runs once every second. Samples the in-air status of all player units.
-Timer(function()
-  for _, side in ipairs{coalition.side.NEUTRAL, coalition.side.RED, coalition.side.BLUE} do
-    for _, unit in ipairs(coalition.getPlayers(side)) do
-      unit:setInAir(unit:inAir())
-    end
+function Unit.setLandingTimeInterval(seconds)
+  landingTimeInterval = seconds
+end
+
+function Unit.setLandingSpeedThreshold(speed)
+  landingSpeedThreshold = speed
+end
+
+-- Start a timer when a slick, a helicopter carrying a chalk, lands. Start
+-- checking the unit speed.
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_TAKEOFF then
+    event.initiator:stopLanding()
+  elseif event.id == world.event.S_EVENT_LAND then
+    event.initiator:startLanding()
+  elseif event.id == world.event.S_EVENT_CRASH then
+    event.initiator:stopLanding()
+  elseif event.id == world.event.S_EVENT_EJECTION then
+    event.initiator:stopLanding()
+  elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
+    event.initiator:stopLanding()
   end
-end):delay(1, true)
+end)
+
+--------------------------------------------------------------------------------
+--                                                                        chalks
+--------------------------------------------------------------------------------
+
+-- Creates an association between a unit and a chalk, a Units instance.
+local chalks = {}
+
+-- Answers this unit's chalk, or nil if the unit has no chalk.
+function Unit:chalk()
+  return chalks[self:getID()]
+end
+
+function Unit:setChalk(units)
+  chalks[self:getID()] = units
+end
+
+-- Embarks the given group. Destroys the group.
+function Unit:embarkGroup(group)
+  local units = Units()
+  units:addGroup(group)
+  self:setChalk(units)
+  group:destroy()
+  return units
+end
+
+-- Disembarks when crashing as well as when landing. Does nothing if the unit
+-- has no chalk. The disembarked chalk forms two columns alongside the unit,
+-- pointing in the unit's heading direction. Uses the unit's rotor diameter as
+-- the default distance between the two columns.
+function Unit:disembarkChalk(dx, dy)
+  local chalk = self:chalk()
+  if not chalk then return end
+  self:setChalk(nil)
+  if not dx then
+    dx = (self:getDesc().rotor_diameter or 14.63) / 2
+  end
+  chalk:formColumns(dx, dy or 1, 2)
+  chalk:translateXY(self:getPoint().x, self:getPoint().z)
+  chalk:setHeading(self:heading())
+  chalk:spawn()
+end
+
+-- Adjust the chalk when bad things happen. Do sensible things in response.
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_CRASH then
+    local chalk = event.initiator:chalk()
+    if not chalk then return end
+    event.initiator:setChalk(nil)
+    chalk:setProbability(math.random())
+    chalk:randomizeXYInZone{
+      point = event.initiator:getPoint(),
+      radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 2}
+    chalk:randomizeHeading()
+    chalk:spawn()
+  elseif event.id == world.event.S_EVENT_EJECTION then
+    event.initiator:setChalk(nil)
+  elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
+    event.initiator:setChalk(nil)
+  end
+end)

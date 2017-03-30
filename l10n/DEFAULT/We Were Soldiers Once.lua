@@ -57,7 +57,6 @@ end
 
 world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_LANDED then
-    trigger.action.outText(event.initiator:getName() .. ' landed', 3)
     local chalk = event.initiator:chalk()
     if chalk then
       event.initiator:disembarkChalk()

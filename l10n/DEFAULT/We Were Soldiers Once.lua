@@ -65,7 +65,9 @@ world.addEventFunction(function(event)
     elseif string.find(event.initiator:getName(), 'Slick') == 1 then
       local zone = {point = event.initiator:getPoint(),
         radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 1.5}
-      local groups = cav.names:untaskedGroupsInZone(zone, coalition.side.BLUE, Group.Category.GROUND)
+      local groups = cav.names:groupsInZone(zone, coalition.side.BLUE, Group.Category.GROUND, function(group)
+        return group:getSize() > 0 and not group:getController():hasTask()
+      end)
       if #groups > 0 then
         chalk = event.initiator:embarkGroup(groups[1])
         local text = event.initiator:getName() .. ' embarked ' .. chalk.name

@@ -208,8 +208,22 @@ dictionary = {
 	["DictKey_WptName_85"] = "",
 	["DictKey_WptName_95"] = "",
 	["DictKey_WptName_98"] = "",
-	["DictKey_descriptionBlueTask_3"] = "",
-	["DictKey_descriptionRedTask_2"] = "",
-	["DictKey_descriptionText_1"] = "",
+	["DictKey_descriptionBlueTask_3"] = "1. Lift at Firebase Falcon, time 1035. Slicks embark troopers of 1st and 2nd battalions, 7th Cavalry. Head due west towards the Ia Drang valley, in the central highlands east of the Chu Pong Massif.\
+2. Fly nap of the earth, using the dry creek bed for cover and follow the road towards the west end of the valley. Spec Ops say there are Viet Cong and NVA units with Chinese–made RPGs and 23mm antiaircraft cannons. \
+3. Deploy troopers in the clearing in front of the roadblock, LZ X–Ray. Direct elements from the 21st Field Artillery regiment at Firebase Falcon to begin bombardment. Use artillery wisely. \
+4. Slicks return to Firebase Falcon for more troopers. Gunships will support the assault with mini–guns and white phosphorus rockets.\
+5. This is a war of attrition. The side with the highest enemy body count wins. The mission ends when the body count hits 250 blues, or 2500 reds.\
+\
+Are you wondering what was going through Custer’s mind when he realised that he’d led his men into a slaughter? Don’t. Custer was a pussy. You ain’t. You need us, you call us!",
+	["DictKey_descriptionRedTask_2"] = "Play as Lt Col Nguyen Huu An, commanding the Vietnamese People’s Army from a bunker on the slopes of the Chu Pong Massif. Move inside the column, grab them by the belt, and thus avoid casualties from the artillery and air.",
+	["DictKey_descriptionText_1"] = "Lt Col Moore, “Gentlemen, we are moving into the shadow of the valley of death. We are going into battle against a tough and determined enemy. Enemy strength? We have no idea. But we have our orders. Simple orders from High Command: find the enemy and kill him. Nothing more.\
+\
+We will be landing under fire gentlemen. Men will die. When Crazy Horse was a baby, he nursed at the breast of every woman in the tribe. The Sioux raised their children that way. Every warrior called every woman in the tribe “Mother.” Every older warrior, they called him “Grandfather.” Now, the point here is that they fought as a family. Take care of your men. Teach them to take care of each other. ‘Cause when this starts… each other is all we’re gonna have. \
+\
+Let us pray. \
+\
+Our Father in Heaven, before we go into battle, every soldier among us will approach you each in his own way. Our enemies too, according to their own understanding, will ask for protection and for victory. And so, we bow before your infinite wisdom. We offer our prayers as best we can. I pray you watch over the men that I lead into battle. You use me as your instrument in this awful hell of war to watch over them. Especially if they’re men like these before me, deserving of a future in your blessing and goodwill. Amen. \
+\
+Oh, yes, and one more thing, dear Lord, about our enemies, ignore their heathen prayers and help us blow those little bastards straight to Hell. Amen.”",
 	["DictKey_sortie_4"] = "We Were Soldiers Once",
 }

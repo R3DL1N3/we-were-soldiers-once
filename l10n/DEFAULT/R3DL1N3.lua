@@ -567,12 +567,15 @@ end
 -- hostile. Neutrals are friendly with everyone. Units are coalition objects:
 -- they known their coalition.
 function Unit:isFriendlyWith(other)
+  if not other.getCoalition then return nil end
   local side = self:getCoalition()
   return side == coalition.side.NEUTRAL or side == other:getCoalition()
 end
 
--- True if not neutral and the other unit is not on the same side.
+-- True if not neutral and the other unit is not on the same side. Answers `nil`
+-- if the other object has no coalition, because it's not a coalition object.
 function Unit:isHostileWith(other)
+  if not other.getCoalition then return nil end
   local side = self:getCoalition()
   return side ~= coalition.side.NEUTRAL and side ~= other:getCoalition()
 end
@@ -1400,18 +1403,15 @@ end
 
 -- Collates all the given player's scores. answering zero or more strings, one
 -- string for each score key-value pair where the key and the accumulated value
--- have a colon delimiter. Sorts the scores by value, high to low. The resulting
--- strings reflect this order.
+-- have a colon delimiter. Sorts the score strings by value, low to high.
 function Unit.playerScoreStringsFor(playerName)
   local strings = {}
   local playerScores = Unit.allPlayerScores()[playerName]
   if playerScores then
-    table.sort(playerScores, function(lhs, rhs)
-      return lhs > rhs
-    end)
     for key, value in pairs(playerScores) do
       table.insert(strings, key .. ':' .. value)
     end
+    table.sort(strings)
   end
   return strings
 end
@@ -1424,12 +1424,16 @@ function Unit.allPlayerScoreLines()
   for _, playerName in ipairs(playerNames) do
     local strings = Unit.playerScoreStringsFor(playerName)
     table.insert(strings, 1, playerName)
-    table.insert(lines, table.concat(string, ' '))
+    table.insert(lines, table.concat(strings, ' '))
   end
   return lines
 end
 
 -- Outputs a text message to all sides showing the scores for all players.
-function Unit.outAllPlayerScores(seconds)
-  trigger.action.outText(table.concat(Unit.allPlayerScoreLines(), '\n'), seconds or 10)
+-- Outputs nothing if there are no scores as yet.
+function Unit.outAllPlayerScores(seconds, clear)
+  local lines = Unit.allPlayerScoreLines()
+  if #lines > 0 then
+    trigger.action.outText(table.concat(lines, '\n'), seconds or 10, clear)
+  end
 end

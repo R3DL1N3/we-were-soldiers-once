@@ -24,7 +24,7 @@
 
 function Unit:addScore(key, score)
   self:addPlayerScore(key, 1)
-  self:addPlayerScore('score', score)
+  self:addPlayerScore('Score', score)
 end
 
 -- Periodically outputs player scores to all sides.

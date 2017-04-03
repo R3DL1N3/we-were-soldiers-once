@@ -1287,7 +1287,7 @@ function Unit:disembarkChalk(dx, dy)
     units = chalk,
   }
   local group = chalk:spawn()
-  group:disembarkedBy(self:getPlayerName())
+  group:setDisembarkedBy(self:getPlayerName())
   world.onEvent{
     id = world.event.S_EVENT_DISEMBARKED,
     initiator = self,

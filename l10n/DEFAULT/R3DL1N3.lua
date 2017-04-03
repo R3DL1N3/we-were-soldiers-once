@@ -1195,6 +1195,12 @@ function Unit:disembarkedBy()
   return self:getGroup():disembarkedBy()
 end
 
+-- Answers the unit's player name where the player that disembarked the unit
+-- overrides any current player.
+function Unit:playerName()
+  return self:disembarkedBy() or self:getPlayerName()
+end
+
 -- Call this method whenever a chopper's door opens. Opening the helicopter door
 -- invites either an on-board chalk to disembark, or a nearby chalk to embark.
 -- The radius threshold argument specifies the maximum distance between this

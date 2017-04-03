@@ -25,7 +25,7 @@
 scores = {}
 
 function Unit:score(key, value)
-  local playerName = self:disembarkedBy() or self:getPlayerName()
+  local playerName = self:playerName()
   if not playerName then return end
   local playerScores = scores[playerName]
   if not playerScores then

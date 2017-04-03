@@ -1,5 +1,16 @@
 # Change Log
 
+## Version 0.2, 3 April 2017
+
+- Nil’ify chalk when player enters unit
+- Report KIA every 150 seconds
+- Sort scores by score key; plus fixes
+- Output scores at least every 150 seconds
+- Record friendly and hostile hits and kills
+- Kills score the target’s initial hit points
+- Units known who disembarked them
+- Load and unload troopers via the door
+
 ## Version 0.1, 27 March 2017
 
 Two factions. Reds are Vietnam, China and Russia. Blues are USA. It's 14

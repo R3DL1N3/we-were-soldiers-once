@@ -71,6 +71,12 @@ world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_CRASH then
     trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
     event.initiator:addScore('crashes', -50)
+  elseif event.id == world.event.S_EVENT_EMBARKED then
+    local text = event.initiator:getName() .. ' embarked ' .. event.units.name
+    trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
+  elseif event.id == world.event.S_EVENT_DISEMBARKED then
+    local text = event.initiator:getName() .. ' disembarked ' .. event.units.name
+    trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
   elseif event.id == world.event.S_EVENT_EJECTION then
     trigger.action.outText(event.initiator:getName() .. ' ejected', 3)
     event.initiator:addScore('ejects', -10)

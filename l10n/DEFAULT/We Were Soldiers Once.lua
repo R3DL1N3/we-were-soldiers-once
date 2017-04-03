@@ -25,7 +25,7 @@
 scores = {}
 
 function Unit:score(key, value)
-  local playerName = self:getPlayerName() or self:disembarkedBy()
+  local playerName = self:disembarkedBy() or self:getPlayerName()
   if not playerName then return end
   local playerScores = scores[playerName]
   if not playerScores then
@@ -85,9 +85,18 @@ world.addEventFunction(function(event)
   elseif event.id == world.event.S_EVENT_HIT then
     -- Sometimes there is no initiator. Just ignore it in that case.
     if event.initiator then
-      event.initiator:addScore('hits', 1)
+      local score
+      if event.initiator:isHostileWith(event.target) then
+        score = 1
+      elseif event.initiator:isFriendlyWith(event.target) then
+        score = -10
+      else
+        score = 0
+      end
+      event.initiator:addScore('hits', score)
       if event.target:getLife() < 1 then
-        event.initiator:addScore('kills', event.target:getLife0())
+        local life = event.target.getLife0 and event.target:getLife0() or 1
+        event.initiator:addScore('kills', life * score)
       end
     end
   end

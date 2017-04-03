@@ -556,6 +556,21 @@ function Unit:inZone(zone)
   return self:distanceFromZone(zone) < 0
 end
 
+-- True if this unit is friendly with another unit, meaning belonging to the
+-- same coalition. Red and blue are not friendly with neutrals, but are not
+-- hostile. Neutrals are friendly with everyone. Units are coalition objects:
+-- they known their coalition.
+function Unit:isFriendlyWith(other)
+  local side = self:getCoalition()
+  return side == coalition.side.NEUTRAL or side == other:getCoalition()
+end
+
+-- True if not neutral and the other unit is not on the same side.
+function Unit:isHostileWith(other)
+  local side = self:getCoalition()
+  return side ~= coalition.side.NEUTRAL and side ~= other:getCoalition()
+end
+
 -- Returns an iterator for all units within a given zone that belong to a given
 -- coalition side, optionally matching a given group category, and optionally
 -- filtered by a given function.

@@ -281,6 +281,12 @@ end
 
 -- Removes the timer's schedule function but does not disable the timer.
 -- Rescheduling creates a new scheduled timer function.
+--
+-- Calling `remove` as the timer fires both removes the timer function and also
+-- nil'ifies the stored identifier. This will cause the fired function to answer
+-- `nil`. However, what happens if the fired function schedules a new timer? In
+-- that case, the function identifier will not be `nil` and `Timer:fire` will
+-- answer a non-nil for a timer function that has been removed.
 function Timer:remove()
   if self.id then
     timer.removeFunction(self.id)
@@ -475,7 +481,7 @@ end
 -- Groups are not coalition objects, and therefore cannot access their country.
 -- Instead, access the country via the group's first unit.
 function Group:country()
-  local unit = self:getUnit(1)
+  local unit = self:getSize() > 0 and self:getUnit(1)
   return unit and unit:getCountry()
 end
 
@@ -1183,6 +1189,10 @@ end
 
 local disembarkedBy = {}
 
+-- Answers a name string representing a player. Disembarked groups retain the
+-- player name of the unit that disembarked them. Useful for assigning scores,
+-- whenever you want to award disembarked chalk performance to the helicopter
+-- that transported them.
 function Group:disembarkedBy()
   return disembarkedBy[self:getID()]
 end
@@ -1342,4 +1352,84 @@ end
 -- True if this Units instance represents a survivor group.
 function Units:isSurvivor()
   return self.name and string.find(self.name, 'Survivors') == 1
+end
+
+--------------------------------------------------------------------------------
+--                                                                        scores
+--------------------------------------------------------------------------------
+
+world.event.S_EVENT_PLAYER_SCORED = 'S_EVENT_PLAYER_SCORED'
+
+-- When units score, they add points to their player. So players jumping to
+-- different units carry their scores with them.
+local scores = {}
+
+-- Answers the scores to-date for this unit's player, or `nil` if this unit has no player.
+function Unit:playerScores()
+  local playerName = self:playerName()
+  return playerName and scores[playerName]
+end
+
+-- Adds a score value for the given score key. Does nothing if the unit has no
+-- player, which includes an embarked-by player. Scoring sends a player-scored
+-- world event. The event contains this unit as the initiator, the player name
+-- and the up-to-date score.
+function Unit:addPlayerScore(key, value)
+  local playerName = self:playerName()
+  if playerName then
+    local playerScores = scores[playerName]
+    if not playerScores then
+      playerScores = {}
+      scores[playerName] = playerScores
+    end
+    local score = (playerScores[key] or 0) + value
+    playerScores[key] = score
+    world.onEvent{
+      id = world.event.S_EVENT_PLAYER_SCORED,
+      initiator = self,
+      playerName = playerName,
+      score = score,
+    }
+  end
+end
+
+-- Answers a copy of all the player scores indexed by player name.
+function Unit.allPlayerScores()
+  return table.deepcopy(scores)
+end
+
+-- Collates all the given player's scores. answering zero or more strings, one
+-- string for each score key-value pair where the key and the accumulated value
+-- have a colon delimiter. Sorts the scores by value, high to low. The resulting
+-- strings reflect this order.
+function Unit.playerScoreStringsFor(playerName)
+  local strings = {}
+  local playerScores = Unit.allPlayerScores()[playerName]
+  if playerScores then
+    table.sort(playerScores, function(lhs, rhs)
+      return lhs > rhs
+    end)
+    for key, value in pairs(playerScores) do
+      table.insert(strings, key .. ':' .. value)
+    end
+  end
+  return strings
+end
+
+-- Answers lines of text representing scores for all players.
+function Unit.allPlayerScoreLines()
+  local lines = {}
+  local playerNames = table.keys(scores)
+  table.sort(playerNames)
+  for _, playerName in ipairs(playerNames) do
+    local strings = Unit.playerScoreStringsFor(playerName)
+    table.insert(strings, 1, playerName)
+    table.insert(lines, table.concat(string, ' '))
+  end
+  return lines
+end
+
+-- Outputs a text message to all sides showing the scores for all players.
+function Unit.outAllPlayerScores(seconds)
+  trigger.action.outText(table.concat(Unit.allPlayerScoreLines(), '\n'), seconds or 10)
 end

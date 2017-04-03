@@ -22,38 +22,17 @@
 --
 --------------------------------------------------------------------------------
 
-scores = {}
-
-function Unit:score(key, value)
-  local playerName = self:playerName()
-  if not playerName then return end
-  local playerScores = scores[playerName]
-  if not playerScores then
-    playerScores = {}
-    scores[playerName] = playerScores
-  end
-  playerScores[key] = (playerScores[key] or 0) + value
-  UserFlag['77'] = (UserFlag['77'] or 0) + 1
-end
-
 function Unit:addScore(key, score)
-  self:score(key, 1)
-  self:score('score', score)
+  self:addPlayerScore(key, 1)
+  self:addPlayerScore('score', score)
 end
 
 -- Periodically outputs player scores to all sides.
-function outScores(seconds)
-  local lines = {}
-  for playerName, playerScores in pairs(scores) do
-    local line = {}
-    table.insert(line, playerName)
-    for key, value in pairs(playerScores) do
-      table.insert(line, key .. ':' .. value)
-    end
-    table.insert(lines, table.concat(line, ' '))
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_PLAYER_SCORED then
+    UserFlag['77'] = (UserFlag['77'] or 0) + 1
   end
-  trigger.action.outText(table.concat(lines, '\n'), seconds or 10)
-end
+end)
 
 slick = {}
 
@@ -87,7 +66,7 @@ world.addEventFunction(function(event)
     if event.initiator then
       local score
       if event.initiator:isHostileWith(event.target) then
-        score = 1
+        score = event.initiator:disembarkedBy() and 2 or 1
       elseif event.initiator:isFriendlyWith(event.target) then
         score = -10
       else

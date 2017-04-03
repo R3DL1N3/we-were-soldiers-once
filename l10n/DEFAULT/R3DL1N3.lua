@@ -1342,6 +1342,10 @@ world.addEventFunction(function(event)
     chalk:spawn()
   elseif event.id == world.event.S_EVENT_EJECTION then
     event.initiator:setChalk(nil)
+  elseif event.id == world.event.S_EVENT_PLAYER_ENTER_UNIT then
+    -- There are some strange scenarios where the player re-enters the same unit
+    -- without leaving it, and without crashing or ejecting.
+    event.initiator:setChalk(nil)
   elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
     event.initiator:setChalk(nil)
   end

@@ -25,7 +25,7 @@
 scores = {}
 
 function Unit:score(key, value)
-  local playerName = self:getPlayerName()
+  local playerName = self:getPlayerName() or self:disembarkedBy()
   if not playerName then return end
   local playerScores = scores[playerName]
   if not playerScores then
@@ -55,26 +55,20 @@ function outScores(seconds)
   trigger.action.outText(table.concat(lines, '\n'), seconds or 10)
 end
 
+slick = {}
+
+-- Slicks can embark all troopers, including tasked troopers.
+function slick.embarkOrDisembark(unit)
+  if not unit then return end
+  if not unit:isLanded() then return end
+  local groups = table.fromiter(Group.filtered(coalition.side.BLUE, Group.Category.GROUND, function(group)
+    return group:getSize() > 0 and cav.names:includesGroup(group)
+  end))
+  unit:embarkOrDisembark(groups, 100, 100)
+end
+
 world.addEventFunction(function(event)
-  if event.id == world.event.S_EVENT_LANDED then
-    local chalk = event.initiator:chalk()
-    if chalk then
-      event.initiator:disembarkChalk()
-      local text = event.initiator:getName() .. ' disembarked ' .. chalk.name
-      trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-    elseif string.find(event.initiator:getName(), 'Slick') == 1 then
-      local zone = {point = event.initiator:getPoint(),
-        radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 1.5}
-      local groups = cav.names:groupsInZone(zone, coalition.side.BLUE, Group.Category.GROUND, function(group)
-        return group:getSize() > 0 and not group:getController():hasTask()
-      end)
-      if #groups > 0 then
-        chalk = event.initiator:embarkGroup(groups[1])
-        local text = event.initiator:getName() .. ' embarked ' .. chalk.name
-        trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-      end
-    end
-  elseif event.id == world.event.S_EVENT_CRASH then
+  if event.id == world.event.S_EVENT_CRASH then
     trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
     event.initiator:addScore('crashes', -50)
   elseif event.id == world.event.S_EVENT_EJECTION then

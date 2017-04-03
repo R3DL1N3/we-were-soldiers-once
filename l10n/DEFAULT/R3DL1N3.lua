@@ -95,6 +95,15 @@ function math.deltaxz(angle, radius)
   }
 end
 
+-- Answers a random 3-vector point within the given zone. The result does not
+-- contain an altitude, y co-ordinate.
+function math.randomxzinzone(zone)
+  local angle = 2 * math.pi * math.random()
+  local radius = zone.radius * math.random()
+  local delta = math.deltaxz(angle, radius)
+  return {x = zone.point.x + delta.x, z = zone.point.z + delta.z}
+end
+
 -- Answers the square magnitude of the given 3-vector. Useful for comparing
 -- vector magnitudes; comparing squares is faster.
 function math.squaremagnitude(vec3)
@@ -291,7 +300,9 @@ end
 -- function, and sets up a repeat if necessary.
 --
 -- Only returns the next firing time if the timer has not been removed and the
--- timer repeats.
+-- timer repeats. Assumes that a non-repeating timer automatically removes the
+-- underlying timer function. One-shot timers disconnect the timer function,
+-- return nil on firing and get removed automatically.
 function Timer:fire(time)
   self.time = time
   self:fired()
@@ -396,10 +407,25 @@ function Group:setTurningToUnitsTask(units)
   table.sort(units, function(lhs, rhs)
     return math.distancexz(lhs:getPoint(), centerPoint) < math.distancexz(rhs:getPoint(), centerPoint)
   end)
+  self:turnToPoint(units[1]:getPoint())
+end
+
+-- Constructs a new turning-to-point mission based on this group. Does not apply
+-- the mission, just answers a new mission.
+function Group:turningToPointMission(vec3, action)
   local mission = Mission()
   mission:turningToPoint(self:getUnit(1):getPoint())
-  mission:turningToPoint(units[1]:getPoint())
-  mission:setTaskTo(self:getController())
+  mission:turningToPoint(vec3)
+  if action then
+    mission:setAction(action)
+  end
+  return mission
+end
+
+-- Turns the group to move towards the given point. The group starts
+-- immediately, replacing any existing tasks.
+function Group:turnToPoint(vec3, action)
+  self:turningToPointMission(vec3, action):setTaskTo(self:getController())
 end
 
 -- Group in zone means all units in the group within the zone. This method
@@ -424,6 +450,21 @@ function Group:centerPoint()
   end
   if n == 0 then return nil end
   return {x = x / n, y = y / n, z = z / n}
+end
+
+-- Answers the group's zone based on its units' locations in the x-z plane. The
+-- centre of the zone is the centre of the group. The radius is the distance
+-- between the centre and the group's furthest unit from the centre. Never answers a zero-radius zone.
+function Group:zone()
+  local point = self:centerPoint()
+  local radius = 1
+  for _, unit in pairs(self:getUnits()) do
+    local distance = math.distancexz(unit:getPoint(), point)
+    if distance > radius then
+      radius = distance
+    end
+  end
+  return {point = point, radius = radius}
 end
 
 -- Only works with ground groups.
@@ -474,15 +515,45 @@ function Unit:heading()
   return math.headingxz({x = 0, z = 0}, self:getPosition().x)
 end
 
+-- Answers the unit's bounding box.
+function Unit:box()
+  return self:getDesc().box
+end
+
+-- Answers the unit's width, height and length in that order.
+function Unit:dimensions()
+  local box = self:box()
+  return box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z
+end
+
+-- Answers the width and length of the unit. The width is defined as the
+-- shortest horizontal dimension. The length is the longest.
+function Unit:widthAndLength()
+  local dx, _, dz = self:dimensions()
+  if dx < dz then
+    return dx, dz
+  else
+    return dz, dx
+  end
+end
+
 -- Returns the distance between two units, this unit and another given unit
 -- which may be the same unit.
 function Unit:distanceXZ(other)
   return math.distancexz(self:getPoint(), other:getPoint())
 end
 
+-- Answers the distance from this unit to the zone centre relative to the zone
+-- boundary. If negative, this unit is within the boundary. If positive, the
+-- unit is outside the zone. The magnitude tells you how far this unit is either
+-- in or out of the zone.
+function Unit:distanceFromZone(zone)
+  return math.distancexz(self:getPoint(), zone.point) - zone.radius
+end
+
 -- Answers true if this unit is within the given zone.
 function Unit:inZone(zone)
-  return math.distancexz(self:getPoint(), zone.point) < zone.radius
+  return self:distanceFromZone(zone) < 0
 end
 
 -- Returns an iterator for all units within a given zone that belong to a given
@@ -588,11 +659,8 @@ end
 -- given zone.
 function Units:randomizeXYInZone(zone)
   for _, unit in ipairs(self.units) do
-    local angle = 2 * math.pi * math.random()
-    local radius = zone.radius * math.random()
-    local delta = math.deltaxz(angle, radius)
-    unit.x = zone.point.x + delta.x
-    unit.y = zone.point.z + delta.z
+    local point = math.randomxzinzone(zone)
+    unit.x, unit.y = point.x, point.z
   end
 end
 
@@ -604,9 +672,10 @@ function Units:translateXY(dx, dy)
 end
 
 -- Rotates all the units to the given angle about the x-y plane's origin. Note,
--- the angle is in radians relative to east; 0 means right. Hence, the argument
--- name is angle not heading.
-function Units:rotateXY(angle)
+-- the heading argument is in radians relative to north; 0 means up and
+-- increases clockwise. Hence, the argument name is heading not angle.
+function Units:rotateXY(heading)
+  local angle = 2 * math.pi - heading
   local dx, dy = math.cos(angle), math.sin(angle)
   for _, unit in ipairs(self.units) do
     unit.x, unit.y = unit.x * dx - unit.y * dy, unit.x * dy + unit.y * dx
@@ -707,6 +776,20 @@ function Units:setProbability(fraction)
   self.probability = fraction
 end
 
+-- Decimates the units using the given probability of death. Uses 10%
+-- probability of dying if none given; therefore one in ten units will not
+-- survive on average, by default.
+function Units:decimate(probability)
+  local index = 1
+  while index <= #self.units do
+    if math.random() < (probability or 0.1) then
+      table.remove(self.units, index)
+    else
+      index = index + 1
+    end
+  end
+end
+
 function Units:table()
   if not self.name then
     -- Sets up the name of the units, which will become the group name when spawned.
@@ -745,6 +828,11 @@ end
 -- Takes the name of the units from the group name, unless the units already
 -- have a name. Adds units for each group unit, copying the type, name and
 -- skill.
+--
+-- Also remembers each unit's life and initial life, from which you can assess
+-- the damage to the chalk; although no way to restore the hit points exists
+-- currently. The group's initial size is also recorded. Useful for knowing how
+-- many casualties the group suffered before embarking.
 function Units:addGroup(group)
   if not self.name then
     self.name = group:getName()
@@ -760,8 +848,25 @@ function Units:addGroup(group)
       type = unit:getTypeName(),
       name = unit:getName(),
       skill = unit:skill(),
+      life = unit:getLife(),
+      life0 = unit:getLife0(),
     }
   end
+  self.initialSize = group:getInitialSize()
+end
+
+-- Assesses the total chalk damage based on its initial life and its current
+-- life at the time of embarking. This implementation relies on having life
+-- information taken from an existing group. Answers nil if no life information
+-- exists for these units.
+function Units:damage()
+  local damage
+  for _, unit in ipairs(self:all()) do
+    if unit.life and unit.life0 then
+      damage = (damage or 0) + math.floor(unit.life0 - unit.life)
+    end
+  end
+  return damage
 end
 
 -- Makes a unique group or unit name using a prefix and a number. You supply the
@@ -900,6 +1005,21 @@ function Mission:turningAtPoint(vec3)
   return self:addTurningPoint(vec3.x, vec3.z, vec3.y)
 end
 
+-- Assigns an action for all the waypoints.
+function Mission:setAction(action)
+  for _, waypoint in ipairs(self:waypoints()) do
+    waypoint.action = action
+  end
+end
+
+function Mission:setOnRoadAction()
+  self:setAction(AI.Task.VehicleFormation.ON_ROAD)
+end
+
+function Mission:setOffRoadAction()
+  self:setAction(AI.Task.VehicleFormation.OFF_ROAD)
+end
+
 -- Converts this mission into an ordinary table by removing the meta-table, and
 -- thus making it suitable for submission to a controller as a new task.
 function Mission:table()
@@ -925,6 +1045,8 @@ local landingTimers = {}
 local landingTimeInterval = 1
 local landingSpeedThreshold = 1
 
+local isLanded = {}
+
 function Unit:landingTimer()
   return landingTimers[self:getID()]
 end
@@ -939,6 +1061,18 @@ function Unit:isLanding()
   return self:landingTimer() ~= nil
 end
 
+function Unit:isLanded()
+  return isLanded[self:getID()]
+end
+
+function Unit:setIsLanded(is)
+  isLanded[self:getID()] = is
+end
+
+-- Starts the landing cycle. The world starts to see LANDING and LANDED events.
+-- Landing events repeat until the unit's speed decreases below the speed
+-- threshold. At that point, landing becomes landed and the world sees a single
+-- LANDED event.
 function Unit:startLanding()
   -- Stop landing before starting!
   self:stopLanding()
@@ -985,20 +1119,40 @@ end
 world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_TAKEOFF then
     event.initiator:stopLanding()
+    event.initiator:setIsLanded(nil)
   elseif event.id == world.event.S_EVENT_LAND then
     event.initiator:startLanding()
+    event.initiator:setIsLanded(nil)
+  elseif event.id == world.event.S_EVENT_LANDING then
+    event.initiator:setIsLanded(false)
+  elseif event.id == world.event.S_EVENT_LANDED then
+    event.initiator:setIsLanded(true)
   elseif event.id == world.event.S_EVENT_CRASH then
     event.initiator:stopLanding()
+    event.initiator:setIsLanded(nil)
   elseif event.id == world.event.S_EVENT_EJECTION then
     event.initiator:stopLanding()
+    event.initiator:setIsLanded(nil)
+  elseif event.id == world.event.S_EVENT_PLAYER_ENTER_UNIT then
+    -- This only runs when in multi-player mode. Note that not nil is true, as
+    -- well as not false being true. Therefore, is-landed becomes true if not
+    -- in-air true but also if in-air is nil or unknown. Defaults to landed.
+    event.initiator:setIsLanded(not event.initiator:inAir())
   elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
     event.initiator:stopLanding()
+    event.initiator:setIsLanded(nil)
   end
 end)
 
 --------------------------------------------------------------------------------
 --                                                                        chalks
 --------------------------------------------------------------------------------
+
+world.event.S_EVENT_EMBARKING = 'S_EVENT_EMBARKING'
+world.event.S_EVENT_EMBARKED = 'S_EVENT_EMBARKED'
+
+world.event.S_EVENT_DISEMBARKING = 'S_EVENT_DISEMBARKING'
+world.event.S_EVENT_DISEMBARKED = 'S_EVENT_DISEMBARKED'
 
 -- Creates an association between a unit and a chalk, a Units instance.
 local chalks = {}
@@ -1012,42 +1166,140 @@ function Unit:setChalk(units)
   chalks[self:getID()] = units
 end
 
+local disembarkedBy = {}
+
+function Group:disembarkedBy()
+  return disembarkedBy[self:getID()]
+end
+
+function Group:setDisembarkedBy(playerName)
+  disembarkedBy[self:getID()] = playerName
+end
+
+-- Call this method whenever a chopper's door opens. Opening the helicopter door
+-- invites either an on-board chalk to disembark, or a nearby chalk to embark.
+-- The radius threshold argument specifies the maximum distance between this
+-- unit and any chalk unit. If units are outside the limit, you might want to
+-- display a message to this unit's player, giving the current distance.
+--
+-- Note, this works in both directions: chopper to chalk, or chalk to chopper.
+-- You can move units to the chopper in order to embark them.
+function Unit:embarkOrDisembark(groups, radiusThreshold, distanceThreshold, dx, dy)
+  if not self:chalk() then
+    self:embarkChalk(groups, radiusThreshold, distanceThreshold)
+  else
+    self:disembarkChalk(dx, dy)
+  end
+end
+
+-- Selects and sorts the given groups by their zone radius and their distance
+-- from this unit.
+function Unit:embarks(groups, radiusThreshold)
+  if not radiusThreshold then
+    local width, length = self:widthAndLength()
+    radiusThreshold = width + length
+  end
+  local embarks = {}
+  for _, group in ipairs(groups) do
+    local zone = group:zone()
+    if zone.radius < radiusThreshold then
+      table.insert(embarks, {group = group, distance = zone.radius + self:distanceFromZone(zone)})
+    end
+  end
+  table.sort(embarks, function(lhs, rhs)
+    return lhs.distance < rhs.distance
+  end)
+  return embarks
+end
+
+-- Embarks a chalk from the given groups. Groups become chalks once embarked.
+-- Assumes that all the given groups are eligable for embarking. Selects just
+-- one group. The given radius threshold defines the maximum size of the group
+-- zone for embarking. Does not embark groups more spread out that this.
+function Unit:embarkChalk(groups, radiusThreshold, distanceThreshold)
+  local embarks = self:embarks(groups, radiusThreshold)
+  if #embarks == 0 then return end
+  if embarks[1].distance < distanceThreshold then
+    self:embarkGroup(embarks[1].group)
+  end
+end
+
 -- Embarks the given group. Destroys the group.
 function Unit:embarkGroup(group)
   local units = Units()
   units:addGroup(group)
+  world.onEvent{
+    id = world.event.S_EVENT_EMBARKING,
+    initiator = self,
+    group = group,
+    units = units,
+  }
   self:setChalk(units)
   group:destroy()
+  world.onEvent{
+    id = world.event.S_EVENT_EMBARKED,
+    initiator = self,
+    group = group,
+    units = units,
+  }
   return units
 end
 
--- Disembarks when crashing as well as when landing. Does nothing if the unit
--- has no chalk. The disembarked chalk forms two columns alongside the unit,
--- pointing in the unit's heading direction. Uses the unit's rotor diameter as
--- the default distance between the two columns.
+-- Disembarks when landing. Does nothing if the unit has no chalk. The
+-- disembarked chalk forms two columns alongside the unit, pointing in the
+-- unit's heading direction. Uses the unit's width-length average as the default
+-- distance between the two columns.
 function Unit:disembarkChalk(dx, dy)
   local chalk = self:chalk()
   if not chalk then return end
   self:setChalk(nil)
   if not dx then
-    dx = (self:getDesc().rotor_diameter or 14.63) / 2
+    local width, length = self:widthAndLength()
+    dx = (width + length) / 2
   end
   chalk:formColumns(dx, dy or 1, 2)
+  local heading = self:heading()
+  chalk:rotateXY(heading)
   chalk:translateXY(self:getPoint().x, self:getPoint().z)
-  chalk:setHeading(self:heading())
-  chalk:spawn()
+  chalk:setHeading(heading)
+  world.onEvent{
+    id = world.event.S_EVENT_DISEMBARKING,
+    initiator = self,
+    units = chalk,
+  }
+  local group = chalk:spawn()
+  group:disembarkedBy(self:getPlayerName())
+  world.onEvent{
+    id = world.event.S_EVENT_DISEMBARKED,
+    initiator = self,
+    group = group,
+    units = chalk,
+  }
 end
 
--- Adjust the chalk when bad things happen. Do sensible things in response.
+-- Automatically disembark the chalk when bad things happen. Do sensible things
+-- in response. Crashing spawns the chalk randomly, damaged and decimated. Uses
+-- the helicopter's crash speed to determine survivability. Everyone dies at 60
+-- mph (26 metres per second).
 world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_CRASH then
     local chalk = event.initiator:chalk()
     if not chalk then return end
     event.initiator:setChalk(nil)
+    chalk:decimate(event.initiator:speed() / 26.8224)
+    if #chalk.units == 0 then return end
+    if not chalk:isSurvivor() then
+      local suffix
+      if chalk.name then
+        suffix = ' of ' .. chalk.name
+      else
+        suffix = ''
+      end
+      chalk.name = 'Survivors' .. suffix
+    end
     chalk:setProbability(math.random())
-    chalk:randomizeXYInZone{
-      point = event.initiator:getPoint(),
-      radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 2}
+    local _, length = event.initiator:widthAndLength()
+    chalk:randomizeXYInZone{point = event.initiator:getPoint(), radius = length}
     chalk:randomizeHeading()
     chalk:spawn()
   elseif event.id == world.event.S_EVENT_EJECTION then
@@ -1056,3 +1308,13 @@ world.addEventFunction(function(event)
     event.initiator:setChalk(nil)
   end
 end)
+
+-- True if this group is a survivor group.
+function Group:isSurvivor()
+  return string.find(self:getName(), 'Survivors') == 1
+end
+
+-- True if this Units instance represents a survivor group.
+function Units:isSurvivor()
+  return self.name and string.find(self.name, 'Survivors') == 1
+end

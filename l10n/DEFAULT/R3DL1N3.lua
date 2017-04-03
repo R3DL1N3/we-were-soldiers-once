@@ -1176,6 +1176,10 @@ function Group:setDisembarkedBy(playerName)
   disembarkedBy[self:getID()] = playerName
 end
 
+function Unit:disembarkedBy()
+  return self:getGroup():disembarkedBy()
+end
+
 -- Call this method whenever a chopper's door opens. Opening the helicopter door
 -- invites either an on-board chalk to disembark, or a nearby chalk to embark.
 -- The radius threshold argument specifies the maximum distance between this

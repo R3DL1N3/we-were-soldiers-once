@@ -81,7 +81,7 @@ world.addEventFunction(function(event)
     if event.initiator then
       event.initiator:addScore('hits', 1)
       if event.target:getLife() < 1 then
-        event.initiator:addScore('kills', event.initiator:getLife0())
+        event.initiator:addScore('kills', event.target:getLife0())
       end
     end
   end

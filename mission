@@ -2979,7 +2979,7 @@ mission = {
 			[3] = 49,
 		},
 	},
-	["currentKey"] = 21588,
+	["currentKey"] = 21794,
 	["date"] = {
 		["Day"] = 14,
 		["Month"] = 11,
@@ -3114,7 +3114,7 @@ mission = {
 		["conditions"] = {
 			[1] = "return(true)",
 			[10] = "return(c_time_since_flag(7, 10) )",
-			[11] = "return(c_time_since_flag(7, 300) )",
+			[11] = "return(c_time_since_flag(7, 150) )",
 			[12] = "return(c_time_since_flag(77, 10) )",
 			[13] = "return(c_time_since_flag(77, 150) )",
 			[14] = "return(c_time_since_flag(30, 10) )",
@@ -3383,7 +3383,7 @@ mission = {
 					["value"] = 1,
 				},
 			},
-			["comment"] = "KIA Out 300 Seconds",
+			["comment"] = "KIA Out 150 Seconds",
 			["eventlist"] = "",
 			["predicate"] = "triggerFront",
 			["rules"] = {
@@ -3391,7 +3391,7 @@ mission = {
 					["coalitionlist"] = "red",
 					["flag"] = 7,
 					["predicate"] = "c_time_since_flag",
-					["seconds"] = 300,
+					["seconds"] = 150,
 					["zone"] = 46,
 				},
 			},

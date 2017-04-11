@@ -1,5 +1,20 @@
 # Change Log
 
+## Version 0.3, 11 April 2017
+
+- Creech AFB is red, Nellis AFB is blue
+- Added Skyraider and Redstar flights
+- Play music on 30.00FM
+- Destroy empty groups every five minutes
+- Added Group.destroyAllEmpty function
+- Fix embedded quotes: single not double
+- Always play a tune every five minutes; players can turn it off now
+- Guard against events with no initiator
+- Briefing about Armed Forces Radio Vietnam
+- Fix chalk embarking-disembarking briefing
+- Guard conditions for events with no initiator added
+- Resampled audio files to 22.05kHz; no normalisation
+
 ## Version 0.2, 3 April 2017
 
 - Nil’ify chalk when player enters unit

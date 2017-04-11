@@ -48,7 +48,13 @@ dictionary = {
 	["DictKey_GroupName_242"] = "Firebase Falcon Tankers",
 	["DictKey_GroupName_248"] = "Slick 4",
 	["DictKey_GroupName_251"] = "Slick 5",
+	["DictKey_GroupName_260"] = "Skyraider 1",
+	["DictKey_GroupName_263"] = "Skyraider 2",
+	["DictKey_GroupName_266"] = "Skyraider 3",
+	["DictKey_GroupName_269"] = "Redstar 1",
 	["DictKey_GroupName_27"] = "Firebase Falcon Transports",
+	["DictKey_GroupName_272"] = "Redstar 2",
+	["DictKey_GroupName_276"] = "Redstar 3",
 	["DictKey_GroupName_34"] = "Firebase Falcon Windsock",
 	["DictKey_GroupName_37"] = "Gunship 1",
 	["DictKey_GroupName_40"] = "Gunship 2",
@@ -157,6 +163,12 @@ dictionary = {
 	["DictKey_UnitName_249"] = "Slick 4",
 	["DictKey_UnitName_25"] = "",
 	["DictKey_UnitName_252"] = "Slick 5",
+	["DictKey_UnitName_261"] = "Skyraider 1",
+	["DictKey_UnitName_264"] = "Skyraider 2",
+	["DictKey_UnitName_267"] = "Skyraider 3",
+	["DictKey_UnitName_270"] = "Redstar 1",
+	["DictKey_UnitName_273"] = "Redstar 2",
+	["DictKey_UnitName_277"] = "Redstar 3",
 	["DictKey_UnitName_28"] = "Firebase Falcon Transport #1",
 	["DictKey_UnitName_30"] = "Firebase Falcon Transport #2",
 	["DictKey_UnitName_31"] = "Firebase Falcon Transport #3",
@@ -213,6 +225,13 @@ dictionary = {
 	["DictKey_WptName_250"] = "",
 	["DictKey_WptName_253"] = "",
 	["DictKey_WptName_26"] = "",
+	["DictKey_WptName_262"] = "",
+	["DictKey_WptName_265"] = "",
+	["DictKey_WptName_268"] = "",
+	["DictKey_WptName_271"] = "",
+	["DictKey_WptName_274"] = "",
+	["DictKey_WptName_275"] = "",
+	["DictKey_WptName_278"] = "",
 	["DictKey_WptName_29"] = "",
 	["DictKey_WptName_33"] = "",
 	["DictKey_WptName_36"] = "",
@@ -240,6 +259,7 @@ dictionary = {
 6. Refuel and rearm when rotors stop. Re–slotting deducts 25 points from your personal score.\
 7. Pick up and drop off chalks as many times as you like, even in the field. Troopers embark when you land and open the cockpit door within 100 metres of a chalk. Disembark troopers the same way: land and open the door.\
 8. Calm your nerves by switching on the FM radio tuned to Armed Forces Radio Vietnam, transmitting out of Saigon on 30.00FM.\
+9. If pilots available, an F-5E-3 Skyraider flight out of Saigon can also support the assault, but beware MiG-15s of the Vietnam People's Air Force 921 fighter regiment, the so-called Red Star squadron, are patrolling the Chu Pong sector.\
 \
 Are you wondering what was going through Custer’s mind when he realised that he’d led his men into a slaughter? Don’t. Custer was a pussy. You ain’t. You need us, you call us!",
 	["DictKey_descriptionRedTask_2"] = "Play as Lt Col Nguyen Huu An, commanding the Vietnamese People’s Army from a bunker on the slopes of the Chu Pong Massif. Move inside the column, grab them by the belt, and thus avoid casualties from the artillery and air.",

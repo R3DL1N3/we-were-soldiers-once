@@ -47,6 +47,8 @@ function slick.embarkOrDisembark(unit)
 end
 
 world.addEventFunction(function(event)
+  -- Sometimes there is no initiator. Just ignore it in that case.
+  if not event.initiator then return end
   if event.id == world.event.S_EVENT_CRASH then
     trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
     event.initiator:addScore('crashes', -50)
@@ -62,21 +64,18 @@ world.addEventFunction(function(event)
   elseif event.id == world.event.S_EVENT_PLAYER_LEAVE_UNIT then
     event.initiator:addScore('leaves', -25)
   elseif event.id == world.event.S_EVENT_HIT then
-    -- Sometimes there is no initiator. Just ignore it in that case.
-    if event.initiator then
-      local score
-      if event.initiator:isHostileWith(event.target) then
-        score = event.initiator:disembarkedBy() and 2 or 1
-      elseif event.initiator:isFriendlyWith(event.target) then
-        score = -10
-      else
-        score = 0
-      end
-      event.initiator:addScore('hits', score)
-      if event.target:getLife() < 1 then
-        local life = event.target.getLife0 and event.target:getLife0() or 1
-        event.initiator:addScore('kills', life * score)
-      end
+    local score
+    if event.initiator:isHostileWith(event.target) then
+      score = event.initiator:disembarkedBy() and 3 or 1
+    elseif event.initiator:isFriendlyWith(event.target) then
+      score = -10
+    else
+      score = 0
+    end
+    event.initiator:addScore('hits', score)
+    if event.target:getLife() < 1 then
+      local life = event.target.getLife0 and event.target:getLife0() or 1
+      event.initiator:addScore('kills', life * score)
     end
   end
 end)
@@ -88,6 +87,7 @@ end)
 kia = {}
 
 world.addEventFunction(function(event)
+  if not event.initiator then return end
   if event.id == world.event.S_EVENT_DEAD then
     local unit = event.initiator
     if not unit.getCoalition then return end

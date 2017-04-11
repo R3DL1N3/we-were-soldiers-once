@@ -8,6 +8,7 @@ dictionary = {
 	["DictKey_ActionText_256"] = "slick.embarkOrDisembark(Unit('Slick 3'))",
 	["DictKey_ActionText_257"] = "slick.embarkOrDisembark(Unit('Slick 4'))",
 	["DictKey_ActionText_258"] = "slick.embarkOrDisembark(Unit('Slick 5'))",
+	["DictKey_ActionText_259"] = "Group.destroyAllEmpty()",
 	["DictKey_ActionText_52"] = "cav.spawnChalk(Zone('1/7 Cav'))",
 	["DictKey_ActionText_53"] = "cav.spawnChalk(Zone('2/7 Cav'))",
 	["DictKey_ActionText_54"] = "cav.spawnChalk(Zone('2/5 Cav'))",

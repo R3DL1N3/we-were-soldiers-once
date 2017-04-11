@@ -509,7 +509,7 @@ end
 -- helicopter is hovering close to the ground.
 function Unit:height()
   local p = self:getPoint()
-  return p.y - land.getHeight{x = p.x, z = p.z}
+  return p.y - land.getHeight{x = p.x, y = p.z}
 end
 
 -- The unit's speed is the magnitude of its velocity vector.
@@ -1178,6 +1178,9 @@ world.event.S_EVENT_EMBARKED = 'S_EVENT_EMBARKED'
 world.event.S_EVENT_DISEMBARKING = 'S_EVENT_DISEMBARKING'
 world.event.S_EVENT_DISEMBARKED = 'S_EVENT_DISEMBARKED'
 
+world.event.S_EVENT_SURVIVING = 'S_EVENT_SURVIVING'
+world.event.S_EVENT_SURVIVED = 'S_EVENT_SURVIVED'
+
 -- Creates an association between a unit and a chalk, a Units instance.
 local chalks = {}
 
@@ -1315,33 +1318,55 @@ function Unit:disembarkChalk(dx, dy)
   }
 end
 
+-- Crashing spawns the chalk randomly, damaged and decimated. Uses the
+-- helicopter's crash speed to determine survivability. Everyone dies at 60 mph
+-- (26 metres per second).
+function Unit:crashChalk()
+  local chalk = self:chalk()
+  if not chalk then return end
+  self:setChalk(nil)
+  chalk:decimate(self:speed() / 26.8224)
+  if #chalk.units == 0 then return end
+  if not chalk:isSurvivor() then
+    local suffix
+    if chalk.name then
+      suffix = ' of ' .. chalk.name
+    else
+      suffix = ''
+    end
+    chalk.name = 'Survivors' .. suffix
+  end
+  chalk:setProbability(math.random())
+  local _, length = self:widthAndLength()
+  chalk:randomizeXYInZone{point = self:getPoint(), radius = length}
+  chalk:randomizeHeading()
+  world.onEvent{
+    id = world.event.S_EVENT_SURVIVING,
+    initiator = self,
+    units = chalk,
+  }
+  local group = chalk:spawn()
+  world.onEvent{
+    id = world.event.S_EVENT_SURVIVED,
+    initiator = self,
+    group = group,
+    units = chalk,
+  }
+end
+
 -- Automatically disembark the chalk when bad things happen. Do sensible things
--- in response. Crashing spawns the chalk randomly, damaged and decimated. Uses
--- the helicopter's crash speed to determine survivability. Everyone dies at 60
--- mph (26 metres per second).
+-- in response.
 world.addEventFunction(function(event)
   if event.id == world.event.S_EVENT_CRASH then
-    local chalk = event.initiator:chalk()
-    if not chalk then return end
-    event.initiator:setChalk(nil)
-    chalk:decimate(event.initiator:speed() / 26.8224)
-    if #chalk.units == 0 then return end
-    if not chalk:isSurvivor() then
-      local suffix
-      if chalk.name then
-        suffix = ' of ' .. chalk.name
-      else
-        suffix = ''
-      end
-      chalk.name = 'Survivors' .. suffix
-    end
-    chalk:setProbability(math.random())
-    local _, length = event.initiator:widthAndLength()
-    chalk:randomizeXYInZone{point = event.initiator:getPoint(), radius = length}
-    chalk:randomizeHeading()
-    chalk:spawn()
+    event.initiator:crashChalk()
   elseif event.id == world.event.S_EVENT_EJECTION then
-    event.initiator:setChalk(nil)
+    -- Ejecting either spawns survivors or makes them disappear forever. Use
+    -- height above land to determine which one happens.
+    if event.initiator:height() < 10 then
+      event.initiator:crashChalk()
+    else
+      event.initiator:setChalk(nil)
+    end
   elseif event.id == world.event.S_EVENT_PLAYER_ENTER_UNIT then
     -- There are some strange scenarios where the player re-enters the same unit
     -- without leaving it, and without crashing or ejecting.
@@ -1360,6 +1385,93 @@ end
 function Units:isSurvivor()
   return self.name and string.find(self.name, 'Survivors') == 1
 end
+
+--------------------------------------------------------------------------------
+--                                                                         Crash
+--------------------------------------------------------------------------------
+
+world.event.S_EVENT_CRASH_SPAWNING = 'S_EVENT_CRASH_SPAWNING'
+world.event.S_EVENT_CRASH_SPAWNED = 'S_EVENT_CRASH_SPAWNED'
+
+world.event.S_EVENT_CRASH_FLARING = 'S_EVENT_CRASH_FLARING'
+world.event.S_EVENT_CRASH_FLARED = 'S_EVENT_CRASH_FLARED'
+
+world.event.S_EVENT_CRASH_CLEANING = 'S_EVENT_CRASH_CLEANING'
+world.event.S_EVENT_CRASH_CLEANED = 'S_EVENT_CRASH_CLEANED'
+
+-- Crash: a time, a zone, a timer, a coalition, a flare colour, a flare counter,
+-- a unit name and a unit type name. The zone and unit-related information comes
+-- from the unit that crashed. Do not retain the original unit. Once set up, the
+-- crash site no longer cares who crashed. The simulator can remove the crashing
+-- unit before the crash site disappears.
+Crash = {}
+Crash.__index = Crash
+setmetatable(Crash, {
+  __call = function(self, unit)
+    local _, length = unit:widthAndLength()
+    local crash = {
+      time = timer.getTime(),
+      zone = {point = unit:getPoint(), radius = length},
+      side = unit:getCoalition(),
+      name = unit:getName(),
+      typeName = unit:getTypeName(),
+    }
+    return setmetatable(crash, self)
+  end,
+})
+
+-- Spawning does not immediately pop a flare. It just starts the site's crash
+-- timer, which subsequently pops flares.
+function Crash:spawn()
+  self.timer = Timer(function()
+    self:fired()
+  end)
+  world.onEvent{id = world.event.S_EVENT_CRASH_SPAWNING, crash = self}
+  if not self.timer.id then
+    self.timer:delay(10, true)
+  end
+  world.onEvent{id = world.event.S_EVENT_CRASH_SPAWNED, crash = self}
+end
+
+-- Fires a signal flare, or cleans the crash site. Cleaning depends on the
+-- coalition. If all the ground units have left the zone, the crash site stops
+-- flaring. There is no one left there to pop them.
+function Crash:fired()
+  if #Unit.allGroundUnitsInZone(self.zone, self.side) > 0 then
+    self:flare()
+  else
+    self:clean()
+  end
+end
+
+-- Fires a flare.
+function Crash:flare()
+  world.onEvent{id = world.event.S_EVENT_CRASH_FLARING, crash = self}
+  local color = self.flareColor or trigger.flareColor.Green
+  local azimuth = self.azimuth or 0
+  trigger.action.signalFlare(self.zone.point, color, azimuth)
+  self.counter = (self.counter or 0) + 1
+  world.onEvent{id = world.event.S_EVENT_CRASH_FLARED, crash = self}
+end
+
+-- Cleans a crash site. Invoked by the world-event handler responding to
+-- crash-flaring events, or just before the signal flare. It just removes the
+-- crash timer, which removes the crash site when the garbage collector arrives.
+function Crash:clean()
+  world.onEvent{id = world.event.S_EVENT_CRASH_CLEANING, crash = self}
+  self.timer:remove()
+  world.onEvent{id = world.event.S_EVENT_CRASH_CLEANED, crash = self}
+end
+
+-- Whenever there is a crash, spawn a crash site. Clean up the crash site when
+-- the coalition leaves. The site fires flares until empty, or the flares run
+-- out because you cleaned the crash site. Crash sites pop infinite flares by
+-- default. Crash sites send world events while active.
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_CRASH then
+    Crash(event.initiator):spawn()
+  end
+end)
 
 --------------------------------------------------------------------------------
 --                                                                        scores

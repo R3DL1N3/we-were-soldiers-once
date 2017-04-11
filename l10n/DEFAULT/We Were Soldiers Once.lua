@@ -22,61 +22,40 @@
 --
 --------------------------------------------------------------------------------
 
-scores = {}
-
-function Unit:score(key, value)
-  local playerName = self:getPlayerName()
-  if not playerName then return end
-  local playerScores = scores[playerName]
-  if not playerScores then
-    playerScores = {}
-    scores[playerName] = playerScores
-  end
-  playerScores[key] = (playerScores[key] or 0) + value
-  UserFlag['77'] = (UserFlag['77'] or 0) + 1
-end
-
 function Unit:addScore(key, score)
-  self:score(key, 1)
-  self:score('score', score)
+  self:addPlayerScore(key, 1)
+  self:addPlayerScore('Score', score)
 end
 
 -- Periodically outputs player scores to all sides.
-function outScores(seconds)
-  local lines = {}
-  for playerName, playerScores in pairs(scores) do
-    local line = {}
-    table.insert(line, playerName)
-    for key, value in pairs(playerScores) do
-      table.insert(line, key .. ':' .. value)
-    end
-    table.insert(lines, table.concat(line, ' '))
+world.addEventFunction(function(event)
+  if event.id == world.event.S_EVENT_PLAYER_SCORED then
+    UserFlag['77'] = (UserFlag['77'] or 0) + 1
   end
-  trigger.action.outText(table.concat(lines, '\n'), seconds or 10)
+end)
+
+slick = {}
+
+-- Slicks can embark all troopers, including tasked troopers.
+function slick.embarkOrDisembark(unit)
+  if not unit then return end
+  if not unit:isLanded() then return end
+  local groups = table.fromiter(Group.filtered(coalition.side.BLUE, Group.Category.GROUND, function(group)
+    return group:getSize() > 0 and cav.names:includesGroup(group)
+  end))
+  unit:embarkOrDisembark(groups, 100, 100)
 end
 
 world.addEventFunction(function(event)
-  if event.id == world.event.S_EVENT_LANDED then
-    local chalk = event.initiator:chalk()
-    if chalk then
-      event.initiator:disembarkChalk()
-      local text = event.initiator:getName() .. ' disembarked ' .. chalk.name
-      trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-    elseif string.find(event.initiator:getName(), 'Slick') == 1 then
-      local zone = {point = event.initiator:getPoint(),
-        radius = (event.initiator:getDesc().rotor_diameter or 14.63) * 1.5}
-      local groups = cav.names:groupsInZone(zone, coalition.side.BLUE, Group.Category.GROUND, function(group)
-        return group:getSize() > 0 and not group:getController():hasTask()
-      end)
-      if #groups > 0 then
-        chalk = event.initiator:embarkGroup(groups[1])
-        local text = event.initiator:getName() .. ' embarked ' .. chalk.name
-        trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
-      end
-    end
-  elseif event.id == world.event.S_EVENT_CRASH then
+  if event.id == world.event.S_EVENT_CRASH then
     trigger.action.outText(event.initiator:getName() .. ' crashed', 3)
     event.initiator:addScore('crashes', -50)
+  elseif event.id == world.event.S_EVENT_EMBARKED then
+    local text = event.initiator:getName() .. ' embarked ' .. event.units.name
+    trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
+  elseif event.id == world.event.S_EVENT_DISEMBARKED then
+    local text = event.initiator:getName() .. ' disembarked ' .. event.units.name
+    trigger.action.outTextForCoalition(coalition.side.BLUE, text, 3)
   elseif event.id == world.event.S_EVENT_EJECTION then
     trigger.action.outText(event.initiator:getName() .. ' ejected', 3)
     event.initiator:addScore('ejects', -10)
@@ -85,9 +64,18 @@ world.addEventFunction(function(event)
   elseif event.id == world.event.S_EVENT_HIT then
     -- Sometimes there is no initiator. Just ignore it in that case.
     if event.initiator then
-      event.initiator:addScore('hits', 1)
+      local score
+      if event.initiator:isHostileWith(event.target) then
+        score = event.initiator:disembarkedBy() and 2 or 1
+      elseif event.initiator:isFriendlyWith(event.target) then
+        score = -10
+      else
+        score = 0
+      end
+      event.initiator:addScore('hits', score)
       if event.target:getLife() < 1 then
-        event.initiator:addScore('kills', event.initiator:getLife0())
+        local life = event.target.getLife0 and event.target:getLife0() or 1
+        event.initiator:addScore('kills', life * score)
       end
     end
   end

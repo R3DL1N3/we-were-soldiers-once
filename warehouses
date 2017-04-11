@@ -6,7 +6,7 @@ warehouses = {
 			["OperatingLevel_Fuel"] = 10,
 			["aircrafts"] = {
 			},
-			["coalition"] = "NEUTRAL",
+			["coalition"] = "RED",
 			["diesel"] = {
 				["InitFuel"] = 100,
 			},
@@ -336,7 +336,7 @@ warehouses = {
 			["OperatingLevel_Fuel"] = 10,
 			["aircrafts"] = {
 			},
-			["coalition"] = "NEUTRAL",
+			["coalition"] = "BLUE",
 			["diesel"] = {
 				["InitFuel"] = 100,
 			},

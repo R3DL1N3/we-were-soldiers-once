@@ -502,11 +502,8 @@ function Unit:life()
 end
 
 -- Answers the unit's height above ground level. Importantly, the land height
--- needs a two-dimensional vector, a table, with keys `x` and `z` for horizontal
+-- needs a two-dimensional vector, a table, with keys `x` and `y` for horizontal
 -- and vertical coordinates.
---
--- Be aware that sometimes, this gives odd-looking results, i.e. negative when a
--- helicopter is hovering close to the ground.
 function Unit:height()
   local p = self:getPoint()
   return p.y - land.getHeight{x = p.x, y = p.z}
@@ -1141,6 +1138,8 @@ end
 -- Start a timer when a slick, a helicopter carrying a chalk, lands. Start
 -- checking the unit speed.
 world.addEventFunction(function(event)
+  -- Entirely ignore events without an initiator.
+  if not event.initiator then return end
   if event.id == world.event.S_EVENT_TAKEOFF then
     event.initiator:stopLanding()
     event.initiator:setIsLanded(nil)
@@ -1357,6 +1356,7 @@ end
 -- Automatically disembark the chalk when bad things happen. Do sensible things
 -- in response.
 world.addEventFunction(function(event)
+  if not event.initiator then return end
   if event.id == world.event.S_EVENT_CRASH then
     event.initiator:crashChalk()
   elseif event.id == world.event.S_EVENT_EJECTION then
@@ -1468,6 +1468,7 @@ end
 -- out because you cleaned the crash site. Crash sites pop infinite flares by
 -- default. Crash sites send world events while active.
 world.addEventFunction(function(event)
+  if not event.initiator then return end
   if event.id == world.event.S_EVENT_CRASH then
     Crash(event.initiator):spawn()
   end
@@ -1483,7 +1484,8 @@ world.event.S_EVENT_PLAYER_SCORED = 'S_EVENT_PLAYER_SCORED'
 -- different units carry their scores with them.
 local scores = {}
 
--- Answers the scores to-date for this unit's player, or `nil` if this unit has no player.
+-- Answers the scores to-date for this unit's player, or `nil` if this unit has
+-- no player.
 function Unit:playerScores()
   local playerName = self:playerName()
   return playerName and scores[playerName]

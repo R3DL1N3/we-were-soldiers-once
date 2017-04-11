@@ -493,6 +493,21 @@ function Group.sortGroupsByCenterPoint(groups, point)
   end)
 end
 
+function Group.destroyEmpty(side, category)
+  for group in Group.filtered(side, category, function(group)
+    return group:getSize() == 0
+  end) do
+    group:destroy()
+  end
+end
+
+-- Destroy all empty groups. The simulator does not automatically destroy them.
+-- Helps maintain frames-per-second. Run this periodically.
+function Group.destroyAllEmpty()
+  Group.destroyEmpty(coalition.side.RED)
+  Group.destroyEmpty(coalition.side.BLUE)
+end
+
 --------------------------------------------------------------------------------
 --                                                                          Unit
 --------------------------------------------------------------------------------

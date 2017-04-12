@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.4, 12 April 2017
+
+- Three extra AAA units, spawned when Skyraiders come alive
+- Added three-element Checkertail flight
+- Added F-86F Checkertails to briefing
+- Pretend the MiG-15s are Chinese Shenyang J-5s
+
 ## Version 0.3, 11 April 2017
 
 - Creech AFB is red, Nellis AFB is blue

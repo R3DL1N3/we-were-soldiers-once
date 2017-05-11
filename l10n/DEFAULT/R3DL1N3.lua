@@ -46,6 +46,7 @@
 --    two dimensions, take x and z; not x and y as you might expect. Whereever
 --    this distinction needs clarifying, the script either uses `vec3` as the
 --    argument name or tries to make it clear in the description. Just be aware.
+--
 
 --------------------------------------------------------------------------------
 --                                                                          math
@@ -430,8 +431,10 @@ end
 
 -- Turns the group to move towards the given point. The group starts
 -- immediately, replacing any existing tasks.
-function Group:turnToPoint(vec3, action)
-  self:turningToPointMission(vec3, action):setTaskTo(self:getController())
+function Group:turnToPoint(vec3, action, speed)
+  local mission = self:turningToPointMission(vec3, action)
+  if speed then mission:setSpeed(speed) end
+  mission:setTaskTo(self:getController())
 end
 
 -- Group in zone means all units in the group within the zone. This method
@@ -707,11 +710,12 @@ function Units:translateXY(dx, dy)
   end
 end
 
--- Rotates all the units to the given angle about the x-y plane's origin. Note,
--- the heading argument is in radians relative to north; 0 means up and
--- increases clockwise. Hence, the argument name is heading not angle.
+-- Rotates all the units to the given heading about the x-y plane's origin.
+-- Note, the heading argument is in radians relative to north; 0 means up and
+-- increases anti-clockwise. Hence, the argument name is heading not angle.
 function Units:rotateXY(heading)
-  local angle = 2 * math.pi - heading
+  local angle = 0.5 * math.pi + heading
+  if angle > 2 * math.pi then angle = angle - 2 * math.pi end
   local dx, dy = math.cos(angle), math.sin(angle)
   for _, unit in ipairs(self.units) do
     unit.x, unit.y = unit.x * dx - unit.y * dy, unit.x * dy + unit.y * dx
@@ -807,9 +811,19 @@ function Units:setExcellentSkill()
   self:setSkill(AI.Skill.EXCELLENT)
 end
 
+function Units:setClientSkill()
+  self:setSkill(AI.Skill.CLIENT)
+end
+
 -- Sets up the units condition, a fraction between 0 and 1.
 function Units:setProbability(fraction)
   self.probability = fraction
+end
+
+-- Applies the given mission to these units. Copies the mission's route,
+-- including the route's waypoints.
+function Units:setMission(mission)
+  self.route = table.deepcopy(mission:route())
 end
 
 -- Decimates the units using the given probability of death. Uses 10%
@@ -858,6 +872,18 @@ function Units:spawn(country, category)
     end
   end
   return group
+end
+
+function Units:spawnAirplane(country)
+  return self:spawn(country, Group.Category.AIRPLANE)
+end
+
+function Units:spawnHelicopter(country)
+  return self:spawn(country, Group.Category.HELICOPTER)
+end
+
+function Units:spawnGround(country)
+  return self:spawn(country, Group.Category.GROUND)
 end
 
 -- Adds the given group, or more precisely, adds units based on the given group.
@@ -1017,10 +1043,14 @@ setmetatable(Mission, {
   end,
 })
 
+function Mission:route()
+  return self.params.route
+end
+
 -- Gives access to the waypoints. Answers the actual waypoints, not a copy.
 -- Modifying the result also modifies the mission.
 function Mission:waypoints()
-  return self.params.route.points
+  return self:route().points
 end
 
 -- Adds a waypoint to the mission, or some other kind of point.
@@ -1054,6 +1084,12 @@ end
 
 function Mission:setOffRoadAction()
   self:setAction(AI.Task.VehicleFormation.OFF_ROAD)
+end
+
+function Mission:setSpeed(speed)
+  for _, waypoint in ipairs(self:waypoints()) do
+    waypoint.speed = speed
+  end
 end
 
 -- Converts this mission into an ordinary table by removing the meta-table, and

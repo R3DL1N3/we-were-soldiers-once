@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.5, 11 May 2017
+
+- Added note about triple scoring for disembarked chalks
+- Fix rotation: heading increases anti-clockwise
+
 ## Version 0.4, 12 April 2017
 
 - Three extra AAA units, spawned when Skyraiders come alive

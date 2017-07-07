@@ -36,3 +36,12 @@ task :fix do |task|
   miz.fix
   miz.commit
 end
+
+task :unzip do |task|
+  miz = Miz.new miz_path
+  miz.entries.each do |entry|
+    entry_path = File.join dir, entry.name
+    FileUtils.mkdir_p File.dirname(entry_path)
+    entry.extract(entry_path) { true }
+  end
+end

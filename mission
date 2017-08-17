@@ -4273,7 +4273,6 @@ mission = {
 		zoom = 50000
 	},
 	maxDictId = 297,
-	needModules = {},
 	pictureFileNameB = {
 		[1] = "ResKey_ImageBriefing_231",
 		[2] = "ResKey_ImageBriefing_232",
@@ -4282,6 +4281,7 @@ mission = {
 		[5] = "ResKey_ImageBriefing_235"
 	},
 	pictureFileNameR = {},
+	requiredModules = {},
 	result = {
 		blue = {
 			actions = {},

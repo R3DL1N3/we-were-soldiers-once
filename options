@@ -23,12 +23,12 @@ options = {
 		labels = false,
 		map = true,
 		miniHUD = false,
-		optionsView = "optview_all",
+		optionsView = "optview_allies",
 		padlock = false,
 		permitCrash = false,
 		radio = false,
-		reports = true,
-		setGlobal = true,
+		reports = false,
+		setGlobal = false,
 		spectatorExternalViews = true,
 		tips = false,
 		units = "imperial",
@@ -74,7 +74,7 @@ options = {
 		width = 2560
 	},
 	miscellaneous = {
-		Coordinate_Display = "Lat Long",
+		Coordinate_Display = "Lat Long Decimal",
 		F2_view_effects = 1,
 		TrackIR_external_views = true,
 		accidental_failures = false,
@@ -102,8 +102,8 @@ options = {
 		},
 		CA = {
 			ground_aim_helper = true,
-			ground_automatic = true,
-			ground_platform_shake = false,
+			ground_automatic = false,
+			ground_platform_shake = true,
 			ground_target_info = true,
 			kompass_options = 1
 		},
@@ -161,7 +161,7 @@ options = {
 		},
 		SpitfireLFMkIX = {
 			aileronTrim = 0,
-			assistance = 100,
+			assistance = 0,
 			autoRudder = false
 		},
 		["Su-25T"] = {
@@ -184,20 +184,20 @@ options = {
 	},
 	sound = {
 		GBreathEffect = true,
-		cockpit = 50,
+		cockpit = 66,
 		gui = 100,
-		headphones = 50,
+		headphones = 100,
 		hear_in_helmet = true,
 		music = 0,
 		radioSpeech = true,
 		subtitles = false,
 		volume = 50,
-		world = 50
+		world = 100
 	},
 	views = {
 		cockpit = {
 			avionics = 1,
-			mirrors = false,
+			mirrors = true,
 			reflections = false
 		}
 	}

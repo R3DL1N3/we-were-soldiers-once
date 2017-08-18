@@ -576,7 +576,10 @@ end
 -- the mission, just answers a new mission.
 function Group:turningToPointMission(vec3, action)
   local mission = Mission()
-  mission:turningToPoint(self:getUnit(1):getPoint())
+  local unit = self:getUnit(1)
+  if unit then
+    mission:turningToPoint(unit:getPoint())
+  end
   mission:turningToPoint(vec3)
   if action then
     mission:setAction(action)

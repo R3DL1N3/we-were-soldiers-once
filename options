@@ -68,8 +68,8 @@ options = {
 		terrainTextures = "max",
 		textures = 1,
 		treesVisibility = 10000,
-		visibRange = "High",
 		useDeferredShading = 1,
+		visibRange = "High",
 		water = 1,
 		width = 2560
 	},

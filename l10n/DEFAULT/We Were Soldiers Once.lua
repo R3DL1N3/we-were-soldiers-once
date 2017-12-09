@@ -170,7 +170,7 @@ function vpa.attackInZone(zone)
     if #units == 0 then
       group:getController():resetTask()
     else
-      group:setTurningToUnitsTask(units)
+      group:setTurningToUnitsTask(units, AI.Task.VehicleFormation.OFF_ROAD, 10)
     end
   end
 end

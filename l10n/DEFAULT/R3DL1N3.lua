@@ -46,6 +46,21 @@
 --    two dimensions, take x and z; not x and y as you might expect. Whereever
 --    this distinction needs clarifying, the script either uses `vec3` as the
 --    argument name or tries to make it clear in the description. Just be aware.
+--
+
+-- Loads a chunk of Lua from the given file, then executes it within the given
+-- function environment using a protected call. Returns the result of the
+-- function and nil on success. Answers nil and an error on failure; errors
+-- include file loading failures as well as execution errors within the loaded
+-- Lua.
+function env_dofile(env, filename)
+  local f, err = loadfile(filename)
+  if not f then return nil, err end
+  setfenv(f, env)
+  local status, result = pcall(f)
+  if not status then return nil, result end
+  return result, nil
+end
 
 --------------------------------------------------------------------------------
 --                                                                          math
@@ -207,6 +222,37 @@ function table.values(table)
   return values
 end
 
+function table.copy(table)
+  local copy = {}
+  for key, value in pairs(table) do
+    copy[key] = value
+  end
+  return copy
+end
+
+function table.tostrings(table, depth)
+  local strings = {}
+  if 'table' == type(table) then
+    local tables = {{{}, table}}
+    repeat
+      local keys, table = unpack(_G.table.remove(tables))
+      for key, value in pairs(table) do
+        local subkeys = {}
+        for _, key in ipairs(keys) do
+          _G.table.insert(subkeys, key)
+        end
+        _G.table.insert(subkeys, key)
+        if 'table' ~= type(value) then
+          _G.table.insert(strings, _G.table.concat(subkeys, '.') .. ':' .. tostring(value))
+        elseif depth == nil or #subkeys < depth then
+          _G.table.insert(tables, {subkeys, value})
+        end
+      end
+    until #tables == 0
+  end
+  return strings
+end
+
 -- Returns true if the given table contains a value matching the one given.
 -- Otherwise answers false.
 function table.contains(table, match)
@@ -216,6 +262,108 @@ function table.contains(table, match)
     end
   end
   return false
+end
+
+-- Answers unique values from the given table. Uses table look-up and insertion
+-- for optimisation.
+function table.uniqvalues(values)
+  local byvalue = {}
+  for _, value in ipairs(values) do
+    byvalue[value] = {}
+  end
+  return table.keys(byvalue)
+end
+
+-- Groups an array of values by the results of the given function.
+function table.groupvaluesby(values, func)
+  local groups = {}
+  for _, value in ipairs(values) do
+    local index = func(value)
+    local group = groups[index]
+    if group then
+      _G.table.insert(group, value)
+    else
+      groups[index] = {value}
+    end
+  end
+  return groups
+end
+
+-- Answers a table of key arrays indexed by key type.
+function table.keysbytype(table)
+  return _G.table.groupvaluesby(_G.table.keys(table), function(key)
+    return type(key)
+  end)
+end
+
+--------------------------------------------------------------------------------
+--                                                                     serialize
+--------------------------------------------------------------------------------
+
+serialize = {}
+
+function serialize.keyindent(key, indent)
+  return (indent or '') .. (key or '') .. (key and ' = ' or '')
+end
+
+function serialize.number(object, key, indent)
+  return serialize.keyindent(key, indent) .. tostring(object)
+end
+
+function serialize.boolean(object, key, indent)
+  return serialize.keyindent(key, indent) .. tostring(object)
+end
+
+function serialize.string(object, key, indent)
+  return serialize.keyindent(key, indent) .. string.format('%q', object)
+end
+
+-- Recursively serialises a table to Lua code with optional indent and offset,
+-- defaulting to blank indent and tab offset. Serialises only numeric and string
+-- keys. Sorts the keys; sorted numeric indices first, then sorted strings.
+-- Answers a multi-line string but without a new-line terminator, by design. Add
+-- a terminator externally if needed.
+function serialize.table(object, key, indent, offset)
+  indent = indent or ''
+  offset = offset or '\t'
+  local strings = {}
+  local keysbytype = table.keysbytype(object)
+  for _, type in ipairs{'number', 'string'} do
+    local keys = keysbytype[type]
+    if keys then
+      table.sort(keys)
+      for _, key in ipairs(keys) do
+        table.insert(strings, serialize.object(object[key], '[' .. serialize.object(key) .. ']', indent .. offset, offset))
+      end
+    end
+  end
+  -- Elide new-lines when the table is empty.
+  local string = serialize.keyindent(key, indent) .. '{'
+  if #strings > 0 then
+    string = string .. '\n' .. table.concat(strings, ',\n') .. '\n' .. indent
+  end
+  return string .. '}'
+end
+
+function serialize.object(object, key, indent, offset)
+  local func = serialize[type(object)]
+  return func and func(object, key, indent, offset) or 'nil'
+end
+
+--------------------------------------------------------------------------------
+--                                                                        string
+--------------------------------------------------------------------------------
+
+-- Splits a string by matching an inverse pattern. The given pattern matches the
+-- non-delimiter character sequences. The result is an array of sub-strings
+-- matching the pattern. Matches non-space sequences by default.
+function string.split(string, pattern)
+  local strings = {__index = table.insert}
+  setmetatable(strings, strings)
+  string.gsub(string, pattern or '[^%s]+', strings)
+  setmetatable(strings, nil)
+  strings.__index = nil
+  return strings
 end
 
 --------------------------------------------------------------------------------
@@ -403,24 +551,35 @@ function Group.setTurningToUnitsTasksInZone(fromSide, toSide, category, zone)
   end
 end
 
--- Sets this group's task to turn towards the location of the nearest member of
--- the given units. Nearest means the smallest horizontal distance from this
--- group's centre point. Sorts the given table of units. Replaces the group
--- controller's current task. Does nothing if this group is empty.
-function Group:setTurningToUnitsTask(units)
+-- Sorts the given units by distance from this group's centre point. Sorts
+-- in-place unless the group has no units and therefore no centre point. Answers
+-- sorted units, else nil if no centre.
+function Group:sortUnitsByDistance(units)
   local centerPoint = self:centerPoint()
   if centerPoint == nil then return end
   table.sort(units, function(lhs, rhs)
     return math.distancexz(lhs:getPoint(), centerPoint) < math.distancexz(rhs:getPoint(), centerPoint)
   end)
-  self:turnToPoint(units[1]:getPoint())
+  return units
+end
+
+-- Sets this group's task to turn towards the location of the nearest member of
+-- the given units. Nearest means the smallest horizontal distance from this
+-- group's centre point. Sorts the given table of units. Replaces the group
+-- controller's current task. Does nothing if this group is empty.
+function Group:setTurningToUnitsTask(units, action, speed)
+  self:sortUnitsByDistance(units)
+  self:turnToPoint(units[1]:getPoint(), action, speed)
 end
 
 -- Constructs a new turning-to-point mission based on this group. Does not apply
 -- the mission, just answers a new mission.
 function Group:turningToPointMission(vec3, action)
   local mission = Mission()
-  mission:turningToPoint(self:getUnit(1):getPoint())
+  local unit = self:getUnit(1)
+  if unit then
+    mission:turningToPoint(unit:getPoint())
+  end
   mission:turningToPoint(vec3)
   if action then
     mission:setAction(action)
@@ -430,8 +589,10 @@ end
 
 -- Turns the group to move towards the given point. The group starts
 -- immediately, replacing any existing tasks.
-function Group:turnToPoint(vec3, action)
-  self:turningToPointMission(vec3, action):setTaskTo(self:getController())
+function Group:turnToPoint(vec3, action, speed)
+  local mission = self:turningToPointMission(vec3, action)
+  if speed then mission:setSpeed(speed) end
+  mission:setTaskTo(self:getController())
 end
 
 -- Group in zone means all units in the group within the zone. This method
@@ -460,7 +621,8 @@ end
 
 -- Answers the group's zone based on its units' locations in the x-z plane. The
 -- centre of the zone is the centre of the group. The radius is the distance
--- between the centre and the group's furthest unit from the centre. Never answers a zero-radius zone.
+-- between the centre and the group's furthest unit from the centre. Never
+-- answers a zero-radius zone.
 function Group:zone()
   local point = self:centerPoint()
   local radius = 1
@@ -476,6 +638,10 @@ end
 -- Only works with ground groups.
 function Group:continueMoving()
   trigger.action.groupContinueMoving(self)
+end
+
+function Group:stopMoving()
+  trigger.action.groupStopMoving(self)
 end
 
 -- Groups are not coalition objects, and therefore cannot access their country.
@@ -561,6 +727,12 @@ function Unit:distanceXZ(other)
   return math.distancexz(self:getPoint(), other:getPoint())
 end
 
+function Unit:distanceFromGroup(group)
+  local centerPoint = group:centerPoint()
+  if centerPoint == nil then return end
+  return math.distancexz(self:getPoint(), centerPoint)
+end
+
 -- Answers the distance from this unit to the zone centre relative to the zone
 -- boundary. If negative, this unit is within the boundary. If positive, the
 -- unit is outside the zone. The magnitude tells you how far this unit is either
@@ -590,6 +762,31 @@ function Unit:isHostileWith(other)
   if not other.getCoalition then return nil end
   local side = self:getCoalition()
   return side ~= coalition.side.NEUTRAL and side ~= other:getCoalition()
+end
+
+function Unit:surfaceType()
+  local p = self:getPoint()
+  return land.getSurfaceType{x = p.x, y = p.z}
+end
+
+function Unit:onLand()
+  return self:surfaceType() == land.SurfaceType.LAND
+end
+
+function Unit:inShallowWater()
+  return self:surfaceType() == land.SurfaceType.SHALLOW_WATER
+end
+
+function Unit:inWater()
+  return self:surfaceType() == land.SurfaceType.WATER
+end
+
+function Unit:onRoad()
+  return self:surfaceType() == land.SurfaceType.ROAD
+end
+
+function Unit:onRunway()
+  return self:surfaceType() == land.SurfaceType.RUNWAY
 end
 
 -- Returns an iterator for all units within a given zone that belong to a given
@@ -707,11 +904,12 @@ function Units:translateXY(dx, dy)
   end
 end
 
--- Rotates all the units to the given angle about the x-y plane's origin. Note,
--- the heading argument is in radians relative to north; 0 means up and
--- increases clockwise. Hence, the argument name is heading not angle.
+-- Rotates all the units to the given heading about the x-y plane's origin.
+-- Note, the heading argument is in radians relative to north; 0 means up and
+-- increases anti-clockwise. Hence, the argument name is heading not angle.
 function Units:rotateXY(heading)
-  local angle = 2 * math.pi - heading
+  local angle = 0.5 * math.pi + heading
+  if angle > 2 * math.pi then angle = angle - 2 * math.pi end
   local dx, dy = math.cos(angle), math.sin(angle)
   for _, unit in ipairs(self.units) do
     unit.x, unit.y = unit.x * dx - unit.y * dy, unit.x * dy + unit.y * dx
@@ -807,9 +1005,29 @@ function Units:setExcellentSkill()
   self:setSkill(AI.Skill.EXCELLENT)
 end
 
+function Units:setClientSkill()
+  self:setSkill(AI.Skill.CLIENT)
+end
+
 -- Sets up the units condition, a fraction between 0 and 1.
 function Units:setProbability(fraction)
   self.probability = fraction
+end
+
+-- Applies the given mission to these units. Copies the mission's route,
+-- including the route's waypoints.
+function Units:setMission(mission)
+  self.route = table.deepcopy(mission:route())
+end
+
+-- Constructs a new mission based on one of the units. The index identifies
+-- which one of the units, the first by default. The new mission's initial
+-- turning point starts at the given unit's location. Ignores altitude.
+function Units:missionFromUnit(index)
+  local mission = Mission()
+  local unit = self.units[index or 1]
+  if unit then mission:addTurningPoint(unit.x, unit.y) end
+  return mission
 end
 
 -- Decimates the units using the given probability of death. Uses 10%
@@ -858,6 +1076,22 @@ function Units:spawn(country, category)
     end
   end
   return group
+end
+
+function Units:spawnAirplane(country)
+  return self:spawn(country, Group.Category.AIRPLANE)
+end
+
+function Units:spawnHelicopter(country)
+  return self:spawn(country, Group.Category.HELICOPTER)
+end
+
+function Units:spawnGround(country)
+  return self:spawn(country, Group.Category.GROUND)
+end
+
+function Units:spawnShip(country)
+  return self:spawn(country, Group.Category.SHIP)
 end
 
 -- Adds the given group, or more precisely, adds units based on the given group.
@@ -917,6 +1151,18 @@ function Units.makeName(class, prefix)
     name = prefix .. ' #' .. number
   until not class.getByName(name)
   return name
+end
+
+--------------------------------------------------------------------------------
+--                                                                    Controller
+--------------------------------------------------------------------------------
+
+function Controller:immortal(immortal)
+  self:setCommand{id = 'SetImmortal', params = {value = immortal or true}}
+end
+
+function Controller:invisible(invisible)
+  self:setCommand{id = 'SetInvisible', params = {value = invisible or true}}
 end
 
 --------------------------------------------------------------------------------
@@ -1017,10 +1263,14 @@ setmetatable(Mission, {
   end,
 })
 
+function Mission:route()
+  return self.params.route
+end
+
 -- Gives access to the waypoints. Answers the actual waypoints, not a copy.
 -- Modifying the result also modifies the mission.
 function Mission:waypoints()
-  return self.params.route.points
+  return self:route().points
 end
 
 -- Adds a waypoint to the mission, or some other kind of point.
@@ -1054,6 +1304,21 @@ end
 
 function Mission:setOffRoadAction()
   self:setAction(AI.Task.VehicleFormation.OFF_ROAD)
+end
+
+function Mission:setSpeed(speed)
+  for _, waypoint in ipairs(self:waypoints()) do
+    waypoint.speed = speed
+  end
+end
+
+function Mission:setSpeedKph(kph)
+  self:setSpeed(kph / 3.6)
+end
+
+-- One nautical mile equals 1852 meters.
+function Mission:setSpeedKt(kt)
+  self:setSpeedKph(kt * 1.852)
 end
 
 -- Converts this mission into an ordinary table by removing the meta-table, and
@@ -1239,6 +1504,18 @@ end
 --
 -- Note, this works in both directions: chopper to chalk, or chalk to chopper.
 -- You can move units to the chopper in order to embark them.
+--
+-- Run this when a door opens, i.e. a unit's argument switches to within range
+-- 0.9 to 1.0 or fully open. For different aircraft, the argument number maps as
+-- follows.
+--
+--    38    UH-1 cockpit doors, Gazelle doors, Mi-8 left door
+--    43    UH-1 left door
+--    44    UH-1 right door
+--    86    Mi-8 cargo doors
+--    133   Mi-8 left blister
+--    131   Mi-8 right blister
+--
 function Unit:embarkOrDisembark(groups, radiusThreshold, distanceThreshold, dx, dy)
   if not self:chalk() then
     self:embarkChalk(groups, radiusThreshold, distanceThreshold)

@@ -1,5 +1,22 @@
 # Change Log
 
+## Version 0.6, 18 August 2017
+
+- Merge branch 'feature/2.1.1.8491' into develop
+- Group clean-up every 30s; stagger spawning and attacking triggers
+- Guard for empty groups
+- VPA attack off-road at 10m/s
+- Updated R3DL1N3 script
+- Adjusted options
+- New 2.1.1 Update 2 options
+- Task selected
+- Need to require modules
+
+## Version 0.5, 11 May 2017
+
+- Added note about triple scoring for disembarked chalks
+- Fix rotation: heading increases anti-clockwise
+
 ## Version 0.4, 12 April 2017
 
 - Three extra AAA units, spawned when Skyraiders come alive

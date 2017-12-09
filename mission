@@ -4347,8 +4347,8 @@ mission = {
 			[5] = "return(c_time_since_flag(3, 30) )",
 			[6] = "return(c_time_since_flag(30, 300) )",
 			[7] = "return(c_time_since_flag(1, 1) )",
-			[8] = "return(c_time_since_flag(1, 1) )",
-			[9] = "return(c_time_since_flag(3, 1) )",
+			[8] = "return(c_time_since_flag(1, 5) )",
+			[9] = "return(c_time_since_flag(3, 15) )",
 			[10] = "return(c_time_since_flag(7, 10) )",
 			[11] = "return(c_time_since_flag(7, 150) )",
 			[12] = "return(c_time_since_flag(77, 10) )",
@@ -4366,7 +4366,7 @@ mission = {
 			[24] = "return(c_unit_argument_in_range(37, 38, 0.9, 1) )",
 			[25] = "return(c_unit_argument_in_range(100, 38, 0.9, 1) )",
 			[26] = "return(c_unit_argument_in_range(101, 38, 0.9, 1) )",
-			[27] = "return(c_time_since_flag(30, 1) )",
+			[27] = "return(c_time_since_flag(3, 1) )",
 			[28] = "return(c_unit_alive(102) )",
 			[29] = "return(c_unit_alive(103) )",
 			[30] = "return(c_unit_alive(104) )"
@@ -4818,7 +4818,7 @@ mission = {
 					coalitionlist = "red",
 					flag = 1,
 					predicate = "c_time_since_flag",
-					seconds = 1,
+					seconds = 5,
 					zone = 92
 				}
 			}
@@ -4843,7 +4843,7 @@ mission = {
 					coalitionlist = "red",
 					flag = 3,
 					predicate = "c_time_since_flag",
-					seconds = 1,
+					seconds = 15,
 					zone = 92
 				}
 			}
@@ -5379,7 +5379,7 @@ mission = {
 			rules = {
 				[1] = {
 					coalitionlist = "red",
-					flag = 30,
+					flag = 3,
 					predicate = "c_time_since_flag",
 					seconds = 1,
 					zone = 231

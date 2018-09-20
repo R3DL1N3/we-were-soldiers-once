@@ -5261,8 +5261,8 @@ mission = {
 					predicate = "c_unit_argument_in_range",
 					unit = 35,
 					zone = 231,
-					["_max"] = 1,
-					["_min"] = 0.9
+					_max = 1,
+					_min = 0.9
 				}
 			}
 		},
@@ -5288,8 +5288,8 @@ mission = {
 					predicate = "c_unit_argument_in_range",
 					unit = 36,
 					zone = 231,
-					["_max"] = 1,
-					["_min"] = 0.9
+					_max = 1,
+					_min = 0.9
 				}
 			}
 		},
@@ -5315,8 +5315,8 @@ mission = {
 					predicate = "c_unit_argument_in_range",
 					unit = 37,
 					zone = 231,
-					["_max"] = 1,
-					["_min"] = 0.9
+					_max = 1,
+					_min = 0.9
 				}
 			}
 		},
@@ -5342,8 +5342,8 @@ mission = {
 					predicate = "c_unit_argument_in_range",
 					unit = 100,
 					zone = 231,
-					["_max"] = 1,
-					["_min"] = 0.9
+					_max = 1,
+					_min = 0.9
 				}
 			}
 		},
@@ -5369,8 +5369,8 @@ mission = {
 					predicate = "c_unit_argument_in_range",
 					unit = 101,
 					zone = 231,
-					["_max"] = 1,
-					["_min"] = 0.9
+					_max = 1,
+					_min = 0.9
 				}
 			}
 		},

@@ -161,6 +161,8 @@ end
 
 -- Directs all VPA groups to attack blue units within the given zone, the Chu
 -- Pong mountain area.
+--
+-- Be careful to avoid lagging.
 function vpa.attackInZone(zone)
   if #coalition.getPlayers(coalition.side.RED) > 0 then return end
   local units = Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND)
@@ -171,6 +173,7 @@ function vpa.attackInZone(zone)
       group:getController():resetTask()
     else
       group:setTurningToUnitsTask(units, AI.Task.VehicleFormation.OFF_ROAD, 10)
+      break
     end
   end
 end

@@ -94,7 +94,6 @@ end
 function math.headingxz(p, q)
   local dx = q.x - p.x
   local dz = q.z - p.z
-  -- Flip the axes because 0 degrees corresponds to up, not right.
   local angle = math.atan2(dz, dx)
   if angle < 0 then
     angle = 2 * math.pi + angle
@@ -204,6 +203,14 @@ function table.fromiter(iter)
     table.insert(values, value)
   end
   return values
+end
+
+function table.valueiter(values)
+  return coroutine.wrap(function()
+    for _, value in pairs(values) do
+      coroutine.yield(value)
+    end
+  end)
 end
 
 function table.keys(table)
@@ -497,21 +504,192 @@ setmetatable(UserFlag, {
 --                                                                          Zone
 --------------------------------------------------------------------------------
 
-Zone = setmetatable({}, {
+Zone = {}
+Zone.__index = Zone
+Zone = setmetatable(Zone, {
   -- Constructs a zone using either a string or a zone itself as the zone table.
   -- Zone tables contain a point and a radius. The point is a three-dimensional
   -- vector.
   __call = function(self, arg)
     if 'string' == type(arg) then
-      return trigger.misc.getZone(arg)
+      arg = trigger.misc.getZone(arg)
     end
-    return arg
+    return setmetatable({point = arg.point, radius = arg.radius}, self)
   end,
 })
+
+-- Answers the zone's centre point, a two-vector.
+function Zone:center()
+  local p = self.point
+  return {x = p.x, y = p.z}
+end
+
+-- Horizontal distance between the zone's centre and a given point.
+function Zone:distanceXZ(vec3)
+  return math.distancexz(self.point, vec3)
+end
+
+-- True if the given point lies horizontally within this zone.
+function Zone:within(vec3)
+  return self:distanceXZ(vec3) < self.radius
+end
+
+function Zone:surfaceType()
+  return land.getSurfaceType(self:center())
+end
+
+function Zone:onLand()
+  return self:surfaceType() == land.SurfaceType.LAND
+end
+
+function Zone:inShallowWater()
+  return self:surfaceType() == land.SurfaceType.SHALLOW_WATER
+end
+
+function Zone:inWater()
+  return self:surfaceType() == land.SurfaceType.WATER
+end
+
+function Zone:onRoad()
+  return self:surfaceType() == land.SurfaceType.ROAD
+end
+
+function Zone:onRunway()
+  return self:surfaceType() == land.SurfaceType.RUNWAY
+end
+
+function Zone:randomXZ()
+  return math.randomxzinzone(self)
+end
+
+function Zone:randomSubZone(radius)
+  return Zone{point = self:randomXZ(), radius = radius or 1}
+end
+
+-- Generates a limited number of random sub-zones whose centres lie within this
+-- zone. Defaults to 100 sub-zones of 1-metre radius. The optional function
+-- filters the generated zones.
+function Zone:randomSubZones(count, radius, filter)
+  return coroutine.wrap(function()
+    for _ = 1, count or 100 do
+      local zone = self:randomSubZone(radius)
+      if filter == nil or filter(zone) then
+        coroutine.yield(zone)
+      end
+    end
+  end)
+end
+
+--------------------------------------------------------------------------------
+--                                                                          MGRS
+--------------------------------------------------------------------------------
+
+MGRS = {}
+MGRS.__index = MGRS
+setmetatable(MGRS, {
+  __call = function(self, ...)
+    local lat, long = ...
+    -- Typically, the arguments are numeric latitude and longitude. But if the
+    -- first argument is a table, assume it is a two- or three-vector. In that
+    -- case, convert the vector to latitude and longitude first.
+    if 'table' == type(lat) then
+      if lat.z then
+        lat, long = coord.LOtoLL(lat)
+      else
+        lat, long = coord.LOtoLL{x = lat.x, z = lat.y}
+      end
+    end
+    return setmetatable(coord.LLtoMGRS(lat, long), self)
+  end,
+})
+
+function MGRS:utm()
+  return self.UTMZone
+end
+
+function MGRS:digraph()
+  return self.MGRSDigraph
+end
+
+function MGRS:easting()
+  return self.Easting
+end
+
+function MGRS:northing()
+  return self.Northing
+end
+
+function MGRS:__tostring()
+  return string.format("%s %s %05d %05d", self:utm(), self:digraph(), self:easting()), self:northing()
+end
+
+function MGRS:eastingsNorthings()
+  local eastingsNorthings = {}
+  local function digit(ing, pow)
+    return math.floor((ing % (pow * 10)) / pow)
+  end
+  local easting = self:easting()
+  local northing = self:northing()
+  for i = 0, 4 do
+    local pow = math.pow(10, i)
+    table.insert(eastingsNorthings, 1, {digit(easting, pow), digit(northing, pow)})
+  end
+  return eastingsNorthings
+end
+
+function MGRS:toString(precision, utm)
+  local strings = {}
+  if utm then table.insert(strings, self:utm()) end
+  table.insert(strings, self:digraph())
+  local ings = self:eastingsNorthings()
+  for i = 1, precision or 5 do
+    local ing = ings[i]
+    table.insert(strings, string.format('%d%d', ing[1], ing[2]))
+  end
+  return table.concat(strings, ' ')
+end
+
+function MGRS:latLong()
+  return coord.MGRStoLL(self)
+end
+
+function MGRS:point()
+  return coord.LLtoLO(self:latLong())
+end
+
+function MGRS:vec2()
+  local p = self:point()
+  return {x = p.x, y = p.z}
+end
+
+function MGRS:surfaceType()
+  return land.getSurfaceType(self:vec2())
+end
+
+function MGRS:height()
+  return land.getHeight(self:vec2())
+end
+
+--------------------------------------------------------------------------------
+--                                                                     coalition
+--------------------------------------------------------------------------------
+
+-- Answers an iterator that yields all coalition sides.
+function coalition.allSides()
+  return table.valueiter(coalition.side)
+end
 
 --------------------------------------------------------------------------------
 --                                                                         Group
 --------------------------------------------------------------------------------
+
+function Group:id()
+  return self:getID()
+end
+
+function Group:outText(text, seconds, clear)
+  trigger.action.outTextForGroup(self:id(), text, seconds, clear)
+end
 
 -- Answers a function that wraps a co-routine iterator. You can use the result
 -- directly in a for-statement. The iterated elements are Group instances.
@@ -568,12 +746,18 @@ end
 -- group's centre point. Sorts the given table of units. Replaces the group
 -- controller's current task. Does nothing if this group is empty.
 function Group:setTurningToUnitsTask(units, action, speed)
+  if #units == 0 then return end
   self:sortUnitsByDistance(units)
   self:turnToPoint(units[1]:getPoint(), action, speed)
 end
 
 -- Constructs a new turning-to-point mission based on this group. Does not apply
 -- the mission, just answers a new mission.
+--
+-- Includes the first unit's position as the initial waypoint, since the
+-- simulator's group controller will ignore the mission otherwise. Only does so
+-- if the group is not empty. Empty groups have no units but may exist
+-- temporarily.
 function Group:turningToPointMission(vec3, action)
   local mission = Mission()
   local unit = self:getUnit(1)
@@ -674,9 +858,24 @@ function Group.destroyAllEmpty()
   Group.destroyEmpty(coalition.side.BLUE)
 end
 
+-- Answers an iterator for all group categories.
+function Group.allCategories()
+  return table.valueiter(Group.Category)
+end
+
 --------------------------------------------------------------------------------
 --                                                                          Unit
 --------------------------------------------------------------------------------
+
+function Unit:group()
+  return self:getGroup()
+end
+
+-- Outputs trigger text for this unit, indirectly outputting the text for the
+-- unit's entire group. The simulator does not support unit-level trigger text.
+function Unit:outText(text, seconds, clear)
+  self:group():outText(text, seconds, clear)
+end
 
 function Unit:life()
   return self:getLife() / self:getLife0()

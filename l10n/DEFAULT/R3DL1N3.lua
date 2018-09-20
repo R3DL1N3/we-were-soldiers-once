@@ -1263,7 +1263,10 @@ end
 -- auto-generated group name if the units do not already have one.
 function Units:spawn(country, category)
   if not self.route then
-    self:setMission(self:missionFromUnit())
+    local mission = self:missionFromUnit()
+    local unit = self:all()[1]
+    mission:turningToPoint(unit.x, unit.y)
+    self:setMission(mission)
   end
   local group = coalition.addGroup(country or self.country, category or self.category, self:table())
   -- Cache the unit skills. This is the only time that the units and the skills

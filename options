@@ -1,10 +1,4 @@
 options = {
-	VR = {
-		box_mouse_cursor = true,
-		enable = true,
-		pixel_density = 1.5,
-		use_mouse = true
-	},
 	difficulty = {
 		avionicsLanguage = "native",
 		birds = 0,
@@ -19,13 +13,13 @@ options = {
 		hideStick = false,
 		iconsTheme = "nato",
 		immortal = false,
-		impostors = "",
 		labels = false,
 		map = true,
 		miniHUD = false,
 		optionsView = "optview_allies",
 		padlock = false,
 		permitCrash = false,
+		RBDAI = false,
 		radio = false,
 		reports = false,
 		setGlobal = false,
@@ -37,168 +31,13 @@ options = {
 		weapons = false
 	},
 	format = 1,
-	graphics = {
-		DOF = 0,
-		HDR = 1,
-		LensEffects = 0,
-		MSAA = 0,
-		SSAO = 0,
-		anisotropy = 2,
-		aspect = 1.7777777777778,
-		chimneySmokeDensity = 0,
-		civTraffic = "low",
-		clouds = 1,
-		clutterMaxDistance = 1000,
-		cockpitGI = 0,
-		disableAero = false,
-		effects = 3,
-		flatTerrainShadows = 1,
-		fullScreen = false,
-		heatBlr = 0,
-		height = 1440,
-		lights = 2,
-		motionBlur = 0,
-		multiMonitorSetup = "1camera",
-		outputGamma = 1.9,
-		preloadRadius = 100000,
-		scaleGui = false,
-		shadowTree = false,
-		shadows = 3,
-		sync = false,
-		terrainTextures = "max",
-		textures = 1,
-		treesVisibility = 10000,
-		useDeferredShading = 1,
-		visibRange = "High",
-		water = 1,
-		width = 2560
-	},
-	miscellaneous = {
-		Coordinate_Display = "Lat Long Decimal",
-		F2_view_effects = 1,
-		TrackIR_external_views = true,
-		accidental_failures = false,
-		chat_window_at_start = false,
-		f10_awacs = true,
-		f11_free_camera = true,
-		f5_nearest_ac = true,
-		force_feedback_enabled = false,
-		headmove = false,
-		show_pilot_body = false,
-		synchronize_controls = true
-	},
+	graphics = {},
+	miscellaneous = {},
 	playerName = "New callsign",
-	plugins = {
-		["A-10C"] = {
-			CPLocalList = "default"
-		},
-		["Bf-109K-4"] = {
-			CPLocalList = "default",
-			aileronTrim = 0,
-			assistance = 0,
-			autoRudder = false,
-			cameraOrigin = 1,
-			rudderTrim = 0
-		},
-		CA = {
-			ground_aim_helper = true,
-			ground_automatic = false,
-			ground_platform_shake = true,
-			ground_target_info = true,
-			kompass_options = 1
-		},
-		["F-86F"] = {
-			CPLocalList = "default",
-			NoseWheelSteeringSimpleBehaviourF86 = true,
-			aiHelper = false,
-			gunCamera = 0,
-			landSeatAdjustF86 = true
-		},
-		["FW-190D9"] = {
-			CPLocalList = "default",
-			assistance = 100,
-			autoRudder = false
-		},
-		["Ka-50"] = {
-			CPLocalList = "english",
-			Ka50RudderTrimmer = false,
-			Ka50TrimmingMethod = 0,
-			altTrimmingMethod = false
-		},
-		["M-2000C"] = {
-			CPLocalList = "default",
-			PPA_TOTPAR = false,
-			UNI_ALIGNED = false,
-			UNI_NODRIFT = false
-		},
-		["Mi-8MTV2"] = {
-			CPLocalList = "english",
-			Mi8AutopilotAdjustment = false,
-			Mi8CockpitShake = 50,
-			Mi8FOV = 120,
-			Mi8RudderTrimmer = false,
-			Mi8TrimmingMethod = 1,
-			controlHelperMi8 = false,
-			gunCamera = 0
-		},
-		["P-51D"] = {
-			CPLocalList = "default",
-			assistance = 100,
-			autoRudder = false
-		},
-		SA342 = {
-			CPLocalList = "default",
-			CPLocalListL = "default",
-			CPLocalListM = "default",
-			ControlsDisplayLocation = 0,
-			EasierControls = false,
-			EngineBreak = true,
-			PreloadWaypoints = true,
-			RudderTrim = false,
-			StickPitchCurve = 0,
-			StickRollCurve = 0,
-			VibrationRate = 100
-		},
-		SpitfireLFMkIX = {
-			aileronTrim = 0,
-			assistance = 0,
-			autoRudder = false
-		},
-		["Su-25T"] = {
-			CPLocalList = "default"
-		},
-		["TF-51D"] = {
-			CPLocalList = "default",
-			assistance = 100,
-			autoRudder = false
-		},
-		["UH-1H"] = {
-			CPLocalList = "default",
-			UH1HCockpitShake = 50,
-			UHRudderTrimmer = false,
-			UHTrackIRAiming = true,
-			UHTrimmingMethod = 1,
-			autoPilot = true,
-			weapTooltips = true
-		}
-	},
-	sound = {
-		GBreathEffect = true,
-		cockpit = 66,
-		gui = 100,
-		headphones = 100,
-		hear_in_helmet = true,
-		music = 0,
-		radioSpeech = true,
-		subtitles = false,
-		volume = 50,
-		world = 100
-	},
+	plugins = {},
+	sound = {},
+	VR = {},
 	views = {
-		cockpit = {
-			avionics = 1,
-			mirrors = true,
-			reflections = false
-		}
+		cockpit = {}
 	}
 }

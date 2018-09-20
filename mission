@@ -20,11 +20,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -59,41 +59,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Enfield11",
 											[1] = 1,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Enfield11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -127,6 +102,32 @@ mission = {
 											}
 										},
 										psi = -5.235987755983,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -150,11 +151,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -189,41 +190,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Springfield11",
 											[1] = 2,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Springfield11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -257,6 +233,32 @@ mission = {
 											}
 										},
 										psi = -5.235987755983,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -280,11 +282,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -319,41 +321,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Uzi11",
 											[1] = 3,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Uzi11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -387,6 +364,32 @@ mission = {
 											}
 										},
 										psi = -5.235987755983,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -410,11 +413,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -449,41 +452,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Colt11",
 											[1] = 4,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Colt11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -511,6 +489,32 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -534,11 +538,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -573,41 +577,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Dodge11",
 											[1] = 5,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Dodge11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -635,6 +614,32 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -658,11 +663,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -697,41 +702,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Ford11",
 											[1] = 6,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Ford11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -759,6 +739,32 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -782,11 +788,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -821,41 +827,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Chevy11",
 											[1] = 7,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Chevy11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -883,6 +864,32 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -906,11 +913,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											helipadId = 38,
 											linkUnit = 38,
@@ -945,41 +952,16 @@ mission = {
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
-											GunnersAISkill = 90
-										},
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
-												}
-											}
+											GunnersAISkill = 90,
+											NetCrewControlPriority = 1
 										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Pontiac11",
 											[1] = 8,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Pontiac11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1007,6 +989,32 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 251,
+													[2] = 264,
+													[3] = 265,
+													[4] = 256,
+													[5] = 254,
+													[6] = 250,
+													[7] = 270,
+													[8] = 257,
+													[9] = 255,
+													[10] = 262,
+													[11] = 259,
+													[12] = 268,
+													[13] = 269,
+													[14] = 260,
+													[15] = 263,
+													[16] = 261,
+													[17] = 267,
+													[18] = 251,
+													[19] = 253,
+													[20] = 266
+												}
+											}
+										},
 										ropeLength = 15,
 										skill = "Client",
 										speed = 41.666666666667,
@@ -1036,12 +1044,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_262",
 											properties = {
@@ -1101,10 +1109,10 @@ mission = {
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Enfield21",
 											[1] = 1,
 											[2] = 2,
-											[3] = 1
+											[3] = 1,
+											name = "Enfield21"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1166,12 +1174,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_265",
 											properties = {
@@ -1231,10 +1239,10 @@ mission = {
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Springfield21",
 											[1] = 2,
 											[2] = 2,
-											[3] = 1
+											[3] = 1,
+											name = "Springfield21"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1296,12 +1304,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_268",
 											properties = {
@@ -1361,10 +1369,10 @@ mission = {
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Uzi21",
 											[1] = 3,
 											[2] = 2,
-											[3] = 1
+											[3] = 1,
+											name = "Uzi21"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1426,12 +1434,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_281",
 											properties = {
@@ -1475,37 +1483,13 @@ mission = {
 								uncontrolled = false,
 								units = {
 									[1] = {
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 225,
-													[2] = 258,
-													[3] = 260,
-													[4] = 270,
-													[5] = 255,
-													[6] = 259,
-													[7] = 262,
-													[8] = 257,
-													[9] = 253,
-													[10] = 263,
-													[11] = 267,
-													[12] = 254,
-													[13] = 264,
-													[14] = 266,
-													[15] = 265,
-													[16] = 252,
-													[17] = 268,
-													[18] = 269
-												}
-											}
-										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Colt21",
 											[1] = 4,
 											[2] = 2,
-											[3] = 1
+											[3] = 1,
+											name = "Colt21"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1547,6 +1531,30 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 225,
+													[2] = 258,
+													[3] = 260,
+													[4] = 270,
+													[5] = 255,
+													[6] = 259,
+													[7] = 262,
+													[8] = 257,
+													[9] = 253,
+													[10] = 263,
+													[11] = 267,
+													[12] = 254,
+													[13] = 264,
+													[14] = 266,
+													[15] = 265,
+													[16] = 252,
+													[17] = 268,
+													[18] = 269
+												}
+											}
+										},
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "F-86F Sabre",
@@ -1569,12 +1577,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_284",
 											properties = {
@@ -1618,37 +1626,13 @@ mission = {
 								uncontrolled = false,
 								units = {
 									[1] = {
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 225,
-													[2] = 258,
-													[3] = 260,
-													[4] = 270,
-													[5] = 255,
-													[6] = 259,
-													[7] = 262,
-													[8] = 257,
-													[9] = 253,
-													[10] = 263,
-													[11] = 267,
-													[12] = 254,
-													[13] = 264,
-													[14] = 266,
-													[15] = 265,
-													[16] = 252,
-													[17] = 268,
-													[18] = 269
-												}
-											}
-										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Dodge21",
 											[1] = 5,
 											[2] = 2,
-											[3] = 1
+											[3] = 1,
+											name = "Dodge21"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1690,6 +1674,30 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 225,
+													[2] = 258,
+													[3] = 260,
+													[4] = 270,
+													[5] = 255,
+													[6] = 259,
+													[7] = 262,
+													[8] = 257,
+													[9] = 253,
+													[10] = 263,
+													[11] = 267,
+													[12] = 254,
+													[13] = 264,
+													[14] = 266,
+													[15] = 265,
+													[16] = 252,
+													[17] = 268,
+													[18] = 269
+												}
+											}
+										},
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "F-86F Sabre",
@@ -1712,12 +1720,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_287",
 											properties = {
@@ -1761,37 +1769,13 @@ mission = {
 								uncontrolled = false,
 								units = {
 									[1] = {
-										Radio = {
-											[1] = {
-												channels = {
-													[1] = 225,
-													[2] = 258,
-													[3] = 260,
-													[4] = 270,
-													[5] = 255,
-													[6] = 259,
-													[7] = 262,
-													[8] = 257,
-													[9] = 253,
-													[10] = 263,
-													[11] = 267,
-													[12] = 254,
-													[13] = 264,
-													[14] = 266,
-													[15] = 265,
-													[16] = 252,
-													[17] = 268,
-													[18] = 269
-												}
-											}
-										},
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Ford21",
 											[1] = 6,
 											[2] = 2,
-											[3] = 1
+											[3] = 1,
+											name = "Ford21"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -1833,6 +1817,30 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											[1] = {
+												channels = {
+													[1] = 225,
+													[2] = 258,
+													[3] = 260,
+													[4] = 270,
+													[5] = 255,
+													[6] = 259,
+													[7] = 262,
+													[8] = 257,
+													[9] = 253,
+													[10] = 263,
+													[11] = 267,
+													[12] = 254,
+													[13] = 264,
+													[14] = 266,
+													[15] = 265,
+													[16] = 252,
+													[17] = 268,
+													[18] = 269
+												}
+											}
+										},
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "F-86F Sabre",
@@ -2498,11 +2506,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 1410,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_29",
 											speed = 5.5555555555556,
@@ -2587,11 +2595,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 1440,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_101",
 											speed = 5.5555555555556,
@@ -2720,11 +2728,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 1403,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_244",
 											speed = 5.5555555555556,
@@ -2831,11 +2839,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 2796,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_122",
 											speed = 5.5555555555556,
@@ -2894,11 +2902,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 2060,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_150",
 											speed = 5.5555555555556,
@@ -3048,11 +3056,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 2259,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_168",
 											speed = 5.5555555555556,
@@ -3189,11 +3197,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 1726,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_227",
 											speed = 5.5555555555556,
@@ -3330,11 +3338,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 1726,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_230",
 											speed = 5.5555555555556,
@@ -3383,11 +3391,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 2370,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_290",
 											speed = 5.5555555555556,
@@ -3437,11 +3445,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 2314,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_293",
 											speed = 5.5555555555556,
@@ -3502,11 +3510,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 2600,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_297",
 											speed = 5.5555555555556,
@@ -3567,12 +3575,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 1,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_271",
 											properties = {
@@ -3619,10 +3627,10 @@ mission = {
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Enfield11",
 											[1] = 1,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Enfield11"
 										},
 										hardpoint_racks = true,
 										heading = 0,
@@ -3660,12 +3668,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 1,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_274",
 											properties = {
@@ -3712,10 +3720,10 @@ mission = {
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Springfield11",
 											[1] = 2,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Springfield11"
 										},
 										heading = 0,
 										name = "DictKey_UnitName_273",
@@ -3752,12 +3760,12 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "From Parking Area",
 											airdromeId = 1,
 											alt = 1876,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_278",
 											properties = {
@@ -3804,10 +3812,10 @@ mission = {
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
-											name = "Uzi11",
 											[1] = 3,
 											[2] = 1,
-											[3] = 1
+											[3] = 1,
+											name = "Uzi11"
 										},
 										heading = 0,
 										name = "DictKey_UnitName_277",
@@ -4090,11 +4098,11 @@ mission = {
 								route = {
 									points = {
 										[1] = {
-											ETA = 0,
-											ETA_locked = true,
 											action = "Off Road",
 											alt = 1726,
 											alt_type = "BARO",
+											ETA = 0,
+											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_181",
 											speed = 5.5555555555556,
@@ -4216,7 +4224,7 @@ mission = {
 			[3] = 49
 		}
 	},
-	currentKey = 24308,
+	currentKey = 24566,
 	date = {
 		Day = 14,
 		Month = 11,
@@ -4254,18 +4262,22 @@ mission = {
 		roles = {
 			artillery_commander = {
 				blue = 2,
+				neutrals = 0,
 				red = 2
 			},
 			forward_observer = {
 				blue = 0,
+				neutrals = 0,
 				red = 0
 			},
 			instructor = {
 				blue = 0,
+				neutrals = 0,
 				red = 0
 			},
 			observer = {
 				blue = 2,
+				neutrals = 0,
 				red = 2
 			}
 		}
@@ -4283,6 +4295,7 @@ mission = {
 		[4] = "ResKey_ImageBriefing_234",
 		[5] = "ResKey_ImageBriefing_235"
 	},
+	pictureFileNameN = {},
 	pictureFileNameR = {},
 	requiredModules = {},
 	result = {
@@ -4585,42 +4598,42 @@ mission = {
 		[2] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_49",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
 					flag = 1,
+					KeyDict_text = "DictKey_ActionText_49",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_49"
 				},
 				[2] = {
-					KeyDict_text = "DictKey_ActionText_50",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
 					flag = 2,
+					KeyDict_text = "DictKey_ActionText_50",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_50"
 				},
 				[3] = {
-					KeyDict_text = "DictKey_ActionText_51",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
 					flag = 3,
+					KeyDict_text = "DictKey_ActionText_51",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_51"
 				},
 				[4] = {
-					KeyDict_text = "DictKey_ActionText_140",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
 					flag = 30,
+					KeyDict_text = "DictKey_ActionText_140",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_140"
 				}
@@ -4740,29 +4753,29 @@ mission = {
 		[7] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_52",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_52",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_52"
 				},
 				[2] = {
-					KeyDict_text = "DictKey_ActionText_53",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_53",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_53"
 				},
 				[3] = {
-					KeyDict_text = "DictKey_ActionText_54",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_54",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_54"
 				}
@@ -4783,29 +4796,29 @@ mission = {
 		[8] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_86",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_86",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_86"
 				},
 				[2] = {
-					KeyDict_text = "DictKey_ActionText_90",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_90",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_90"
 				},
 				[3] = {
-					KeyDict_text = "DictKey_ActionText_107",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_107",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_107"
 				}
@@ -4826,11 +4839,11 @@ mission = {
 		[9] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_91",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_91",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_91"
 				}
@@ -4851,11 +4864,11 @@ mission = {
 		[10] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_89",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_89",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_89"
 				}
@@ -4901,11 +4914,11 @@ mission = {
 		[12] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_139",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_139",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_139"
 				}
@@ -5229,11 +5242,11 @@ mission = {
 		[22] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_254",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_254",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_254"
 				}
@@ -5243,24 +5256,24 @@ mission = {
 			predicate = "triggerFront",
 			rules = {
 				[1] = {
-					_max = 1,
-					_min = 0.9,
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
 					unit = 35,
-					zone = 231
+					zone = 231,
+					["_max"] = 1,
+					["_min"] = 0.9
 				}
 			}
 		},
 		[23] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_255",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_255",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_255"
 				}
@@ -5270,24 +5283,24 @@ mission = {
 			predicate = "triggerFront",
 			rules = {
 				[1] = {
-					_max = 1,
-					_min = 0.9,
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
 					unit = 36,
-					zone = 231
+					zone = 231,
+					["_max"] = 1,
+					["_min"] = 0.9
 				}
 			}
 		},
 		[24] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_256",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_256",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_256"
 				}
@@ -5297,24 +5310,24 @@ mission = {
 			predicate = "triggerFront",
 			rules = {
 				[1] = {
-					_max = 1,
-					_min = 0.9,
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
 					unit = 37,
-					zone = 231
+					zone = 231,
+					["_max"] = 1,
+					["_min"] = 0.9
 				}
 			}
 		},
 		[25] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_257",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_257",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_257"
 				}
@@ -5324,24 +5337,24 @@ mission = {
 			predicate = "triggerFront",
 			rules = {
 				[1] = {
-					_max = 1,
-					_min = 0.9,
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
 					unit = 100,
-					zone = 231
+					zone = 231,
+					["_max"] = 1,
+					["_min"] = 0.9
 				}
 			}
 		},
 		[26] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_258",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_258",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_258"
 				}
@@ -5351,24 +5364,24 @@ mission = {
 			predicate = "triggerFront",
 			rules = {
 				[1] = {
-					_max = 1,
-					_min = 0.9,
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
 					unit = 101,
-					zone = 231
+					zone = 231,
+					["_max"] = 1,
+					["_min"] = 0.9
 				}
 			}
 		},
 		[27] = {
 			actions = {
 				[1] = {
-					KeyDict_text = "DictKey_ActionText_259",
 					ai_task = {
 						[1] = "",
 						[2] = ""
 					},
+					KeyDict_text = "DictKey_ActionText_259",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_259"
 				}
@@ -5456,7 +5469,7 @@ mission = {
 			}
 		}
 	},
-	version = 13,
+	version = 15,
 	weather = {
 		atmosphere_type = 1,
 		clouds = {
@@ -5475,9 +5488,10 @@ mission = {
 				rotation = 0.8031917238797
 			}
 		},
+		dust_density = 0,
+		enable_dust = false,
 		enable_fog = true,
 		fog = {
-			density = 7,
 			thickness = 0,
 			visibility = 25
 		},

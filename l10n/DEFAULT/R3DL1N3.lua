@@ -1262,6 +1262,9 @@ end
 -- table hereafter. The group always needs a name. Adding supplies an
 -- auto-generated group name if the units do not already have one.
 function Units:spawn(country, category)
+  if not self.route then
+    self:setMission(self:missionFromUnit())
+  end
   local group = coalition.addGroup(country or self.country, category or self.category, self:table())
   -- Cache the unit skills. This is the only time that the units and the skills
   -- exist together at the same time. This assumes, of course, that the order of

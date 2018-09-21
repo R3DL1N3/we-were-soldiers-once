@@ -6,10 +6,10 @@ mission = {
 				y = -55317.501317367
 			},
 			country = {
-				[1] = {
+				{
 					helicopter = {
 						group = {
-							[1] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 10,
@@ -19,7 +19,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -55,7 +55,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -81,50 +81,50 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
+												{
 													CLSID = "M134_L"
 												},
-												[2] = {
+												{
 													CLSID = "XM158_M156"
 												},
-												[3] = {
+												{
 													CLSID = "M60_SIDE_L"
 												},
-												[4] = {
+												{
 													CLSID = "M60_SIDE_R"
 												},
-												[5] = {
+												{
 													CLSID = "XM158_M156"
 												},
-												[6] = {
+												{
 													CLSID = "M134_R"
 												}
 											}
 										},
 										psi = -5.235987755983,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -140,7 +140,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[2] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 11,
@@ -150,7 +150,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -186,7 +186,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -212,50 +212,50 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
+												{
 													CLSID = "M134_L"
 												},
-												[2] = {
+												{
 													CLSID = "XM158_M156"
 												},
-												[3] = {
+												{
 													CLSID = "M60_SIDE_L"
 												},
-												[4] = {
+												{
 													CLSID = "M60_SIDE_R"
 												},
-												[5] = {
+												{
 													CLSID = "XM158_M156"
 												},
-												[6] = {
+												{
 													CLSID = "M134_R"
 												}
 											}
 										},
 										psi = -5.235987755983,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -271,7 +271,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[3] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 12,
@@ -281,7 +281,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -317,7 +317,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -343,50 +343,50 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
+												{
 													CLSID = "M134_L"
 												},
-												[2] = {
+												{
 													CLSID = "XM158_M156"
 												},
-												[3] = {
+												{
 													CLSID = "M60_SIDE_L"
 												},
-												[4] = {
+												{
 													CLSID = "M60_SIDE_R"
 												},
-												[5] = {
+												{
 													CLSID = "XM158_M156"
 												},
-												[6] = {
+												{
 													CLSID = "M134_R"
 												}
 											}
 										},
 										psi = -5.235987755983,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -402,7 +402,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[4] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 31,
@@ -412,7 +412,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -448,7 +448,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -490,28 +490,28 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -527,7 +527,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[5] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 32,
@@ -537,7 +537,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -573,7 +573,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -615,28 +615,28 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -652,7 +652,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[6] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 33,
@@ -662,7 +662,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -698,7 +698,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -740,28 +740,28 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -777,7 +777,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[7] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 46,
@@ -787,7 +787,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -823,7 +823,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -865,28 +865,28 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -902,7 +902,7 @@ mission = {
 								x = -394640.65365035,
 								y = -55111.215603085
 							},
-							[8] = {
+							{
 								communication = true,
 								frequency = 251,
 								groupId = 47,
@@ -912,7 +912,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											alt = 1876,
 											alt_type = "BARO",
@@ -948,7 +948,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											EngineResource = 90,
 											ExhaustScreen = true,
@@ -990,28 +990,28 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 251,
-													[2] = 264,
-													[3] = 265,
-													[4] = 256,
-													[5] = 254,
-													[6] = 250,
-													[7] = 270,
-													[8] = 257,
-													[9] = 255,
-													[10] = 262,
-													[11] = 259,
-													[12] = 268,
-													[13] = 269,
-													[14] = 260,
-													[15] = 263,
-													[16] = 261,
-													[17] = 267,
-													[18] = 251,
-													[19] = 253,
-													[20] = 266
+													251,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
 												}
 											}
 										},
@@ -1033,7 +1033,7 @@ mission = {
 					name = "USA",
 					plane = {
 						group = {
-							[1] = {
+							{
 								communication = true,
 								frequency = 305,
 								groupId = 48,
@@ -1043,7 +1043,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
@@ -1065,7 +1065,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -1074,7 +1074,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -1092,7 +1092,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											ChaffBurst = 0,
 											ChaffBurstInt = 0,
@@ -1128,25 +1128,25 @@ mission = {
 											fuel = 1023,
 											gun = 100,
 											pylons = {
-												[1] = {
+												{
 													CLSID = "{AIM-9B}"
 												},
-												[2] = {
+												{
 													CLSID = "LAU3_WP156"
 												},
-												[3] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[4] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[5] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[6] = {
+												{
 													CLSID = "LAU3_WP156"
 												},
-												[7] = {
+												{
 													CLSID = "{AIM-9B}"
 												}
 											}
@@ -1163,7 +1163,7 @@ mission = {
 								x = -399571.9375,
 								y = -19235.65234375
 							},
-							[2] = {
+							{
 								communication = true,
 								frequency = 305,
 								groupId = 49,
@@ -1173,7 +1173,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
@@ -1195,7 +1195,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -1204,7 +1204,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -1222,7 +1222,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											ChaffBurst = 0,
 											ChaffBurstInt = 0,
@@ -1258,25 +1258,25 @@ mission = {
 											fuel = 1023,
 											gun = 100,
 											pylons = {
-												[1] = {
+												{
 													CLSID = "{AIM-9B}"
 												},
-												[2] = {
+												{
 													CLSID = "LAU3_WP156"
 												},
-												[3] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[4] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[5] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[6] = {
+												{
 													CLSID = "LAU3_WP156"
 												},
-												[7] = {
+												{
 													CLSID = "{AIM-9B}"
 												}
 											}
@@ -1293,7 +1293,7 @@ mission = {
 								x = -399499.8125,
 								y = -19155.458984375
 							},
-							[3] = {
+							{
 								communication = true,
 								frequency = 305,
 								groupId = 50,
@@ -1303,7 +1303,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
@@ -1325,7 +1325,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -1334,7 +1334,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -1352,7 +1352,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										AddPropAircraft = {
 											ChaffBurst = 0,
 											ChaffBurstInt = 0,
@@ -1388,25 +1388,25 @@ mission = {
 											fuel = 1023,
 											gun = 100,
 											pylons = {
-												[1] = {
+												{
 													CLSID = "{AIM-9B}"
 												},
-												[2] = {
+												{
 													CLSID = "LAU3_WP156"
 												},
-												[3] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[4] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[5] = {
+												{
 													CLSID = "{CBU-52B}"
 												},
-												[6] = {
+												{
 													CLSID = "LAU3_WP156"
 												},
-												[7] = {
+												{
 													CLSID = "{AIM-9B}"
 												}
 											}
@@ -1423,7 +1423,7 @@ mission = {
 								x = -399382,
 								y = -19269.25390625
 							},
-							[4] = {
+							{
 								communication = true,
 								frequency = 225,
 								groupId = 54,
@@ -1433,7 +1433,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
@@ -1455,7 +1455,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -1464,7 +1464,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -1482,7 +1482,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
@@ -1532,26 +1532,26 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 225,
-													[2] = 258,
-													[3] = 260,
-													[4] = 270,
-													[5] = 255,
-													[6] = 259,
-													[7] = 262,
-													[8] = 257,
-													[9] = 253,
-													[10] = 263,
-													[11] = 267,
-													[12] = 254,
-													[13] = 264,
-													[14] = 266,
-													[15] = 265,
-													[16] = 252,
-													[17] = 268,
-													[18] = 269
+													225,
+													258,
+													260,
+													270,
+													255,
+													259,
+													262,
+													257,
+													253,
+													263,
+													267,
+													254,
+													264,
+													266,
+													265,
+													252,
+													268,
+													269
 												}
 											}
 										},
@@ -1566,7 +1566,7 @@ mission = {
 								x = -399113.96875,
 								y = -18563.66015625
 							},
-							[5] = {
+							{
 								communication = true,
 								frequency = 225,
 								groupId = 55,
@@ -1576,7 +1576,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
@@ -1598,7 +1598,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -1607,7 +1607,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -1625,7 +1625,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
@@ -1675,26 +1675,26 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 225,
-													[2] = 258,
-													[3] = 260,
-													[4] = 270,
-													[5] = 255,
-													[6] = 259,
-													[7] = 262,
-													[8] = 257,
-													[9] = 253,
-													[10] = 263,
-													[11] = 267,
-													[12] = 254,
-													[13] = 264,
-													[14] = 266,
-													[15] = 265,
-													[16] = 252,
-													[17] = 268,
-													[18] = 269
+													225,
+													258,
+													260,
+													270,
+													255,
+													259,
+													262,
+													257,
+													253,
+													263,
+													267,
+													254,
+													264,
+													266,
+													265,
+													252,
+													268,
+													269
 												}
 											}
 										},
@@ -1709,7 +1709,7 @@ mission = {
 								x = -399131.5625,
 								y = -18578.541015625
 							},
-							[6] = {
+							{
 								communication = true,
 								frequency = 225,
 								groupId = 56,
@@ -1719,7 +1719,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 4,
 											alt = 1876,
@@ -1741,7 +1741,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -1750,7 +1750,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -1768,7 +1768,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
@@ -1818,26 +1818,26 @@ mission = {
 										},
 										psi = 0,
 										Radio = {
-											[1] = {
+											{
 												channels = {
-													[1] = 225,
-													[2] = 258,
-													[3] = 260,
-													[4] = 270,
-													[5] = 255,
-													[6] = 259,
-													[7] = 262,
-													[8] = 257,
-													[9] = 253,
-													[10] = 263,
-													[11] = 267,
-													[12] = 254,
-													[13] = 264,
-													[14] = 266,
-													[15] = 265,
-													[16] = 252,
-													[17] = 268,
-													[18] = 269
+													225,
+													258,
+													260,
+													270,
+													255,
+													259,
+													262,
+													257,
+													253,
+													263,
+													267,
+													254,
+													264,
+													266,
+													265,
+													252,
+													268,
+													269
 												}
 											}
 										},
@@ -1856,14 +1856,14 @@ mission = {
 					},
 					static = {
 						group = {
-							[1] = {
+							{
 								dead = false,
 								groupId = 1,
 								heading = 0,
 								name = "DictKey_GroupName_6",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -1876,7 +1876,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "GrassAirfields",
 										grassairfield_callsign_id = 1,
@@ -1892,14 +1892,14 @@ mission = {
 								x = -394508.65365034,
 								y = -55307.215603082
 							},
-							[2] = {
+							{
 								dead = false,
 								groupId = 2,
 								heading = 0.69813170079773,
 								name = "DictKey_GroupName_9",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -1912,7 +1912,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0.69813170079773,
@@ -1928,14 +1928,14 @@ mission = {
 								x = -394500.08222177,
 								y = -55304.64417451
 							},
-							[3] = {
+							{
 								dead = false,
 								groupId = 3,
 								heading = 0.69813170079773,
 								name = "DictKey_GroupName_12",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -1948,7 +1948,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0.69813170079773,
@@ -1964,14 +1964,14 @@ mission = {
 								x = -394490.36793605,
 								y = -55297.787031652
 							},
-							[4] = {
+							{
 								dead = false,
 								groupId = 4,
 								heading = 0.69813170079773,
 								name = "DictKey_GroupName_15",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -1984,7 +1984,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0.69813170079773,
@@ -2001,14 +2001,14 @@ mission = {
 								x = -394480.93936463,
 								y = -55289.501317367
 							},
-							[5] = {
+							{
 								dead = false,
 								groupId = 5,
 								heading = 2.2689280275926,
 								name = "DictKey_GroupName_18",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2021,7 +2021,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
@@ -2037,14 +2037,14 @@ mission = {
 								x = -394492.93936462,
 								y = -55316.929888796
 							},
-							[6] = {
+							{
 								dead = false,
 								groupId = 6,
 								heading = 2.2689280275926,
 								name = "DictKey_GroupName_21",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2057,7 +2057,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
@@ -2072,14 +2072,14 @@ mission = {
 								x = -394484.36793605,
 								y = -55310.358460224
 							},
-							[7] = {
+							{
 								dead = false,
 								groupId = 7,
 								heading = 2.2689280275926,
 								name = "DictKey_GroupName_24",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2092,7 +2092,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
@@ -2107,14 +2107,14 @@ mission = {
 								x = -394476.08222177,
 								y = -55303.501317367
 							},
-							[8] = {
+							{
 								dead = false,
 								groupId = 9,
 								heading = 0,
 								name = "DictKey_GroupName_34",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2127,7 +2127,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0,
@@ -2142,14 +2142,14 @@ mission = {
 								x = -394474.08222177,
 								y = -55282.072745939
 							},
-							[9] = {
+							{
 								dead = false,
 								groupId = 14,
 								heading = 0.034906585039887,
 								name = "DictKey_GroupName_59",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2162,7 +2162,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0.034906585039887,
@@ -2177,14 +2177,14 @@ mission = {
 								x = -394563.22507891,
 								y = -55239.501317368
 							},
-							[10] = {
+							{
 								dead = false,
 								groupId = 15,
 								heading = 0,
 								name = "DictKey_GroupName_62",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2197,7 +2197,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0,
@@ -2212,14 +2212,14 @@ mission = {
 								x = -394563.22507891,
 								y = -55230.929888797
 							},
-							[11] = {
+							{
 								dead = false,
 								groupId = 16,
 								heading = 0,
 								name = "DictKey_GroupName_65",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2232,7 +2232,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0,
@@ -2247,14 +2247,14 @@ mission = {
 								x = -394563.22507892,
 								y = -55222.358460226
 							},
-							[12] = {
+							{
 								dead = false,
 								groupId = 17,
 								heading = 5.4105206811824,
 								name = "DictKey_GroupName_68",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2267,7 +2267,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 5.4105206811824,
@@ -2282,14 +2282,14 @@ mission = {
 								x = -394555.79650749,
 								y = -55197.787031654
 							},
-							[13] = {
+							{
 								dead = false,
 								groupId = 18,
 								heading = 5.4105206811824,
 								name = "DictKey_GroupName_71",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2302,7 +2302,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 5.4105206811824,
@@ -2317,14 +2317,14 @@ mission = {
 								x = -394549.5107932,
 								y = -55191.501317368
 							},
-							[14] = {
+							{
 								dead = false,
 								groupId = 19,
 								heading = 5.4105206811824,
 								name = "DictKey_GroupName_74",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2337,7 +2337,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 5.4105206811824,
@@ -2352,14 +2352,14 @@ mission = {
 								x = -394543.22507892,
 								y = -55186.358460226
 							},
-							[15] = {
+							{
 								dead = false,
 								groupId = 20,
 								heading = 4.7123889803847,
 								name = "DictKey_GroupName_77",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2372,7 +2372,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 4.7123889803847,
@@ -2387,14 +2387,14 @@ mission = {
 								x = -394520.65365034,
 								y = -55180.07274594
 							},
-							[16] = {
+							{
 								dead = false,
 								groupId = 21,
 								heading = 4.7123889803847,
 								name = "DictKey_GroupName_80",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2407,7 +2407,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 4.7123889803847,
@@ -2422,14 +2422,14 @@ mission = {
 								x = -394512.65365034,
 								y = -55180.07274594
 							},
-							[17] = {
+							{
 								dead = false,
 								groupId = 22,
 								heading = 4.7123889803847,
 								name = "DictKey_GroupName_83",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2442,7 +2442,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 4.7123889803847,
@@ -2457,14 +2457,14 @@ mission = {
 								x = -394504.93936463,
 								y = -55180.358460226
 							},
-							[18] = {
+							{
 								dead = false,
 								groupId = 34,
 								heading = 5.5850536063819,
 								name = "DictKey_GroupName_136",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -2477,7 +2477,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Heliports",
 										heading = 5.5850536063819,
@@ -2499,13 +2499,13 @@ mission = {
 					},
 					vehicle = {
 						group = {
-							[1] = {
+							{
 								groupId = 8,
 								hidden = false,
 								name = "DictKey_GroupName_27",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 1410,
 											alt_type = "BARO",
@@ -2527,12 +2527,12 @@ mission = {
 										}
 									},
 									spans = {
-										[1] = {
-											[1] = {
+										{
+											{
 												x = -394512.08222176,
 												y = -55331.215603081
 											},
-											[2] = {
+											{
 												x = -394533.79650748,
 												y = -55340.64417451
 											}
@@ -2544,7 +2544,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 3.8571776469075,
 										name = "DictKey_UnitName_28",
 										playerCanDrive = true,
@@ -2557,7 +2557,7 @@ mission = {
 										x = -394504.65365034,
 										y = -55328.072745939
 									},
-									[2] = {
+									{
 										heading = 3.8571776469075,
 										name = "DictKey_UnitName_30",
 										playerCanDrive = true,
@@ -2570,7 +2570,7 @@ mission = {
 										x = -394510.08222176,
 										y = -55320.072745939
 									},
-									[3] = {
+									{
 										heading = 3.8397243543875,
 										name = "DictKey_UnitName_31",
 										playerCanDrive = true,
@@ -2588,13 +2588,13 @@ mission = {
 								x = -394504.65365034,
 								y = -55328.072745939
 							},
-							[2] = {
+							{
 								groupId = 24,
 								hidden = false,
 								name = "DictKey_GroupName_99",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 1440,
 											alt_type = "BARO",
@@ -2608,7 +2608,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "WrappedAction",
@@ -2638,7 +2638,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 4.939281783144,
 										name = "DictKey_UnitName_100",
 										playerCanDrive = true,
@@ -2651,7 +2651,7 @@ mission = {
 										x = -394670.36793606,
 										y = -55672.358460227
 									},
-									[2] = {
+									{
 										heading = 4.939281783144,
 										name = "DictKey_UnitName_102",
 										playerCanDrive = true,
@@ -2664,7 +2664,7 @@ mission = {
 										x = -394679.36597824,
 										y = -55633.383657636
 									},
-									[3] = {
+									{
 										heading = 4.939281783144,
 										name = "DictKey_UnitName_103",
 										playerCanDrive = true,
@@ -2677,7 +2677,7 @@ mission = {
 										x = -394688.36402041,
 										y = -55594.408855044
 									},
-									[4] = {
+									{
 										heading = 4.939281783144,
 										name = "DictKey_UnitName_239",
 										playerCanDrive = true,
@@ -2690,7 +2690,7 @@ mission = {
 										x = -394697.36206258,
 										y = -55555.434052453
 									},
-									[5] = {
+									{
 										heading = 4.939281783144,
 										name = "DictKey_UnitName_240",
 										playerCanDrive = true,
@@ -2703,7 +2703,7 @@ mission = {
 										x = -394706.36010476,
 										y = -55516.459249861
 									},
-									[6] = {
+									{
 										heading = 4.939281783144,
 										name = "DictKey_UnitName_241",
 										playerCanDrive = true,
@@ -2721,13 +2721,13 @@ mission = {
 								x = -394670.36793606,
 								y = -55672.358460227
 							},
-							[3] = {
+							{
 								groupId = 45,
 								hidden = false,
 								name = "DictKey_GroupName_242",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 1403,
 											alt_type = "BARO",
@@ -2749,12 +2749,12 @@ mission = {
 										}
 									},
 									spans = {
-										[1] = {
-											[1] = {
+										{
+											{
 												x = -394602.65365036,
 												y = -55173.215603087
 											},
-											[2] = {
+											{
 												x = -394603.51079322,
 												y = -55172.929888802
 											}
@@ -2766,7 +2766,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 2.8198420991957,
 										name = "DictKey_UnitName_243",
 										playerCanDrive = true,
@@ -2779,7 +2779,7 @@ mission = {
 										x = -394607.7965075,
 										y = -55226.35846023
 									},
-									[2] = {
+									{
 										heading = 2.8198420991957,
 										name = "DictKey_UnitName_246",
 										playerCanDrive = true,
@@ -2792,7 +2792,7 @@ mission = {
 										x = -394601.22507892,
 										y = -55216.644174516
 									},
-									[3] = {
+									{
 										heading = 2.8198420991957,
 										name = "DictKey_UnitName_247",
 										playerCanDrive = true,
@@ -2823,22 +2823,22 @@ mission = {
 				y = -73040
 			},
 			country = {
-				[1] = {
+				{
 					id = 27,
 					name = "China"
 				},
-				[2] = {
+				{
 					id = 0,
 					name = "Russia",
 					vehicle = {
 						group = {
-							[1] = {
+							{
 								groupId = 30,
 								hidden = false,
 								name = "DictKey_GroupName_120",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 2796,
 											alt_type = "BARO",
@@ -2860,12 +2860,12 @@ mission = {
 										}
 									},
 									spans = {
-										[1] = {
-											[1] = {
+										{
+											{
 												x = -394408.65365034,
 												y = -75670.929888799
 											},
-											[2] = {
+											{
 												x = -394408.08222177,
 												y = -75672.072745942
 											}
@@ -2877,7 +2877,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 5.3756140961425,
 										name = "DictKey_UnitName_121",
 										playerCanDrive = true,
@@ -2895,13 +2895,13 @@ mission = {
 								x = -394390.93936463,
 								y = -75626.929888799
 							},
-							[2] = {
+							{
 								groupId = 35,
 								hidden = false,
 								name = "DictKey_GroupName_148",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 2060,
 											alt_type = "BARO",
@@ -2923,12 +2923,12 @@ mission = {
 										}
 									},
 									spans = {
-										[1] = {
-											[1] = {
+										{
+											{
 												x = -395286.08222178,
 												y = -67761.501317371
 											},
-											[2] = {
+											{
 												x = -395248.36793606,
 												y = -67744.9298888
 											}
@@ -2940,7 +2940,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 4.2236967898263,
 										name = "DictKey_UnitName_149",
 										playerCanDrive = false,
@@ -2953,7 +2953,7 @@ mission = {
 										x = -395282.65365035,
 										y = -67762.644174514
 									},
-									[2] = {
+									{
 										heading = 4.1364303272266,
 										name = "DictKey_UnitName_151",
 										playerCanDrive = false,
@@ -2966,7 +2966,7 @@ mission = {
 										x = -395284.36793606,
 										y = -67748.358460228
 									},
-									[3] = {
+									{
 										heading = 4.0491638646268,
 										name = "DictKey_UnitName_152",
 										playerCanDrive = false,
@@ -2979,7 +2979,7 @@ mission = {
 										x = -395254.08222178,
 										y = -67726.072745943
 									},
-									[4] = {
+									{
 										heading = 4.3633231299858,
 										name = "DictKey_UnitName_153",
 										playerCanDrive = false,
@@ -2992,7 +2992,7 @@ mission = {
 										x = -395259.22507892,
 										y = -67716.358460228
 									},
-									[5] = {
+									{
 										heading = 4.310963252426,
 										name = "DictKey_UnitName_154",
 										playerCanDrive = false,
@@ -3005,7 +3005,7 @@ mission = {
 										x = -395214.08222178,
 										y = -67662.644174514
 									},
-									[6] = {
+									{
 										heading = 4.1887902047864,
 										name = "DictKey_UnitName_155",
 										playerCanDrive = false,
@@ -3018,7 +3018,7 @@ mission = {
 										x = -395214.08222178,
 										y = -67650.644174514
 									},
-									[7] = {
+									{
 										heading = 3.9618974020271,
 										name = "DictKey_UnitName_156",
 										playerCanDrive = false,
@@ -3031,7 +3031,7 @@ mission = {
 										x = -395190.65365035,
 										y = -67626.644174514
 									},
-									[8] = {
+									{
 										heading = 3.7699111843078,
 										name = "DictKey_UnitName_157",
 										playerCanDrive = false,
@@ -3049,13 +3049,13 @@ mission = {
 								x = -395282.65365035,
 								y = -67762.644174514
 							},
-							[3] = {
+							{
 								groupId = 36,
 								hidden = false,
 								name = "DictKey_GroupName_159",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 2259,
 											alt_type = "BARO",
@@ -3081,7 +3081,7 @@ mission = {
 								start_time = 0,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 1.1170107212764,
 										name = "DictKey_UnitName_160",
 										playerCanDrive = false,
@@ -3094,7 +3094,7 @@ mission = {
 										x = -396689.51079321,
 										y = -71389.787031659
 									},
-									[2] = {
+									{
 										heading = 1.0297442586767,
 										name = "DictKey_UnitName_161",
 										playerCanDrive = false,
@@ -3107,7 +3107,7 @@ mission = {
 										x = -396687.29898755,
 										y = -71404.004215765
 									},
-									[3] = {
+									{
 										heading = 0.94247779607694,
 										name = "DictKey_UnitName_162",
 										playerCanDrive = false,
@@ -3120,7 +3120,7 @@ mission = {
 										x = -396716.78849239,
 										y = -71427.333310381
 									},
-									[4] = {
+									{
 										heading = 1.2566370614359,
 										name = "DictKey_UnitName_163",
 										playerCanDrive = false,
@@ -3133,7 +3133,7 @@ mission = {
 										x = -396711.30974445,
 										y = -71436.862195289
 									},
-									[5] = {
+									{
 										heading = 1.2042771838761,
 										name = "DictKey_UnitName_164",
 										playerCanDrive = false,
@@ -3146,7 +3146,7 @@ mission = {
 										x = -396754.55050025,
 										y = -71492.119222706
 									},
-									[6] = {
+									{
 										heading = 1.0821041362365,
 										name = "DictKey_UnitName_165",
 										playerCanDrive = false,
@@ -3159,7 +3159,7 @@ mission = {
 										x = -396754.13170629,
 										y = -71504.11191263
 									},
-									[7] = {
+									{
 										heading = 0.85521133347722,
 										name = "DictKey_UnitName_166",
 										playerCanDrive = false,
@@ -3172,7 +3172,7 @@ mission = {
 										x = -396776.70841774,
 										y = -71528.91493783
 									},
-									[8] = {
+									{
 										heading = 0.66322511575785,
 										name = "DictKey_UnitName_167",
 										playerCanDrive = false,
@@ -3190,13 +3190,13 @@ mission = {
 								x = -396689.51079321,
 								y = -71389.787031659
 							},
-							[4] = {
+							{
 								groupId = 43,
 								hidden = false,
 								name = "DictKey_GroupName_218",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 1726,
 											alt_type = "BARO",
@@ -3222,7 +3222,7 @@ mission = {
 								start_time = 0,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 2.5307274153918,
 										name = "DictKey_UnitName_219",
 										playerCanDrive = false,
@@ -3235,7 +3235,7 @@ mission = {
 										x = -394317.51079321,
 										y = -61586.072745944
 									},
-									[2] = {
+									{
 										heading = 2.4434609527921,
 										name = "DictKey_UnitName_220",
 										playerCanDrive = false,
@@ -3248,7 +3248,7 @@ mission = {
 										x = -394314.65365035,
 										y = -61582.644174515
 									},
-									[3] = {
+									{
 										heading = 2.3561944901923,
 										name = "DictKey_UnitName_221",
 										playerCanDrive = false,
@@ -3261,7 +3261,7 @@ mission = {
 										x = -394314.36793607,
 										y = -61591.215603087
 									},
-									[4] = {
+									{
 										heading = 2.6703537555513,
 										name = "DictKey_UnitName_222",
 										playerCanDrive = false,
@@ -3274,7 +3274,7 @@ mission = {
 										x = -394310.93936464,
 										y = -61587.215603087
 									},
-									[5] = {
+									{
 										heading = 2.6179938779915,
 										name = "DictKey_UnitName_223",
 										playerCanDrive = false,
@@ -3287,7 +3287,7 @@ mission = {
 										x = -394330.08222178,
 										y = -61605.501317372
 									},
-									[6] = {
+									{
 										heading = 2.4958208303519,
 										name = "DictKey_UnitName_224",
 										playerCanDrive = false,
@@ -3300,7 +3300,7 @@ mission = {
 										x = -394326.93936464,
 										y = -61602.929888801
 									},
-									[7] = {
+									{
 										heading = 2.2689280275926,
 										name = "DictKey_UnitName_225",
 										playerCanDrive = false,
@@ -3313,7 +3313,7 @@ mission = {
 										x = -394325.79650749,
 										y = -61610.072745944
 									},
-									[8] = {
+									{
 										heading = 2.0769418098733,
 										name = "DictKey_UnitName_226",
 										playerCanDrive = false,
@@ -3331,13 +3331,13 @@ mission = {
 								x = -394317.51079321,
 								y = -61586.072745944
 							},
-							[5] = {
+							{
 								groupId = 44,
 								hidden = false,
 								name = "DictKey_GroupName_228",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 1726,
 											alt_type = "BARO",
@@ -3365,7 +3365,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 2.4434609527921,
 										name = "DictKey_UnitName_229",
 										playerCanDrive = true,
@@ -3383,14 +3383,14 @@ mission = {
 								x = -394326.65365035,
 								y = -61580.644174515
 							},
-							[6] = {
+							{
 								groupId = 57,
 								hidden = false,
 								lateActivation = true,
 								name = "DictKey_GroupName_288",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 2370,
 											alt_type = "BARO",
@@ -3419,7 +3419,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 5.218534463463,
 										name = "DictKey_UnitName_289",
 										playerCanDrive = true,
@@ -3437,14 +3437,14 @@ mission = {
 								x = -395801.22507891,
 								y = -73508.644174515
 							},
-							[7] = {
+							{
 								groupId = 58,
 								hidden = false,
 								lateActivation = true,
 								name = "DictKey_GroupName_291",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 2314,
 											alt_type = "BARO",
@@ -3467,12 +3467,12 @@ mission = {
 									},
 									routeRelativeTOT = true,
 									spans = {
-										[1] = {
-											[1] = {
+										{
+											{
 												x = -396692.36793606,
 												y = -72210.072745943
 											},
-											[2] = {
+											{
 												x = -395802.08222177,
 												y = -73508.358460229
 											}
@@ -3484,7 +3484,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 5.3134798417652,
 										name = "DictKey_UnitName_292",
 										playerCanDrive = true,
@@ -3502,14 +3502,14 @@ mission = {
 								x = -396692.36793606,
 								y = -72210.072745943
 							},
-							[8] = {
+							{
 								groupId = 59,
 								hidden = false,
 								lateActivation = true,
 								name = "DictKey_GroupName_295",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 2600,
 											alt_type = "BARO",
@@ -3538,7 +3538,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 5.8119464091411,
 										name = "DictKey_UnitName_296",
 										playerCanDrive = true,
@@ -3559,12 +3559,12 @@ mission = {
 						}
 					}
 				},
-				[3] = {
+				{
 					id = 49,
 					name = "Vietnam",
 					plane = {
 						group = {
-							[1] = {
+							{
 								communication = true,
 								frequency = 3.75,
 								groupId = 51,
@@ -3574,7 +3574,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 1,
 											alt = 1876,
@@ -3596,7 +3596,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -3605,7 +3605,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -3623,7 +3623,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
@@ -3657,7 +3657,7 @@ mission = {
 								x = -360846.40625,
 								y = -74766.1171875
 							},
-							[2] = {
+							{
 								communication = true,
 								frequency = 3.75,
 								groupId = 52,
@@ -3667,7 +3667,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 1,
 											alt = 1876,
@@ -3689,7 +3689,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -3698,7 +3698,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -3716,7 +3716,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
@@ -3749,7 +3749,7 @@ mission = {
 								x = -360846.28125,
 								y = -74698.109375
 							},
-							[3] = {
+							{
 								communication = true,
 								frequency = 3.75,
 								groupId = 53,
@@ -3759,7 +3759,7 @@ mission = {
 								radioSet = false,
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "From Parking Area",
 											airdromeId = 1,
 											alt = 1876,
@@ -3781,7 +3781,7 @@ mission = {
 												id = "ComboTask",
 												params = {
 													tasks = {
-														[1] = {
+														{
 															auto = true,
 															enabled = true,
 															id = "EngageTargets",
@@ -3790,7 +3790,7 @@ mission = {
 															params = {
 																priority = 0,
 																targetTypes = {
-																	[1] = "Air"
+																	"Air"
 																}
 															}
 														}
@@ -3808,7 +3808,7 @@ mission = {
 								tasks = {},
 								uncontrolled = false,
 								units = {
-									[1] = {
+									{
 										alt = 1876,
 										alt_type = "BARO",
 										callsign = {
@@ -3845,14 +3845,14 @@ mission = {
 					},
 					static = {
 						group = {
-							[1] = {
+							{
 								dead = false,
 								groupId = 23,
 								heading = 2.3038346126325,
 								name = "DictKey_GroupName_93",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -3865,7 +3865,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 2.3038346126325,
@@ -3879,14 +3879,14 @@ mission = {
 								x = -396200.93936463,
 								y = -72895.501317369
 							},
-							[2] = {
+							{
 								dead = false,
 								groupId = 25,
 								heading = 3.2986722862693,
 								name = "DictKey_GroupName_104",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -3899,7 +3899,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 3.2986722862693,
@@ -3913,14 +3913,14 @@ mission = {
 								x = -394392.08222178,
 								y = -75669.215603084
 							},
-							[3] = {
+							{
 								dead = false,
 								groupId = 26,
 								heading = 0.61086523819802,
 								name = "DictKey_GroupName_108",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -3933,7 +3933,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0.61086523819802,
@@ -3947,14 +3947,14 @@ mission = {
 								x = -396177.22507892,
 								y = -73888.644174513
 							},
-							[4] = {
+							{
 								dead = false,
 								groupId = 27,
 								heading = 0.069813170079773,
 								name = "DictKey_GroupName_111",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -3967,7 +3967,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 0.069813170079773,
@@ -3982,14 +3982,14 @@ mission = {
 								x = -396199.22507892,
 								y = -73804.072745941
 							},
-							[5] = {
+							{
 								dead = false,
 								groupId = 28,
 								heading = 3.6128315516283,
 								name = "DictKey_GroupName_114",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -4002,7 +4002,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 3.6128315516283,
@@ -4017,14 +4017,14 @@ mission = {
 								x = -395792.65365034,
 								y = -73491.787031656
 							},
-							[6] = {
+							{
 								dead = false,
 								groupId = 29,
 								heading = 3.3684854563491,
 								name = "DictKey_GroupName_117",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -4037,7 +4037,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 3.3684854563491,
@@ -4051,14 +4051,14 @@ mission = {
 								x = -395786.08222177,
 								y = -73512.072745941
 							},
-							[7] = {
+							{
 								dead = false,
 								groupId = 38,
 								heading = 2.2689280275926,
 								name = "DictKey_GroupName_182",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "",
 											alt = 0,
 											formation_template = "",
@@ -4071,7 +4071,7 @@ mission = {
 									}
 								},
 								units = {
-									[1] = {
+									{
 										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
@@ -4091,13 +4091,13 @@ mission = {
 					},
 					vehicle = {
 						group = {
-							[1] = {
+							{
 								groupId = 37,
 								hidden = false,
 								name = "DictKey_GroupName_179",
 								route = {
 									points = {
-										[1] = {
+										{
 											action = "Off Road",
 											alt = 1726,
 											alt_type = "BARO",
@@ -4125,7 +4125,7 @@ mission = {
 								taskSelected = true,
 								tasks = {},
 								units = {
-									[1] = {
+									{
 										heading = 3.8746309394274,
 										name = "DictKey_UnitName_180",
 										playerCanDrive = false,
@@ -4153,78 +4153,78 @@ mission = {
 	},
 	coalitions = {
 		blue = {
-			[1] = 2
+			2
 		},
 		neutrals = {
-			[1] = 18,
-			[2] = 21,
-			[3] = 23,
-			[4] = 65,
-			[5] = 24,
-			[6] = 11,
-			[7] = 64,
-			[8] = 25,
-			[9] = 8,
-			[10] = 63,
-			[11] = 28,
-			[12] = 26,
-			[13] = 13,
-			[14] = 29,
-			[15] = 62,
-			[16] = 30,
-			[17] = 5,
-			[18] = 16,
-			[19] = 6,
-			[20] = 31,
-			[21] = 61,
-			[22] = 32,
-			[23] = 33,
-			[24] = 60,
-			[25] = 17,
-			[26] = 34,
-			[27] = 35,
-			[28] = 15,
-			[29] = 20,
-			[30] = 36,
-			[31] = 59,
-			[32] = 37,
-			[33] = 58,
-			[34] = 57,
-			[35] = 56,
-			[36] = 55,
-			[37] = 38,
-			[38] = 12,
-			[39] = 39,
-			[40] = 54,
-			[41] = 40,
-			[42] = 41,
-			[43] = 42,
-			[44] = 43,
-			[45] = 44,
-			[46] = 45,
-			[47] = 19,
-			[48] = 9,
-			[49] = 53,
-			[50] = 46,
-			[51] = 22,
-			[52] = 47,
-			[53] = 52,
-			[54] = 10,
-			[55] = 51,
-			[56] = 3,
-			[57] = 4,
-			[58] = 7,
-			[59] = 1,
-			[60] = 50,
-			[61] = 48
+			18,
+			21,
+			23,
+			65,
+			24,
+			11,
+			64,
+			25,
+			8,
+			63,
+			28,
+			26,
+			13,
+			29,
+			62,
+			30,
+			5,
+			16,
+			6,
+			31,
+			61,
+			32,
+			33,
+			60,
+			17,
+			34,
+			35,
+			15,
+			20,
+			36,
+			59,
+			37,
+			58,
+			57,
+			56,
+			55,
+			38,
+			12,
+			39,
+			54,
+			40,
+			41,
+			42,
+			43,
+			44,
+			45,
+			19,
+			9,
+			53,
+			46,
+			22,
+			47,
+			52,
+			10,
+			51,
+			3,
+			4,
+			7,
+			1,
+			50,
+			48
 		},
 		red = {
-			[1] = 27,
-			[2] = 0,
-			[3] = 49
+			27,
+			0,
+			49
 		}
 	},
-	currentKey = 24566,
+	currentKey = 25598,
 	date = {
 		Day = 14,
 		Month = 11,
@@ -4289,11 +4289,11 @@ mission = {
 	},
 	maxDictId = 297,
 	pictureFileNameB = {
-		[1] = "ResKey_ImageBriefing_231",
-		[2] = "ResKey_ImageBriefing_232",
-		[3] = "ResKey_ImageBriefing_233",
-		[4] = "ResKey_ImageBriefing_234",
-		[5] = "ResKey_ImageBriefing_235"
+		"ResKey_ImageBriefing_231",
+		"ResKey_ImageBriefing_232",
+		"ResKey_ImageBriefing_233",
+		"ResKey_ImageBriefing_234",
+		"ResKey_ImageBriefing_235"
 	},
 	pictureFileNameN = {},
 	pictureFileNameR = {},
@@ -4321,103 +4321,103 @@ mission = {
 	theatre = "Nevada",
 	trig = {
 		actions = {
-			[1] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",
-			[2] = "a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30); mission.trig.func[2]=nil;",
-			[3] = "a_inc_flag(1, 1);",
-			[4] = "a_inc_flag(2, 1);",
-			[5] = "a_inc_flag(3, 1);",
-			[6] = "a_inc_flag(30, 1);",
-			[7] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_52\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_53\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_54\"));",
-			[8] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_86\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_90\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_107\"));",
-			[9] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_91\"));",
-			[10] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_89\"));",
-			[11] = "a_inc_flag(7, 1);",
-			[12] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_139\"));",
-			[13] = "a_inc_flag(77, 1);",
-			[14] = "a_set_flag_random(33, 1, 7);",
-			[15] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_259\"), 92, false, false, 30000, 100, \"Garryowen\");",
-			[16] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_260\"), 92, false, false, 30000, 100, \"Hold Me Thrill Me Kiss Me\");",
-			[17] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_261\"), 92, false, false, 30000, 100, \"Sgt MacKenzie\");",
-			[18] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_262\"), 92, false, false, 30000, 100, \"Good Morning Vietnam\");",
-			[19] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_263\"), 92, false, false, 30000, 100, \"We've Gotta Get Out Of This Place\");",
-			[20] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_264\"), 92, false, false, 30000, 100, \"Fortunate Son\");",
-			[21] = "a_radio_transmission(getValueResourceByKey(\"ResKey_Action_265\"), 92, false, false, 30000, 100, \"Paint It Black\");",
-			[22] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_254\"));",
-			[23] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_255\"));",
-			[24] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_256\"));",
-			[25] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_257\"));",
-			[26] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_258\"));",
-			[27] = "a_do_script(getValueDictByKey(\"DictKey_ActionText_259\"));",
-			[28] = "a_activate_group(57); mission.trig.func[28]=nil;",
-			[29] = "a_activate_group(58); mission.trig.func[29]=nil;",
-			[30] = "a_activate_group(59); mission.trig.func[30]=nil;"
+			"a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",
+			"a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30); mission.trig.func[2]=nil;",
+			"a_inc_flag(1, 1);",
+			"a_inc_flag(2, 1);",
+			"a_inc_flag(3, 1);",
+			"a_inc_flag(30, 1);",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_52\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_53\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_54\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_86\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_90\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_107\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_91\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_89\"));",
+			"a_inc_flag(7, 1);",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_139\"));",
+			"a_inc_flag(77, 1);",
+			"a_set_flag_random(33, 1, 7);",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_259\"), 92, false, false, 30000, 100, \"Garryowen\");",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_260\"), 92, false, false, 30000, 100, \"Hold Me Thrill Me Kiss Me\");",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_261\"), 92, false, false, 30000, 100, \"Sgt MacKenzie\");",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_262\"), 92, false, false, 30000, 100, \"Good Morning Vietnam\");",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_263\"), 92, false, false, 30000, 100, \"We've Gotta Get Out Of This Place\");",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_264\"), 92, false, false, 30000, 100, \"Fortunate Son\");",
+			"a_radio_transmission(getValueResourceByKey(\"ResKey_Action_265\"), 92, false, false, 30000, 100, \"Paint It Black\");",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_254\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_255\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_256\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_257\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_258\"));",
+			"a_do_script(getValueDictByKey(\"DictKey_ActionText_259\"));",
+			"a_activate_group(57); mission.trig.func[28]=nil;",
+			"a_activate_group(58); mission.trig.func[29]=nil;",
+			"a_activate_group(59); mission.trig.func[30]=nil;"
 		},
 		conditions = {
-			[1] = "return(true)",
-			[2] = "return(c_time_after(3) )",
-			[3] = "return(c_time_since_flag(1, 10) )",
-			[4] = "return(c_time_since_flag(2, 20) )",
-			[5] = "return(c_time_since_flag(3, 30) )",
-			[6] = "return(c_time_since_flag(30, 300) )",
-			[7] = "return(c_time_since_flag(1, 1) )",
-			[8] = "return(c_time_since_flag(1, 5) )",
-			[9] = "return(c_time_since_flag(3, 15) )",
-			[10] = "return(c_time_since_flag(7, 10) )",
-			[11] = "return(c_time_since_flag(7, 150) )",
-			[12] = "return(c_time_since_flag(77, 10) )",
-			[13] = "return(c_time_since_flag(77, 150) )",
-			[14] = "return(c_time_since_flag(30, 10) )",
-			[15] = "return(c_flag_equals(33, 1) )",
-			[16] = "return(c_flag_equals(33, 2) )",
-			[17] = "return(c_flag_equals(33, 3) )",
-			[18] = "return(c_flag_equals(33, 4) )",
-			[19] = "return(c_flag_equals(33, 5) )",
-			[20] = "return(c_flag_equals(33, 6) )",
-			[21] = "return(c_flag_equals(33, 7) )",
-			[22] = "return(c_unit_argument_in_range(35, 38, 0.9, 1) )",
-			[23] = "return(c_unit_argument_in_range(36, 38, 0.9, 1) )",
-			[24] = "return(c_unit_argument_in_range(37, 38, 0.9, 1) )",
-			[25] = "return(c_unit_argument_in_range(100, 38, 0.9, 1) )",
-			[26] = "return(c_unit_argument_in_range(101, 38, 0.9, 1) )",
-			[27] = "return(c_time_since_flag(3, 1) )",
-			[28] = "return(c_unit_alive(102) )",
-			[29] = "return(c_unit_alive(103) )",
-			[30] = "return(c_unit_alive(104) )"
+			"return(true)",
+			"return(c_time_after(3) )",
+			"return(c_time_since_flag(1, 10) )",
+			"return(c_time_since_flag(2, 20) )",
+			"return(c_time_since_flag(3, 30) )",
+			"return(c_time_since_flag(30, 300) )",
+			"return(c_time_since_flag(1, 1) )",
+			"return(c_time_since_flag(1, 5) )",
+			"return(c_time_since_flag(3, 15) )",
+			"return(c_time_since_flag(7, 10) )",
+			"return(c_time_since_flag(7, 150) )",
+			"return(c_time_since_flag(77, 10) )",
+			"return(c_time_since_flag(77, 150) )",
+			"return(c_time_since_flag(30, 10) )",
+			"return(c_flag_equals(33, 1) )",
+			"return(c_flag_equals(33, 2) )",
+			"return(c_flag_equals(33, 3) )",
+			"return(c_flag_equals(33, 4) )",
+			"return(c_flag_equals(33, 5) )",
+			"return(c_flag_equals(33, 6) )",
+			"return(c_flag_equals(33, 7) )",
+			"return(c_unit_argument_in_range(35, 38, 0.9, 1) )",
+			"return(c_unit_argument_in_range(36, 38, 0.9, 1) )",
+			"return(c_unit_argument_in_range(37, 38, 0.9, 1) )",
+			"return(c_unit_argument_in_range(100, 38, 0.9, 1) )",
+			"return(c_unit_argument_in_range(101, 38, 0.9, 1) )",
+			"return(c_time_since_flag(3, 1) )",
+			"return(c_unit_alive(102) )",
+			"return(c_unit_alive(103) )",
+			"return(c_unit_alive(104) )"
 		},
 		custom = {},
 		customStartup = {},
 		events = {},
 		flag = {
-			[1] = true,
-			[2] = true,
-			[3] = true,
-			[4] = true,
-			[5] = true,
-			[6] = true,
-			[7] = true,
-			[8] = true,
-			[9] = true,
-			[10] = true,
-			[11] = true,
-			[12] = true,
-			[13] = true,
-			[14] = true,
-			[15] = true,
-			[16] = true,
-			[17] = true,
-			[18] = true,
-			[19] = true,
-			[20] = true,
-			[21] = true,
-			[22] = true,
-			[23] = true,
-			[24] = true,
-			[25] = true,
-			[26] = true,
-			[27] = true,
-			[28] = true,
-			[29] = true,
-			[30] = true
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true
 		},
 		func = {
 			[2] = "if mission.trig.conditions[2]() then mission.trig.actions[2]() end",
@@ -4451,17 +4451,17 @@ mission = {
 			[30] = "if mission.trig.conditions[30]() then mission.trig.actions[30]() end"
 		},
 		funcStartup = {
-			[1] = "if mission.trig.conditions[1]() then mission.trig.actions[1]() end"
+			"if mission.trig.conditions[1]() then mission.trig.actions[1]() end"
 		}
 	},
 	triggers = {
 		zones = {
-			[1] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "1/7 Cav",
@@ -4470,12 +4470,12 @@ mission = {
 				y = -55198.072745939,
 				zoneId = 46
 			},
-			[2] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "Cav",
@@ -4484,12 +4484,12 @@ mission = {
 				y = -55228.358460225,
 				zoneId = 92
 			},
-			[3] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "2/7 Cav",
@@ -4498,12 +4498,12 @@ mission = {
 				y = -55206.358460225,
 				zoneId = 138
 			},
-			[4] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "2/5 Cav",
@@ -4512,12 +4512,12 @@ mission = {
 				y = -55230.644174511,
 				zoneId = 184
 			},
-			[5] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "VPA",
@@ -4526,12 +4526,12 @@ mission = {
 				y = -73039.501317369,
 				zoneId = 230
 			},
-			[6] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "1/33 VPA",
@@ -4540,12 +4540,12 @@ mission = {
 				y = -73490.644174512,
 				zoneId = 231
 			},
-			[7] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "3/33 VPA",
@@ -4554,12 +4554,12 @@ mission = {
 				y = -73898.072745941,
 				zoneId = 277
 			},
-			[8] = {
+			{
 				color = {
-					[1] = 1,
-					[2] = 1,
-					[3] = 1,
-					[4] = 0.15
+					1,
+					1,
+					1,
+					0.15
 				},
 				hidden = false,
 				name = "7/66 VPA",
@@ -4571,20 +4571,20 @@ mission = {
 		}
 	},
 	trigrules = {
-		[1] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					file = "ResKey_Action_5",
 					predicate = "a_do_script_file"
 				},
-				[2] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					file = "ResKey_Action_46",
 					predicate = "a_do_script_file"
@@ -4595,42 +4595,42 @@ mission = {
 			predicate = "triggerStart",
 			rules = {}
 		},
-		[2] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 1,
 					KeyDict_text = "DictKey_ActionText_49",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_49"
 				},
-				[2] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 2,
 					KeyDict_text = "DictKey_ActionText_50",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_50"
 				},
-				[3] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 3,
 					KeyDict_text = "DictKey_ActionText_51",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_51"
 				},
-				[4] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 30,
 					KeyDict_text = "DictKey_ActionText_140",
@@ -4642,7 +4642,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerOnce",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					predicate = "c_time_after",
 					seconds = 3,
@@ -4650,12 +4650,12 @@ mission = {
 				}
 			}
 		},
-		[3] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 1,
 					predicate = "a_inc_flag",
@@ -4666,7 +4666,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 1,
 					predicate = "c_time_since_flag",
@@ -4675,12 +4675,12 @@ mission = {
 				}
 			}
 		},
-		[4] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 2,
 					predicate = "a_inc_flag",
@@ -4691,7 +4691,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 2,
 					predicate = "c_time_since_flag",
@@ -4700,12 +4700,12 @@ mission = {
 				}
 			}
 		},
-		[5] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 3,
 					predicate = "a_inc_flag",
@@ -4716,7 +4716,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 3,
 					predicate = "c_time_since_flag",
@@ -4725,12 +4725,12 @@ mission = {
 				}
 			}
 		},
-		[6] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 30,
 					predicate = "a_inc_flag",
@@ -4741,7 +4741,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 30,
 					predicate = "c_time_since_flag",
@@ -4750,30 +4750,30 @@ mission = {
 				}
 			}
 		},
-		[7] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_52",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_52"
 				},
-				[2] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_53",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_53"
 				},
-				[3] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_54",
 					predicate = "a_do_script",
@@ -4784,7 +4784,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 1,
 					predicate = "c_time_since_flag",
@@ -4793,30 +4793,30 @@ mission = {
 				}
 			}
 		},
-		[8] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_86",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_86"
 				},
-				[2] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_90",
 					predicate = "a_do_script",
 					text = "DictKey_ActionText_90"
 				},
-				[3] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_107",
 					predicate = "a_do_script",
@@ -4827,7 +4827,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 1,
 					predicate = "c_time_since_flag",
@@ -4836,12 +4836,12 @@ mission = {
 				}
 			}
 		},
-		[9] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_91",
 					predicate = "a_do_script",
@@ -4852,7 +4852,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 3,
 					predicate = "c_time_since_flag",
@@ -4861,12 +4861,12 @@ mission = {
 				}
 			}
 		},
-		[10] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_89",
 					predicate = "a_do_script",
@@ -4877,7 +4877,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 7,
 					predicate = "c_time_since_flag",
@@ -4886,12 +4886,12 @@ mission = {
 				}
 			}
 		},
-		[11] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 7,
 					predicate = "a_inc_flag",
@@ -4902,7 +4902,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 7,
 					predicate = "c_time_since_flag",
@@ -4911,12 +4911,12 @@ mission = {
 				}
 			}
 		},
-		[12] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_139",
 					predicate = "a_do_script",
@@ -4927,7 +4927,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 77,
 					predicate = "c_time_since_flag",
@@ -4936,12 +4936,12 @@ mission = {
 				}
 			}
 		},
-		[13] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 77,
 					predicate = "a_inc_flag",
@@ -4952,7 +4952,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 77,
 					predicate = "c_time_since_flag",
@@ -4961,12 +4961,12 @@ mission = {
 				}
 			}
 		},
-		[14] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					flag = 33,
 					max_value = 7,
@@ -4978,7 +4978,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 30,
 					predicate = "c_time_since_flag",
@@ -4987,12 +4987,12 @@ mission = {
 				}
 			}
 		},
-		[15] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5014,7 +5014,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5023,12 +5023,12 @@ mission = {
 				}
 			}
 		},
-		[16] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5050,7 +5050,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5059,12 +5059,12 @@ mission = {
 				}
 			}
 		},
-		[17] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5086,7 +5086,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5095,12 +5095,12 @@ mission = {
 				}
 			}
 		},
-		[18] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5122,7 +5122,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5131,12 +5131,12 @@ mission = {
 				}
 			}
 		},
-		[19] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5158,7 +5158,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5167,12 +5167,12 @@ mission = {
 				}
 			}
 		},
-		[20] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5194,7 +5194,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5203,12 +5203,12 @@ mission = {
 				}
 			}
 		},
-		[21] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					argument = 0,
 					coalitionlist = "blue",
@@ -5230,7 +5230,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 33,
 					predicate = "c_flag_equals",
@@ -5239,12 +5239,12 @@ mission = {
 				}
 			}
 		},
-		[22] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_254",
 					predicate = "a_do_script",
@@ -5255,7 +5255,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
@@ -5266,12 +5266,12 @@ mission = {
 				}
 			}
 		},
-		[23] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_255",
 					predicate = "a_do_script",
@@ -5282,7 +5282,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
@@ -5293,12 +5293,12 @@ mission = {
 				}
 			}
 		},
-		[24] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_256",
 					predicate = "a_do_script",
@@ -5309,7 +5309,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
@@ -5320,12 +5320,12 @@ mission = {
 				}
 			}
 		},
-		[25] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_257",
 					predicate = "a_do_script",
@@ -5336,7 +5336,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
@@ -5347,12 +5347,12 @@ mission = {
 				}
 			}
 		},
-		[26] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_258",
 					predicate = "a_do_script",
@@ -5363,7 +5363,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					argument = 38,
 					coalitionlist = "red",
 					predicate = "c_unit_argument_in_range",
@@ -5374,12 +5374,12 @@ mission = {
 				}
 			}
 		},
-		[27] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					KeyDict_text = "DictKey_ActionText_259",
 					predicate = "a_do_script",
@@ -5390,7 +5390,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerFront",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					flag = 3,
 					predicate = "c_time_since_flag",
@@ -5399,12 +5399,12 @@ mission = {
 				}
 			}
 		},
-		[28] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					group = 57,
 					predicate = "a_activate_group"
@@ -5414,7 +5414,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerOnce",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					predicate = "c_unit_alive",
 					unit = 102,
@@ -5422,12 +5422,12 @@ mission = {
 				}
 			}
 		},
-		[29] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					group = 58,
 					predicate = "a_activate_group"
@@ -5437,7 +5437,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerOnce",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					predicate = "c_unit_alive",
 					unit = 103,
@@ -5445,12 +5445,12 @@ mission = {
 				}
 			}
 		},
-		[30] = {
+		{
 			actions = {
-				[1] = {
+				{
 					ai_task = {
-						[1] = "",
-						[2] = ""
+						"",
+						""
 					},
 					group = 59,
 					predicate = "a_activate_group"
@@ -5460,7 +5460,7 @@ mission = {
 			eventlist = "",
 			predicate = "triggerOnce",
 			rules = {
-				[1] = {
+				{
 					coalitionlist = "red",
 					predicate = "c_unit_alive",
 					unit = 104,
@@ -5479,7 +5479,7 @@ mission = {
 			thickness = 200
 		},
 		cyclones = {
-			[1] = {
+			{
 				centerX = -323707.70359737,
 				centerZ = -201858.77666604,
 				ellipticity = 0.95896879244585,

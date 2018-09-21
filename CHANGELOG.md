@@ -1,5 +1,16 @@
 # Change Log
 
+## Version 0.7, 21 September 2018
+
+- Upgraded for DCS v2.5.3.21708
+- Randomise vpa.attackInZone task assigns
+- Avoid lagging
+- Labels are NONE, i.e. 0
+- Upgrade R3DL1N3 to 98863b5
+
+Many thanks to Durham and the [16th Air Guards Regiment](http://www.16agr.com)
+for their feedback and testing.
+
 ## Version 0.6, 18 August 2017
 
 - Merge branch 'feature/2.1.1.8491' into develop

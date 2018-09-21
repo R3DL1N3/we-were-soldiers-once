@@ -1,9 +1,6 @@
 warehouses = {
 	airports = {
 		[1] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "RED",
 			diesel = {
@@ -18,6 +15,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -28,9 +28,6 @@ warehouses = {
 			weapons = {}
 		},
 		[2] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -45,6 +42,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -55,9 +55,6 @@ warehouses = {
 			weapons = {}
 		},
 		[3] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -72,6 +69,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -82,9 +82,6 @@ warehouses = {
 			weapons = {}
 		},
 		[4] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "BLUE",
 			diesel = {
@@ -99,6 +96,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -109,9 +109,6 @@ warehouses = {
 			weapons = {}
 		},
 		[5] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -126,6 +123,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -136,9 +136,6 @@ warehouses = {
 			weapons = {}
 		},
 		[6] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -153,6 +150,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -163,9 +163,6 @@ warehouses = {
 			weapons = {}
 		},
 		[7] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -180,6 +177,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -190,9 +190,6 @@ warehouses = {
 			weapons = {}
 		},
 		[8] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -207,6 +204,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -217,9 +217,6 @@ warehouses = {
 			weapons = {}
 		},
 		[9] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -234,6 +231,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -244,9 +244,6 @@ warehouses = {
 			weapons = {}
 		},
 		[10] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -261,6 +258,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -271,9 +271,6 @@ warehouses = {
 			weapons = {}
 		},
 		[11] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -288,6 +285,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -298,9 +298,6 @@ warehouses = {
 			weapons = {}
 		},
 		[13] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -315,6 +312,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -325,9 +325,6 @@ warehouses = {
 			weapons = {}
 		},
 		[14] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -342,6 +339,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -352,9 +352,6 @@ warehouses = {
 			weapons = {}
 		},
 		[15] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -369,6 +366,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -379,9 +379,6 @@ warehouses = {
 			weapons = {}
 		},
 		[16] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -396,6 +393,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -406,9 +406,6 @@ warehouses = {
 			weapons = {}
 		},
 		[17] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -423,6 +420,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -433,9 +433,6 @@ warehouses = {
 			weapons = {}
 		},
 		[18] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "NEUTRAL",
 			diesel = {
@@ -450,6 +447,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -462,9 +462,6 @@ warehouses = {
 	},
 	warehouses = {
 		[1] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "blue",
 			diesel = {
@@ -479,6 +476,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -489,9 +489,6 @@ warehouses = {
 			weapons = {}
 		},
 		[38] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "blue",
 			diesel = {
@@ -506,6 +503,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,
@@ -516,9 +516,6 @@ warehouses = {
 			weapons = {}
 		},
 		[56] = {
-			OperatingLevel_Air = 10,
-			OperatingLevel_Eqp = 10,
-			OperatingLevel_Fuel = 10,
 			aircrafts = {},
 			coalition = "red",
 			diesel = {
@@ -533,6 +530,9 @@ warehouses = {
 			methanol_mixture = {
 				InitFuel = 100
 			},
+			OperatingLevel_Air = 10,
+			OperatingLevel_Eqp = 10,
+			OperatingLevel_Fuel = 10,
 			periodicity = 30,
 			size = 100,
 			speed = 16.666666,

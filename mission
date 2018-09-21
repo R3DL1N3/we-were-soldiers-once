@@ -4170,10 +4170,10 @@ mission = {
 			49
 		}
 	},
-	currentKey = 31498,
+	currentKey = 32142,
 	date = {
 		Day = 14,
-		Month = 11,
+		Month = 6,
 		Year = 1965
 	},
 	descriptionBlueTask = "DictKey_descriptionBlueTask_3",
@@ -4229,9 +4229,9 @@ mission = {
 		}
 	},
 	map = {
-		centerX = -312597.87075095,
-		centerY = 734049.41537464,
-		zoom = 6932.1248516805
+		centerX = -341843.16621777,
+		centerY = 741422.93322636,
+		zoom = 249926.19129246
 	},
 	maxDictId = 297,
 	pictureFileNameB = {

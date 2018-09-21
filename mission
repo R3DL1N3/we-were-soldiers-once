@@ -5426,12 +5426,12 @@ mission = {
 		},
 		cyclones = {
 			{
-				centerX = -323707.70359737,
-				centerZ = -201858.77666604,
-				ellipticity = 0.95896879244585,
-				pressure_excess = -1279,
-				pressure_spread = 842553.16070292,
-				rotation = 0.8031917238797
+				centerX = -119097.61183486,
+				centerZ = 324303.01583406,
+				ellipticity = 0.93086346662806,
+				pressure_excess = -1258,
+				pressure_spread = 900722.83613543,
+				rotation = 1.012968287179
 			}
 		},
 		dust_density = 0,

@@ -5435,7 +5435,7 @@ mission = {
 			}
 		},
 		dust_density = 0,
-		enable_dust = false,
+		enable_dust = true,
 		enable_fog = true,
 		fog = {
 			thickness = 0,

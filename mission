@@ -2,8 +2,8 @@ mission = {
 	coalition = {
 		blue = {
 			bullseye = {
-				x = -394502.65365034,
-				y = -55317.501317367
+				x = -345312.18150644,
+				y = 739377.66169339
 			},
 			country = {
 				{
@@ -2819,8 +2819,8 @@ mission = {
 		},
 		red = {
 			bullseye = {
-				x = -396175.71428571,
-				y = -73040
+				x = -347892.48644039,
+				y = 735796.16978863
 			},
 			country = {
 				{
@@ -4318,7 +4318,7 @@ mission = {
 	},
 	sortie = "DictKey_sortie_4",
 	start_time = 38100,
-	theatre = "Nevada",
+	theatre = "Caucasus",
 	trig = {
 		actions = {
 			"a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",

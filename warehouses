@@ -353,7 +353,7 @@ warehouses = {
 		},
 		[25] = {
 			aircrafts = {},
-			coalition = "NEUTRAL",
+			coalition = "RED",
 			diesel = {
 				InitFuel = 100
 			},
@@ -461,7 +461,7 @@ warehouses = {
 		},
 		[29] = {
 			aircrafts = {},
-			coalition = "NEUTRAL",
+			coalition = "BLUE",
 			diesel = {
 				InitFuel = 100
 			},
@@ -488,7 +488,7 @@ warehouses = {
 		},
 		[30] = {
 			aircrafts = {},
-			coalition = "NEUTRAL",
+			coalition = "BLUE",
 			diesel = {
 				InitFuel = 100
 			},
@@ -515,7 +515,7 @@ warehouses = {
 		},
 		[31] = {
 			aircrafts = {},
-			coalition = "NEUTRAL",
+			coalition = "BLUE",
 			diesel = {
 				InitFuel = 100
 			},

@@ -5438,8 +5438,8 @@ mission = {
 		enable_dust = true,
 		enable_fog = true,
 		fog = {
-			thickness = 0,
-			visibility = 25
+			thickness = 220,
+			visibility = 370
 		},
 		groundTurbulence = 0,
 		name = "Winter, clean sky",

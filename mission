@@ -2874,7 +2874,41 @@ mission = {
 											task = {
 												id = "ComboTask",
 												params = {
-													tasks = {}
+													tasks = {
+														{
+															auto = false,
+															enabled = true,
+															id = "WrappedAction",
+															number = 1,
+															params = {
+																action = {
+																	id = "SetFrequency",
+																	params = {
+																		frequency = 31000000,
+																		modulation = 1,
+																		power = 10
+																	}
+																}
+															}
+														},
+														{
+															auto = false,
+															enabled = true,
+															id = "WrappedAction",
+															number = 2,
+															params = {
+																action = {
+																	id = "TransmitMessage",
+																	params = {
+																		duration = 5,
+																		file = "ResKey_advancedFile_299",
+																		loop = true,
+																		subtitle = "DictKey_subtitle_298"
+																	}
+																}
+															}
+														}
+													}
 												}
 											},
 											type = "Turning Point",
@@ -4170,7 +4204,7 @@ mission = {
 			49
 		}
 	},
-	currentKey = 47111,
+	currentKey = 48425,
 	date = {
 		Day = 14,
 		Month = 6,
@@ -4229,11 +4263,11 @@ mission = {
 		}
 	},
 	map = {
-		centerX = -109789.54388107,
-		centerY = 487427.72042636,
+		centerX = -164124.685258,
+		centerY = 499577.46257164,
 		zoom = 495144.17588204
 	},
-	maxDictId = 297,
+	maxDictId = 299,
 	pictureFileNameB = {
 		"ResKey_ImageBriefing_231",
 		"ResKey_ImageBriefing_232",
@@ -4268,7 +4302,7 @@ mission = {
 	trig = {
 		actions = {
 			"a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",
-			"a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30); mission.trig.func[2]=nil;",
+			"a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30);a_unit_emission_on(46); mission.trig.func[2]=nil;",
 			"a_inc_flag(1, 1);",
 			"a_inc_flag(2, 1);",
 			"a_inc_flag(3, 1);",
@@ -4582,6 +4616,14 @@ mission = {
 					KeyDict_text = "DictKey_ActionText_140",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_140"
+				},
+				{
+					ai_task = {
+						"",
+						""
+					},
+					predicate = "a_unit_emission_on",
+					unit = 46
 				}
 			},
 			comment = "After 3 Seconds",

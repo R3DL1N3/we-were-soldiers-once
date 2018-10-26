@@ -4297,7 +4297,7 @@ mission = {
 		total = 0
 	},
 	sortie = "DictKey_sortie_4",
-	start_time = 19800,
+	start_time = 21600,
 	theatre = "Caucasus",
 	trig = {
 		actions = {

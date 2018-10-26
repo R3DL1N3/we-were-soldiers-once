@@ -171,6 +171,9 @@ end
 function vpa.attackInZone(zone)
   if #coalition.getPlayers(coalition.side.RED) > 0 then return end
   local units = Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND)
+  for unit in Unit.unitsInZone(zone, coalition.side.BLUE, Group.Category.HELICOPTER) do
+    table.insert(units, unit)
+  end
   local filteredGroups = Group.filtered(coalition.side.RED, Group.Category.GROUND, function(group)
     return vpa.names:includesGroup(group)
   end)

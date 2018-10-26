@@ -4297,7 +4297,7 @@ mission = {
 		total = 0
 	},
 	sortie = "DictKey_sortie_4",
-	start_time = 38100,
+	start_time = 19800,
 	theatre = "Caucasus",
 	trig = {
 		actions = {
@@ -5480,7 +5480,7 @@ mission = {
 		enable_dust = true,
 		enable_fog = true,
 		fog = {
-			thickness = 220,
+			thickness = 330,
 			visibility = 370
 		},
 		groundTurbulence = 2.1336,

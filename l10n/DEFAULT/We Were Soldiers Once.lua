@@ -98,7 +98,7 @@ world.addEventFunction(function(event)
 end)
 
 local cavMax = 1000
-local vpaMax = 2500
+local vpaMax = 3000
 
 function kia.out(seconds)
   local cav = kia[coalition.side.BLUE] or 0

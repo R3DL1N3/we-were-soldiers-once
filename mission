@@ -454,17 +454,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -574,17 +568,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -694,17 +682,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -814,17 +796,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -934,17 +910,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},

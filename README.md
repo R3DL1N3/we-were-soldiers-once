@@ -21,39 +21,3 @@ Oh, yes, and one more thing, dear Lord, about our enemies, ignore their heathen 
 Are you wondering what was going through Custer’s mind when he realised that he’d led his men into a slaughter? Don’t. Custer was a pussy. You ain’t. You need us, you call us!
 
 Play as Lt Col Nguyen Huu An, commanding the Vietnamese People’s Army from a bunker on the slopes of Chu Pong. Move inside the column, grab them by the belt, and thus avoid casualties from the artillery and air.
-
-Version 0.7, 21 September 2018
-- Upgraded for DCS v2.5.3.21708
-- Randomise vpa.attackInZone task assigns
-- Avoid lagging
-- Labels are NONE, i.e. 0
-- Upgrade R3DL1N3 to 98863b5
-
-Version 0.6, 18 August 2017
-- Group clean-up every 30s; stagger spawning and attacking triggers
-- Guard for empty groups
-- VPA attack off-road
-- Updated R3DL1N3 script
-- Adjusted options
-- New 2.1.1 Update 2 (2.1.1.8491) options
-
-Version 0.5 changes, 11 May 2017:
-- Added note about triple scoring for disembarked chalks
-- Fixed chalk rotation: heading increases anti-clockwise
-
-Version 0.4 changes, 12 April 2017:
-- Three extra AAA units, spawned when Skyraiders come alive
-- Added three-element Checkertail flight
-- Added F-86F Checkertails to briefing
-- Pretend the MiG-15s are Chinese Shenyang J-5s
-
-Version 0.3 changes, 11 April 2017:
-- Creech AFB is red, Nellis AFB is blue
-- Added Skyraider and Redstar flights
-- Play music on 30.00FM
-- Destroy empty groups every five minutes
-- Fix embedded quotes: single not double
-- Always play a tune every five minutes; players can turn it off now
-- Briefing about Armed Forces Radio Vietnam
-- Fix chalk embarking-disembarking briefing
-- Resampled audio files to 22.05kHz; no normalisation

@@ -1,5 +1,32 @@
 # Change Log
 
+## Version 1.0, 6 September 2020
+
+- No mini-guns on the slicks
+- Fix parking places
+- 3,000-strong VPA division
+- 6am start
+- Early dawn, more fog, more aggression
+- Updated description, including TL;DR
+- Match blue to red buls
+- SetFrequency and TransmitMessage for 31 FM beacon
+- Score reports Cav and VPA maximums
+- LZ X-ray changed to EJ83; groundTurbulence increased
+- Blue/Red airbases changed to Gudauta and Maykop
+- Light fog
+- Airbase alignments
+- New random dynamic weather
+- Enable dust
+- Month of June
+- Fixed-wing start in air, pre-equiped; (x, y) location adjustments for Caucasus
+  terrain; warehouses updated
+- Switch to Caucasus theatre; LM30
+- Remove redundant array-table indices
+- Elide redundant difficulty options
+
+Lots of changes. Primarily, relocated from Nevada to the Caucasus map. Belated
+release. Thanks to NoFear1979 for prompting an update.
+
 ## Version 0.7, 21 September 2018
 
 - Upgraded for DCS v2.5.3.21708

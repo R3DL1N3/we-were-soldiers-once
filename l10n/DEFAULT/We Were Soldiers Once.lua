@@ -1,6 +1,6 @@
 -- R3DL1N3/We Were Soldiers Once.lua
 --
--- Copyright © 2017, R3DL1N3, United Kingdom
+-- Copyright © 2017, 2018, R3DL1N3, United Kingdom
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the “Software”), to
@@ -97,10 +97,13 @@ world.addEventFunction(function(event)
   end
 end)
 
+local cavMax = 1000
+local vpaMax = 3000
+
 function kia.out(seconds)
   local cav = kia[coalition.side.BLUE] or 0
   local vpa = kia[coalition.side.RED] or 0
-  local text = 'KIA Cav ' .. cav .. ', VPA ' .. vpa
+  local text = 'KIA Cav ' .. cav .. '/' .. cavMax .. ', VPA ' .. vpa .. '/' .. vpaMax
   trigger.action.outText(text, seconds or 3)
 end
 
@@ -117,7 +120,7 @@ cav = {
 -- Spawns one chalk of Cavalry.
 function cav.spawnChalk(fromZone, toZone)
   if #Unit.allInZone(fromZone, coalition.side.BLUE, Group.Category.GROUND) ~= 0 then return end
-  if cav.names.unitCounter.counter >= 1000 then return end
+  if cav.names.unitCounter.counter >= cavMax then return end
   if #table.fromiter(Unit.filtered(coalition.side.BLUE, Group.Category.GROUND)) >= 150 then return end
   local units = Units()
   units:addType('Soldier M4', 7)
@@ -147,7 +150,7 @@ vpa = {
 
 function vpa.spawnSquad(zone)
   if #Unit.allInZone(zone, coalition.side.RED, Group.Category.GROUND) ~= 0 then return end
-  if vpa.names.unitCounter.counter >= 2500 then return end
+  if vpa.names.unitCounter.counter >= vpaMax then return end
   if #table.fromiter(Unit.filtered(coalition.side.RED, Group.Category.GROUND)) >= 300 then return end
   local units = Units()
   units:addType('Infantry AK', 7)
@@ -168,6 +171,9 @@ end
 function vpa.attackInZone(zone)
   if #coalition.getPlayers(coalition.side.RED) > 0 then return end
   local units = Unit.allInZone(zone, coalition.side.BLUE, Group.Category.GROUND)
+  for unit in Unit.unitsInZone(zone, coalition.side.BLUE, Group.Category.HELICOPTER) do
+    table.insert(units, unit)
+  end
   local filteredGroups = Group.filtered(coalition.side.RED, Group.Category.GROUND, function(group)
     return vpa.names:includesGroup(group)
   end)

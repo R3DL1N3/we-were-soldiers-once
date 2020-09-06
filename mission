@@ -194,8 +194,8 @@ mission = {
 										livery_id = "US ARMY 1972",
 										name = "DictKey_UnitName_41",
 										onboard_num = "051",
-										parking = "1",
-										parking_id = "1",
+										parking = 2,
+										parking_id = "2",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -320,8 +320,8 @@ mission = {
 										livery_id = "US ARMY 1972",
 										name = "DictKey_UnitName_44",
 										onboard_num = "052",
-										parking = "1",
-										parking_id = "1",
+										parking = 3,
+										parking_id = "3",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -454,17 +454,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -566,25 +560,19 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_130",
 										onboard_num = "054",
-										parking = "1",
-										parking_id = "1",
+										parking = 2,
+										parking_id = "2",
 										payload = {
 											chaff = 0,
 											flare = 60,
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -686,25 +674,19 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_134",
 										onboard_num = "055",
-										parking = "1",
-										parking_id = "1",
+										parking = 3,
+										parking_id = "3",
 										payload = {
 											chaff = 0,
 											flare = 60,
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -806,25 +788,19 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_249",
 										onboard_num = "056",
-										parking = "1",
-										parking_id = "1",
+										parking = 4,
+										parking_id = "4",
 										payload = {
 											chaff = 0,
 											flare = 60,
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -934,17 +910,11 @@ mission = {
 											fuel = 316,
 											gun = 100,
 											pylons = {
-												[1] = {
-													CLSID = "M134_L"
-												},
 												[3] = {
 													CLSID = "M60_SIDE_L"
 												},
 												[4] = {
 													CLSID = "M60_SIDE_R"
-												},
-												[6] = {
-													CLSID = "M134_R"
 												}
 											}
 										},
@@ -4297,7 +4267,7 @@ mission = {
 		total = 0
 	},
 	sortie = "DictKey_sortie_4",
-	start_time = 38100,
+	start_time = 21600,
 	theatre = "Caucasus",
 	trig = {
 		actions = {
@@ -5480,7 +5450,7 @@ mission = {
 		enable_dust = true,
 		enable_fog = true,
 		fog = {
-			thickness = 220,
+			thickness = 330,
 			visibility = 370
 		},
 		groundTurbulence = 2.1336,

@@ -2,8 +2,8 @@ mission = {
 	coalition = {
 		blue = {
 			bullseye = {
-				x = -394502.65365034,
-				y = -55317.501317367
+				x = -142460.34757928,
+				y = 471885.92542236
 			},
 			country = {
 				{
@@ -21,7 +21,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 2541,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -29,13 +29,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_39",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -45,8 +38,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -62,7 +55,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 2541,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 1,
@@ -75,6 +68,8 @@ mission = {
 										livery_id = "US ARMY 1972",
 										name = "DictKey_UnitName_38",
 										onboard_num = "050",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -101,7 +96,7 @@ mission = {
 												}
 											}
 										},
-										psi = -5.235987755983,
+										psi = 0,
 										Radio = {
 											{
 												channels = {
@@ -133,12 +128,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 12,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -152,7 +147,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 2541,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -160,13 +155,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_42",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -176,8 +164,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -193,7 +181,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 2541,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 2,
@@ -206,6 +194,8 @@ mission = {
 										livery_id = "US ARMY 1972",
 										name = "DictKey_UnitName_41",
 										onboard_num = "051",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -232,7 +222,7 @@ mission = {
 												}
 											}
 										},
-										psi = -5.235987755983,
+										psi = 0,
 										Radio = {
 											{
 												channels = {
@@ -264,12 +254,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 13,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -283,7 +273,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 2541,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -291,13 +281,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_45",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -307,8 +290,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -324,7 +307,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 2541,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 3,
@@ -337,6 +320,8 @@ mission = {
 										livery_id = "US ARMY 1972",
 										name = "DictKey_UnitName_44",
 										onboard_num = "052",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -363,7 +348,7 @@ mission = {
 												}
 											}
 										},
-										psi = -5.235987755983,
+										psi = 0,
 										Radio = {
 											{
 												channels = {
@@ -395,12 +380,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 14,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -414,7 +399,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 464,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -422,13 +407,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_128",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -438,8 +416,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -455,7 +433,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 464,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 4,
@@ -468,6 +446,8 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_127",
 										onboard_num = "053",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -520,12 +500,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 35,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -539,7 +519,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 464,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -547,13 +527,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_131",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -563,8 +536,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -580,7 +553,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 464,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 5,
@@ -593,6 +566,8 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_130",
 										onboard_num = "054",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -645,12 +620,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 36,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -664,7 +639,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 464,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -672,13 +647,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_135",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -688,8 +656,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -705,7 +673,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 464,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 6,
@@ -718,6 +686,8 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_134",
 										onboard_num = "055",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -770,12 +740,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 37,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -789,7 +759,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 464,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -797,13 +767,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_250",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -813,8 +776,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -830,7 +793,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 464,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 7,
@@ -843,6 +806,8 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_249",
 										onboard_num = "056",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -895,12 +860,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 100,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							},
 							{
 								communication = true,
@@ -914,7 +879,7 @@ mission = {
 									points = {
 										{
 											action = "From Parking Area",
-											alt = 1876,
+											alt = 464,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -922,13 +887,6 @@ mission = {
 											helipadId = 38,
 											linkUnit = 38,
 											name = "DictKey_WptName_253",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 41.666666666667,
 											speed_locked = true,
 											task = {
@@ -938,8 +896,8 @@ mission = {
 												}
 											},
 											type = "TakeOffParking",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
@@ -955,7 +913,7 @@ mission = {
 											GunnersAISkill = 90,
 											NetCrewControlPriority = 1
 										},
-										alt = 1876,
+										alt = 464,
 										alt_type = "BARO",
 										callsign = {
 											[1] = 8,
@@ -968,6 +926,8 @@ mission = {
 										livery_id = "Army Standard",
 										name = "DictKey_UnitName_252",
 										onboard_num = "057",
+										parking = "1",
+										parking_id = "1",
 										payload = {
 											chaff = 0,
 											flare = 60,
@@ -1020,12 +980,12 @@ mission = {
 										speed = 41.666666666667,
 										type = "UH-1H",
 										unitId = 101,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							}
 						}
 					},
@@ -1044,21 +1004,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 4,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 639.4704,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_262",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -1081,9 +1033,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -399571.9375,
-											y = -19235.65234375
+											type = "Turning Point",
+											x = -170436.6823625,
+											y = 513242.26513363
 										}
 									}
 								},
@@ -1106,8 +1058,8 @@ mission = {
 											LaserCode10 = 8,
 											LaserCode100 = 6
 										},
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 639.4704,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 1,
 											[2] = 2,
@@ -1119,8 +1071,6 @@ mission = {
 										livery_id = "USAF 'Southeast Asia'",
 										name = "DictKey_UnitName_261",
 										onboard_num = "010",
-										parking = "1",
-										parking_id = "F163",
 										payload = {
 											ammo_type = 1,
 											chaff = 30,
@@ -1152,16 +1102,42 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											{
+												channels = {
+													305,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
+												}
+											}
+										},
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "F-5E-3",
 										unitId = 102,
-										x = -399571.9375,
-										y = -19235.65234375
+										x = -170436.6823625,
+										y = 513242.26513363
 									}
 								},
-								x = -399571.9375,
-								y = -19235.65234375
+								x = -170436.6823625,
+								y = 513242.26513363
 							},
 							{
 								communication = true,
@@ -1174,21 +1150,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 4,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 639.4704,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_265",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -1211,9 +1179,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -399499.8125,
-											y = -19155.458984375
+											type = "Turning Point",
+											x = -170946.54361209,
+											y = 512908.69193544
 										}
 									}
 								},
@@ -1236,8 +1204,8 @@ mission = {
 											LaserCode10 = 8,
 											LaserCode100 = 6
 										},
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 639.4704,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 2,
 											[2] = 2,
@@ -1249,8 +1217,6 @@ mission = {
 										livery_id = "USAF 'Southeast Asia'",
 										name = "DictKey_UnitName_264",
 										onboard_num = "058",
-										parking = "2",
-										parking_id = "F162",
 										payload = {
 											ammo_type = 1,
 											chaff = 30,
@@ -1282,16 +1248,42 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											{
+												channels = {
+													305,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
+												}
+											}
+										},
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "F-5E-3",
 										unitId = 103,
-										x = -399499.8125,
-										y = -19155.458984375
+										x = -170946.54361209,
+										y = 512908.69193544
 									}
 								},
-								x = -399499.8125,
-								y = -19155.458984375
+								x = -170946.54361209,
+								y = 512908.69193544
 							},
 							{
 								communication = true,
@@ -1304,21 +1296,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 4,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 639.4704,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_268",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -1341,9 +1325,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -399382,
-											y = -19269.25390625
+											type = "Turning Point",
+											x = -170974.99470574,
+											y = 513527.50322237
 										}
 									}
 								},
@@ -1366,8 +1350,8 @@ mission = {
 											LaserCode10 = 8,
 											LaserCode100 = 6
 										},
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 639.4704,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 3,
 											[2] = 2,
@@ -1379,8 +1363,6 @@ mission = {
 										livery_id = "USAF 'Southeast Asia'",
 										name = "DictKey_UnitName_267",
 										onboard_num = "059",
-										parking = 0,
-										parking_id = "F164",
 										payload = {
 											ammo_type = 1,
 											chaff = 30,
@@ -1412,16 +1394,42 @@ mission = {
 											}
 										},
 										psi = 0,
+										Radio = {
+											{
+												channels = {
+													305,
+													264,
+													265,
+													256,
+													254,
+													250,
+													270,
+													257,
+													255,
+													262,
+													259,
+													268,
+													269,
+													260,
+													263,
+													261,
+													267,
+													251,
+													253,
+													266
+												}
+											}
+										},
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "F-5E-3",
 										unitId = 104,
-										x = -399382,
-										y = -19269.25390625
+										x = -170974.99470574,
+										y = 513527.50322237
 									}
 								},
-								x = -399382,
-								y = -19269.25390625
+								x = -170974.99470574,
+								y = 513527.50322237
 							},
 							{
 								communication = true,
@@ -1434,21 +1442,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 4,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 639.4704,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_281",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -1471,9 +1471,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -399113.96875,
-											y = -18563.66015625
+											type = "Turning Point",
+											x = -157687.82713107,
+											y = 517345.34497822
 										}
 									}
 								},
@@ -1483,8 +1483,8 @@ mission = {
 								uncontrolled = false,
 								units = {
 									{
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 639.4704,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 4,
 											[2] = 2,
@@ -1496,8 +1496,6 @@ mission = {
 										livery_id = "US Air Force (Squadron 39)",
 										name = "DictKey_UnitName_280",
 										onboard_num = "060",
-										parking = "3",
-										parking_id = "F174",
 										payload = {
 											chaff = 0,
 											flare = 0,
@@ -1559,12 +1557,12 @@ mission = {
 										speed = 138.88888888889,
 										type = "F-86F Sabre",
 										unitId = 108,
-										x = -399113.96875,
-										y = -18563.66015625
+										x = -157687.82713107,
+										y = 517345.34497822
 									}
 								},
-								x = -399113.96875,
-								y = -18563.66015625
+								x = -157687.82713107,
+								y = 517345.34497822
 							},
 							{
 								communication = true,
@@ -1577,21 +1575,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 4,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 639.4704,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_284",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -1614,9 +1604,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -399131.5625,
-											y = -18578.541015625
+											type = "Turning Point",
+											x = -157766.4913925,
+											y = 517425.10503596
 										}
 									}
 								},
@@ -1626,8 +1616,8 @@ mission = {
 								uncontrolled = false,
 								units = {
 									{
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 639.4704,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 5,
 											[2] = 2,
@@ -1639,8 +1629,6 @@ mission = {
 										livery_id = "US Air Force (Squadron 39)",
 										name = "DictKey_UnitName_283",
 										onboard_num = "061",
-										parking = "4",
-										parking_id = "F173",
 										payload = {
 											chaff = 0,
 											flare = 0,
@@ -1702,12 +1690,12 @@ mission = {
 										speed = 138.88888888889,
 										type = "F-86F Sabre",
 										unitId = 109,
-										x = -399131.5625,
-										y = -18578.541015625
+										x = -157766.4913925,
+										y = 517425.10503596
 									}
 								},
-								x = -399131.5625,
-								y = -18578.541015625
+								x = -157766.4913925,
+								y = 517425.10503596
 							},
 							{
 								communication = true,
@@ -1720,21 +1708,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 4,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 639.4704,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_287",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -1757,9 +1737,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -399148.83161652,
-											y = -18593.524975894
+											type = "Turning Point",
+											x = -157765.26257489,
+											y = 517270.27401748
 										}
 									}
 								},
@@ -1769,8 +1749,8 @@ mission = {
 								uncontrolled = false,
 								units = {
 									{
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 639.4704,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 6,
 											[2] = 2,
@@ -1782,8 +1762,6 @@ mission = {
 										livery_id = "US Air Force",
 										name = "DictKey_UnitName_286",
 										onboard_num = "062",
-										parking = "5",
-										parking_id = "F172",
 										payload = {
 											chaff = 0,
 											flare = 0,
@@ -1845,12 +1823,12 @@ mission = {
 										speed = 138.88888888889,
 										type = "F-86F Sabre",
 										unitId = 110,
-										x = -399148.83161652,
-										y = -18593.524975894
+										x = -157765.26257489,
+										y = 517270.27401748
 									}
 								},
-								x = -399148.83161652,
-								y = -18593.524975894
+								x = -157765.26257489,
+								y = 517270.27401748
 							}
 						}
 					},
@@ -1859,7 +1837,7 @@ mission = {
 							{
 								dead = false,
 								groupId = 1,
-								heading = 0,
+								heading = 0.80285145591739,
 								name = "DictKey_GroupName_6",
 								route = {
 									points = {
@@ -1870,27 +1848,26 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394508.65365034,
-											y = -55307.215603082
+											x = -133936.80888867,
+											y = 468232.69297085
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "GrassAirfields",
 										grassairfield_callsign_id = 1,
-										heading = 0,
+										heading = 0.80285145591739,
 										lenght = 2000,
 										name = "DictKey_GroupName_6",
 										type = "GrassAirfield",
 										unitId = 1,
-										x = -394508.65365034,
-										y = -55307.215603082
+										x = -133936.80888867,
+										y = 468232.69297085
 									}
 								},
-								x = -394508.65365034,
-								y = -55307.215603082
+								x = -133936.80888867,
+								y = 468232.69297085
 							},
 							{
 								dead = false,
@@ -1906,14 +1883,13 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394500.08222177,
-											y = -55304.64417451
+											x = -134100.44335779,
+											y = 468590.37792642
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 0.69813170079773,
 										livery_id = "GRC_autumn",
@@ -1921,12 +1897,12 @@ mission = {
 										shape_name = "SetkaKP",
 										type = "FARP Ammo Dump Coating",
 										unitId = 2,
-										x = -394500.08222177,
-										y = -55304.64417451
+										x = -134100.44335779,
+										y = 468590.37792642
 									}
 								},
-								x = -394500.08222177,
-								y = -55304.64417451
+								x = -134100.44335779,
+								y = 468590.37792642
 							},
 							{
 								dead = false,
@@ -1942,14 +1918,13 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394490.36793605,
-											y = -55297.787031652
+											x = -134118.03244215,
+											y = 468612.64495874
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 0.69813170079773,
 										name = "DictKey_GroupName_12",
@@ -1957,12 +1932,12 @@ mission = {
 										shape_name = "kp_ug",
 										type = "FARP CP Blindage",
 										unitId = 3,
-										x = -394490.36793605,
-										y = -55297.787031652
+										x = -134118.03244215,
+										y = 468612.64495874
 									}
 								},
-								x = -394490.36793605,
-								y = -55297.787031652
+								x = -134118.03244215,
+								y = 468612.64495874
 							},
 							{
 								dead = false,
@@ -1978,14 +1953,13 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394480.93936463,
-											y = -55289.501317367
+											x = -134109.42501789,
+											y = 468602.35347322
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 0.69813170079773,
 										livery_id = "GRC_autumn",
@@ -1994,12 +1968,12 @@ mission = {
 										shape_name = "GSM Rus",
 										type = "FARP Fuel Depot",
 										unitId = 4,
-										x = -394480.93936463,
-										y = -55289.501317367
+										x = -134109.42501789,
+										y = 468602.35347322
 									}
 								},
-								x = -394480.93936463,
-								y = -55289.501317367
+								x = -134109.42501789,
+								y = 468602.35347322
 							},
 							{
 								dead = false,
@@ -2015,14 +1989,13 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394492.93936462,
-											y = -55316.929888796
+											x = -134106.58655604,
+											y = 468624.94637463
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
 										name = "DictKey_GroupName_18",
@@ -2030,12 +2003,12 @@ mission = {
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 5,
-										x = -394492.93936462,
-										y = -55316.929888796
+										x = -134106.58655604,
+										y = 468624.94637463
 									}
 								},
-								x = -394492.93936462,
-								y = -55316.929888796
+								x = -134106.58655604,
+								y = 468624.94637463
 							},
 							{
 								dead = false,
@@ -2051,26 +2024,25 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394484.36793605,
-											y = -55310.358460224
+											x = -134097.85022738,
+											y = 468631.95397869
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
 										name = "DictKey_GroupName_21",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 6,
-										x = -394484.36793605,
-										y = -55310.358460224
+										x = -134097.85022738,
+										y = 468631.95397869
 									}
 								},
-								x = -394484.36793605,
-								y = -55310.358460224
+								x = -134097.85022738,
+								y = 468631.95397869
 							},
 							{
 								dead = false,
@@ -2086,26 +2058,25 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394476.08222177,
-											y = -55303.501317367
+											x = -134089.3573931,
+											y = 468638.74824612
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
 										name = "DictKey_GroupName_24",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 7,
-										x = -394476.08222177,
-										y = -55303.501317367
+										x = -134089.3573931,
+										y = 468638.74824612
 									}
 								},
-								x = -394476.08222177,
-								y = -55303.501317367
+								x = -134089.3573931,
+								y = 468638.74824612
 							},
 							{
 								dead = false,
@@ -2121,31 +2092,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394474.08222177,
-											y = -55282.072745939
+											x = -134066.80374286,
+											y = 468526.65618829
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 0,
 										name = "DictKey_GroupName_34",
 										shape_name = "H-Windsock_RW",
 										type = "Windsock",
 										unitId = 11,
-										x = -394474.08222177,
-										y = -55282.072745939
+										x = -134066.80374286,
+										y = 468526.65618829
 									}
 								},
-								x = -394474.08222177,
-								y = -55282.072745939
+								x = -134066.80374286,
+								y = 468526.65618829
 							},
 							{
 								dead = false,
 								groupId = 14,
-								heading = 0.034906585039887,
+								heading = 6.14355896702,
 								name = "DictKey_GroupName_59",
 								route = {
 									points = {
@@ -2156,31 +2126,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394563.22507891,
-											y = -55239.501317368
+											x = -133974.3275703,
+											y = 468616.91909175
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 0.034906585039887,
+										heading = 6.14355896702,
 										name = "DictKey_GroupName_59",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 16,
-										x = -394563.22507891,
-										y = -55239.501317368
+										x = -133974.3275703,
+										y = 468616.91909175
 									}
 								},
-								x = -394563.22507891,
-								y = -55239.501317368
+								x = -133974.3275703,
+								y = 468616.91909175
 							},
 							{
 								dead = false,
 								groupId = 15,
-								heading = 0,
+								heading = 6.14355896702,
 								name = "DictKey_GroupName_62",
 								route = {
 									points = {
@@ -2191,31 +2160,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394563.22507891,
-											y = -55230.929888797
+											x = -133972.72049202,
+											y = 468628.11902727
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 0,
+										heading = 6.14355896702,
 										name = "DictKey_GroupName_62",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 17,
-										x = -394563.22507891,
-										y = -55230.929888797
+										x = -133972.72049202,
+										y = 468628.11902727
 									}
 								},
-								x = -394563.22507891,
-								y = -55230.929888797
+								x = -133972.72049202,
+								y = 468628.11902727
 							},
 							{
 								dead = false,
 								groupId = 16,
-								heading = 0,
+								heading = 6.14355896702,
 								name = "DictKey_GroupName_65",
 								route = {
 									points = {
@@ -2226,31 +2194,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394563.22507892,
-											y = -55222.358460226
+											x = -133971.19794285,
+											y = 468639.38589112
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 0,
+										heading = 6.14355896702,
 										name = "DictKey_GroupName_65",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 18,
-										x = -394563.22507892,
-										y = -55222.358460226
+										x = -133971.19794285,
+										y = 468639.38589112
 									}
 								},
-								x = -394563.22507892,
-								y = -55222.358460226
+								x = -133971.19794285,
+								y = 468639.38589112
 							},
 							{
 								dead = false,
 								groupId = 17,
-								heading = 5.4105206811824,
+								heading = 5.0440015382636,
 								name = "DictKey_GroupName_68",
 								route = {
 									points = {
@@ -2261,31 +2228,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394555.79650749,
-											y = -55197.787031654
+											x = -134026.46018401,
+											y = 468577.92638804
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 5.4105206811824,
+										heading = 5.0440015382636,
 										name = "DictKey_GroupName_68",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 19,
-										x = -394555.79650749,
-										y = -55197.787031654
+										x = -134026.46018401,
+										y = 468577.92638804
 									}
 								},
-								x = -394555.79650749,
-								y = -55197.787031654
+								x = -134026.46018401,
+								y = 468577.92638804
 							},
 							{
 								dead = false,
 								groupId = 18,
-								heading = 5.4105206811824,
+								heading = 5.0440015382636,
 								name = "DictKey_GroupName_71",
 								route = {
 									points = {
@@ -2296,31 +2262,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394549.5107932,
-											y = -55191.501317368
+											x = -134015.45980204,
+											y = 468581.78951495
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 5.4105206811824,
+										heading = 5.0440015382636,
 										name = "DictKey_GroupName_71",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 20,
-										x = -394549.5107932,
-										y = -55191.501317368
+										x = -134015.45980204,
+										y = 468581.78951495
 									}
 								},
-								x = -394549.5107932,
-								y = -55191.501317368
+								x = -134015.45980204,
+								y = 468581.78951495
 							},
 							{
 								dead = false,
 								groupId = 19,
-								heading = 5.4105206811824,
+								heading = 5.0440015382636,
 								name = "DictKey_GroupName_74",
 								route = {
 									points = {
@@ -2331,31 +2296,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394543.22507892,
-											y = -55186.358460226
+											x = -134004.22542513,
+											y = 468585.51656678
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 5.4105206811824,
+										heading = 5.0440015382636,
 										name = "DictKey_GroupName_74",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 21,
-										x = -394543.22507892,
-										y = -55186.358460226
+										x = -134004.22542513,
+										y = 468585.51656678
 									}
 								},
-								x = -394543.22507892,
-								y = -55186.358460226
+								x = -134004.22542513,
+								y = 468585.51656678
 							},
 							{
 								dead = false,
 								groupId = 20,
-								heading = 4.7123889803847,
+								heading = 3.9269908169872,
 								name = "DictKey_GroupName_77",
 								route = {
 									points = {
@@ -2366,31 +2330,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394520.65365034,
-											y = -55180.07274594
+											x = -134083.9616299,
+											y = 468603.17945472
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 4.7123889803847,
+										heading = 3.9269908169872,
 										name = "DictKey_GroupName_77",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 22,
-										x = -394520.65365034,
-										y = -55180.07274594
+										x = -134083.9616299,
+										y = 468603.17945472
 									}
 								},
-								x = -394520.65365034,
-								y = -55180.07274594
+								x = -134083.9616299,
+								y = 468603.17945472
 							},
 							{
 								dead = false,
 								groupId = 21,
-								heading = 4.7123889803847,
+								heading = 3.9269908169872,
 								name = "DictKey_GroupName_80",
 								route = {
 									points = {
@@ -2401,31 +2364,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394512.65365034,
-											y = -55180.07274594
+											x = -134076.4454637,
+											y = 468595.35011494
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 4.7123889803847,
+										heading = 3.9269908169872,
 										name = "DictKey_GroupName_80",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 23,
-										x = -394512.65365034,
-										y = -55180.07274594
+										x = -134076.4454637,
+										y = 468595.35011494
 									}
 								},
-								x = -394512.65365034,
-								y = -55180.07274594
+								x = -134076.4454637,
+								y = 468595.35011494
 							},
 							{
 								dead = false,
 								groupId = 22,
-								heading = 4.7123889803847,
+								heading = 3.9269908169872,
 								name = "DictKey_GroupName_83",
 								route = {
 									points = {
@@ -2436,31 +2398,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394504.93936463,
-											y = -55180.358460226
+											x = -134067.97864341,
+											y = 468587.13765424
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 4.7123889803847,
+										heading = 3.9269908169872,
 										name = "DictKey_GroupName_83",
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 24,
-										x = -394504.93936463,
-										y = -55180.358460226
+										x = -134067.97864341,
+										y = 468587.13765424
 									}
 								},
-								x = -394504.93936463,
-								y = -55180.358460226
+								x = -134067.97864341,
+								y = 468587.13765424
 							},
 							{
 								dead = false,
 								groupId = 34,
-								heading = 5.5850536063819,
+								heading = 3.8920842319474,
 								name = "DictKey_GroupName_136",
 								route = {
 									points = {
@@ -2471,16 +2432,15 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394640.65365035,
-											y = -55111.215603085
+											x = -134222.81299252,
+											y = 468514.36955879
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Heliports",
-										heading = 5.5850536063819,
+										heading = 3.8920842319474,
 										heliport_callsign_id = 2,
 										heliport_frequency = "127.5",
 										heliport_modulation = 0,
@@ -2488,12 +2448,12 @@ mission = {
 										shape_name = "FARPS",
 										type = "FARP",
 										unitId = 38,
-										x = -394640.65365035,
-										y = -55111.215603085
+										x = -134222.81299252,
+										y = 468514.36955879
 									}
 								},
-								x = -394640.65365035,
-								y = -55111.215603085
+								x = -134222.81299252,
+								y = 468514.36955879
 							}
 						}
 					},
@@ -2507,7 +2467,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 1410,
+											alt = 474,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -2522,19 +2482,19 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394504.65365034,
-											y = -55328.072745939
+											x = -134128.69816351,
+											y = 468623.68491595
 										}
 									},
 									spans = {
 										{
 											{
-												x = -394512.08222176,
-												y = -55331.215603081
+												x = -346228.85437644,
+												y = 753504.95418555
 											},
 											{
-												x = -394533.79650748,
-												y = -55340.64417451
+												x = -346250.56866216,
+												y = 753495.52561412
 											}
 										}
 									}
@@ -2554,8 +2514,8 @@ mission = {
 										},
 										type = "M 818",
 										unitId = 8,
-										x = -394504.65365034,
-										y = -55328.072745939
+										x = -134128.69816351,
+										y = 468623.68491595
 									},
 									{
 										heading = 3.8571776469075,
@@ -2567,8 +2527,8 @@ mission = {
 										},
 										type = "M 818",
 										unitId = 9,
-										x = -394510.08222176,
-										y = -55320.072745939
+										x = -134136.13768545,
+										y = 468632.02118265
 									},
 									{
 										heading = 3.8397243543875,
@@ -2580,13 +2540,13 @@ mission = {
 										},
 										type = "M 818",
 										unitId = 10,
-										x = -394514.93936462,
-										y = -55311.501317368
+										x = -134143.03239077,
+										y = 468641.09316333
 									}
 								},
 								visible = false,
-								x = -394504.65365034,
-								y = -55328.072745939
+								x = -134128.69816351,
+								y = 468623.68491595
 							},
 							{
 								groupId = 24,
@@ -2596,7 +2556,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 1440,
+											alt = 483,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -2627,8 +2587,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394670.36793606,
-											y = -55672.358460227
+											x = -134058.61766331,
+											y = 468168.59664398
 										}
 									},
 									spans = {}
@@ -2648,8 +2608,8 @@ mission = {
 										},
 										type = "M-109",
 										unitId = 26,
-										x = -394670.36793606,
-										y = -55672.358460227
+										x = -134058.61766331,
+										y = 468168.59664398
 									},
 									{
 										heading = 4.939281783144,
@@ -2661,8 +2621,8 @@ mission = {
 										},
 										type = "M-109",
 										unitId = 27,
-										x = -394679.36597824,
-										y = -55633.383657636
+										x = -134067.61570549,
+										y = 468207.57144657
 									},
 									{
 										heading = 4.939281783144,
@@ -2674,8 +2634,8 @@ mission = {
 										},
 										type = "M-109",
 										unitId = 28,
-										x = -394688.36402041,
-										y = -55594.408855044
+										x = -134076.61374766,
+										y = 468246.54624917
 									},
 									{
 										heading = 4.939281783144,
@@ -2687,8 +2647,8 @@ mission = {
 										},
 										type = "M-109",
 										unitId = 94,
-										x = -394697.36206258,
-										y = -55555.434052453
+										x = -134085.61178983,
+										y = 468285.52105176
 									},
 									{
 										heading = 4.939281783144,
@@ -2700,8 +2660,8 @@ mission = {
 										},
 										type = "M-109",
 										unitId = 95,
-										x = -394706.36010476,
-										y = -55516.459249861
+										x = -134095.5732659,
+										y = 468323.79403795
 									},
 									{
 										heading = 4.939281783144,
@@ -2713,13 +2673,13 @@ mission = {
 										},
 										type = "M-109",
 										unitId = 96,
-										x = -394715.35814693,
-										y = -55477.48444727
+										x = -134100.46119211,
+										y = 468362.56848319
 									}
 								},
 								visible = false,
-								x = -394670.36793606,
-								y = -55672.358460227
+								x = -134058.61766331,
+								y = 468168.59664398
 							},
 							{
 								groupId = 45,
@@ -2729,7 +2689,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 1403,
+											alt = 475,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -2744,19 +2704,19 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394607.7965075,
-											y = -55226.35846023
+											x = -134122.06510416,
+											y = 468637.66074026
 										}
 									},
 									spans = {
 										{
 											{
-												x = -394602.65365036,
-												y = -55173.215603087
+												x = -346319.42580504,
+												y = 753662.95418554
 											},
 											{
-												x = -394603.51079322,
-												y = -55172.929888802
+												x = -346320.2829479,
+												y = 753663.23989983
 											}
 										}
 									}
@@ -2769,15 +2729,15 @@ mission = {
 									{
 										heading = 2.8198420991957,
 										name = "DictKey_UnitName_243",
-										playerCanDrive = true,
+										playerCanDrive = false,
 										skill = "High",
 										transportable = {
 											randomTransportable = false
 										},
 										type = "M978 HEMTT Tanker",
 										unitId = 97,
-										x = -394607.7965075,
-										y = -55226.35846023
+										x = -134122.06510416,
+										y = 468637.66074026
 									},
 									{
 										heading = 2.8198420991957,
@@ -2789,8 +2749,8 @@ mission = {
 										},
 										type = "M978 HEMTT Tanker",
 										unitId = 98,
-										x = -394601.22507892,
-										y = -55216.644174516
+										x = -134115.49367558,
+										y = 468647.37502597
 									},
 									{
 										heading = 2.8198420991957,
@@ -2802,13 +2762,13 @@ mission = {
 										},
 										type = "M978 HEMTT Tanker",
 										unitId = 99,
-										x = -394594.08222178,
-										y = -55206.644174516
+										x = -134108.35081844,
+										y = 468657.37502597
 									}
 								},
 								visible = false,
-								x = -394607.7965075,
-								y = -55226.35846023
+								x = -134122.06510416,
+								y = 468637.66074026
 							}
 						}
 					}
@@ -2819,8 +2779,8 @@ mission = {
 		},
 		red = {
 			bullseye = {
-				x = -396175.71428571,
-				y = -73040
+				x = -142460.34757928,
+				y = 471885.92542236
 			},
 			country = {
 				{
@@ -2840,7 +2800,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 2796,
+											alt = 745,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -2855,19 +2815,19 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394390.93936463,
-											y = -75626.929888799
+											x = -140704.19677404,
+											y = 472802.12518211
 										}
 									},
 									spans = {
 										{
 											{
-												x = -394408.65365034,
-												y = -75670.929888799
+												x = -346125.42580502,
+												y = 733165.23989983
 											},
 											{
-												x = -394408.08222177,
-												y = -75672.072745942
+												x = -346124.85437645,
+												y = 733164.09704269
 											}
 										}
 									}
@@ -2878,7 +2838,7 @@ mission = {
 								tasks = {},
 								units = {
 									{
-										heading = 5.3756140961425,
+										heading = 0.55850536063819,
 										name = "DictKey_UnitName_121",
 										playerCanDrive = true,
 										skill = "Average",
@@ -2887,13 +2847,13 @@ mission = {
 										},
 										type = "Ural-375 ZU-23",
 										unitId = 34,
-										x = -394390.93936463,
-										y = -75626.929888799
+										x = -140704.19677404,
+										y = 472802.12518211
 									}
 								},
 								visible = false,
-								x = -394390.93936463,
-								y = -75626.929888799
+								x = -140704.19677404,
+								y = 472802.12518211
 							},
 							{
 								groupId = 35,
@@ -2903,7 +2863,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 2060,
+											alt = 244,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -2914,23 +2874,57 @@ mission = {
 											task = {
 												id = "ComboTask",
 												params = {
-													tasks = {}
+													tasks = {
+														{
+															auto = false,
+															enabled = true,
+															id = "WrappedAction",
+															number = 1,
+															params = {
+																action = {
+																	id = "SetFrequency",
+																	params = {
+																		frequency = 31000000,
+																		modulation = 1,
+																		power = 10
+																	}
+																}
+															}
+														},
+														{
+															auto = false,
+															enabled = true,
+															id = "WrappedAction",
+															number = 2,
+															params = {
+																action = {
+																	id = "TransmitMessage",
+																	params = {
+																		duration = 5,
+																		file = "ResKey_advancedFile_299",
+																		loop = true,
+																		subtitle = "DictKey_subtitle_298"
+																	}
+																}
+															}
+														}
+													}
 												}
 											},
 											type = "Turning Point",
-											x = -395282.65365035,
-											y = -67762.644174514
+											x = -142833.48569507,
+											y = 471990.85848678
 										}
 									},
 									spans = {
 										{
 											{
-												x = -395286.08222178,
-												y = -67761.501317371
+												x = -347002.85437646,
+												y = 741074.66847126
 											},
 											{
-												x = -395248.36793606,
-												y = -67744.9298888
+												x = -346965.14009074,
+												y = 741091.23989983
 											}
 										}
 									}
@@ -2941,7 +2935,7 @@ mission = {
 								tasks = {},
 								units = {
 									{
-										heading = 4.2236967898263,
+										heading = 2.6703537555513,
 										name = "DictKey_UnitName_149",
 										playerCanDrive = false,
 										skill = "Good",
@@ -2950,11 +2944,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 39,
-										x = -395282.65365035,
-										y = -67762.644174514
+										x = -142833.48569507,
+										y = 471990.85848678
 									},
 									{
-										heading = 4.1364303272266,
+										heading = 2.1118483949131,
 										name = "DictKey_UnitName_151",
 										playerCanDrive = false,
 										skill = "Good",
@@ -2963,11 +2957,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 40,
-										x = -395284.36793606,
-										y = -67748.358460228
+										x = -142826.45811375,
+										y = 471988.30300267
 									},
 									{
-										heading = 4.0491638646268,
+										heading = 1.2740903539559,
 										name = "DictKey_UnitName_152",
 										playerCanDrive = false,
 										skill = "Good",
@@ -2976,11 +2970,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 41,
-										x = -395254.08222178,
-										y = -67726.072745943
+										x = -142811.31876663,
+										y = 471990.90219971
 									},
 									{
-										heading = 4.3633231299858,
+										heading = 1.5882496193148,
 										name = "DictKey_UnitName_153",
 										playerCanDrive = false,
 										skill = "Good",
@@ -2989,11 +2983,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 42,
-										x = -395259.22507892,
-										y = -67716.358460228
+										x = -142817.47366515,
+										y = 471986.83757706
 									},
 									{
-										heading = 4.310963252426,
+										heading = 0.90757121103705,
 										name = "DictKey_UnitName_154",
 										playerCanDrive = false,
 										skill = "Good",
@@ -3002,11 +2996,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 43,
-										x = -395214.08222178,
-										y = -67662.644174514
+										x = -142820.34858478,
+										y = 471975.01846302
 									},
 									{
-										heading = 4.1887902047864,
+										heading = 1.0471975511966,
 										name = "DictKey_UnitName_155",
 										playerCanDrive = false,
 										skill = "Good",
@@ -3015,11 +3009,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 44,
-										x = -395214.08222178,
-										y = -67650.644174514
+										x = -142814.12412981,
+										y = 471980.50950267
 									},
 									{
-										heading = 3.9618974020271,
+										heading = 3.3161255787892,
 										name = "DictKey_UnitName_156",
 										playerCanDrive = false,
 										skill = "Good",
@@ -3028,11 +3022,11 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 45,
-										x = -395190.65365035,
-										y = -67626.644174514
+										x = -142831.46394908,
+										y = 471982.08584988
 									},
 									{
-										heading = 3.7699111843078,
+										heading = 2.2165681500328,
 										name = "DictKey_UnitName_157",
 										playerCanDrive = false,
 										skill = "Good",
@@ -3041,13 +3035,13 @@ mission = {
 										},
 										type = "Paratrooper RPG-16",
 										unitId = 46,
-										x = -395200.93936463,
-										y = -67618.072745943
+										x = -142829.29277919,
+										y = 471996.10120699
 									}
 								},
 								visible = false,
-								x = -395282.65365035,
-								y = -67762.644174514
+								x = -142833.48569507,
+								y = 471990.85848678
 							},
 							{
 								groupId = 36,
@@ -3057,7 +3051,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 2259,
+											alt = 266,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -3072,8 +3066,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -396689.51079321,
-											y = -71389.787031659
+											x = -142470.51202925,
+											y = 471691.6886569
 										}
 									},
 									spans = {}
@@ -3091,8 +3085,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 47,
-										x = -396689.51079321,
-										y = -71389.787031659
+										x = -142470.51202925,
+										y = 471691.6886569
 									},
 									{
 										heading = 1.0297442586767,
@@ -3104,8 +3098,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 48,
-										x = -396687.29898755,
-										y = -71404.004215765
+										x = -142462.14323473,
+										y = 471679.73323616
 									},
 									{
 										heading = 0.94247779607694,
@@ -3117,8 +3111,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 49,
-										x = -396716.78849239,
-										y = -71427.333310381
+										x = -142452.57889813,
+										y = 471661.80010505
 									},
 									{
 										heading = 1.2566370614359,
@@ -3130,8 +3124,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 50,
-										x = -396711.30974445,
-										y = -71436.862195289
+										x = -142444.21010362,
+										y = 471641.47588979
 									},
 									{
 										heading = 1.2042771838761,
@@ -3143,8 +3137,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 51,
-										x = -396754.55050025,
-										y = -71492.119222706
+										x = -142402.36613102,
+										y = 471707.23070387
 									},
 									{
 										heading = 1.0821041362365,
@@ -3156,8 +3150,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 52,
-										x = -396754.13170629,
-										y = -71504.11191263
+										x = -142391.60625235,
+										y = 471728.7504612
 									},
 									{
 										heading = 0.85521133347722,
@@ -3169,8 +3163,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 53,
-										x = -396776.70841774,
-										y = -71528.91493783
+										x = -142372.47757917,
+										y = 471747.87913439
 									},
 									{
 										heading = 0.66322511575785,
@@ -3182,13 +3176,13 @@ mission = {
 										},
 										type = "Paratrooper RPG-16",
 										unitId = 54,
-										x = -396766.12983069,
-										y = -71537.122178667
+										x = -142380.84637369,
+										y = 471772.98551794
 									}
 								},
 								visible = false,
-								x = -396689.51079321,
-								y = -71389.787031659
+								x = -142470.51202925,
+								y = 471691.6886569
 							},
 							{
 								groupId = 43,
@@ -3198,7 +3192,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 1726,
+											alt = 261,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -3213,8 +3207,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394317.51079321,
-											y = -61586.072745944
+											x = -142460.39592322,
+											y = 471936.80493611
 										}
 									},
 									spans = {}
@@ -3223,7 +3217,7 @@ mission = {
 								tasks = {},
 								units = {
 									{
-										heading = 2.5307274153918,
+										heading = 1.7104226669544,
 										name = "DictKey_UnitName_219",
 										playerCanDrive = false,
 										skill = "Good",
@@ -3232,8 +3226,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 82,
-										x = -394317.51079321,
-										y = -61586.072745944
+										x = -142460.39592322,
+										y = 471936.80493611
 									},
 									{
 										heading = 2.4434609527921,
@@ -3245,8 +3239,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 83,
-										x = -394314.65365035,
-										y = -61582.644174515
+										x = -142457.33775224,
+										y = 471940.4424476
 									},
 									{
 										heading = 2.3561944901923,
@@ -3258,8 +3252,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 84,
-										x = -394314.36793607,
-										y = -61591.215603087
+										x = -142457.25306608,
+										y = 471931.66207896
 									},
 									{
 										heading = 2.6703537555513,
@@ -3271,8 +3265,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 85,
-										x = -394310.93936464,
-										y = -61587.215603087
+										x = -142453.94504491,
+										y = 471935.11105037
 									},
 									{
 										heading = 2.6179938779915,
@@ -3284,8 +3278,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 86,
-										x = -394330.08222178,
-										y = -61605.501317372
+										x = -142472.96735179,
+										y = 471917.37636468
 									},
 									{
 										heading = 2.4958208303519,
@@ -3297,8 +3291,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 87,
-										x = -394326.93936464,
-										y = -61602.929888801
+										x = -142469.69690036,
+										y = 471919.2380268
 									},
 									{
 										heading = 2.2689280275926,
@@ -3310,8 +3304,8 @@ mission = {
 										},
 										type = "Infantry AK",
 										unitId = 88,
-										x = -394325.79650749,
-										y = -61610.072745944
+										x = -142469.45456412,
+										y = 471913.17962086
 									},
 									{
 										heading = 2.0769418098733,
@@ -3323,13 +3317,13 @@ mission = {
 										},
 										type = "Paratrooper RPG-16",
 										unitId = 89,
-										x = -394322.93936464,
-										y = -61607.787031658
+										x = -142465.94068868,
+										y = 471914.99714265
 									}
 								},
 								visible = false,
-								x = -394317.51079321,
-								y = -61586.072745944
+								x = -142460.39592322,
+								y = 471936.80493611
 							},
 							{
 								groupId = 44,
@@ -3339,7 +3333,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 1726,
+											alt = 786,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -3354,8 +3348,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394326.65365035,
-											y = -61580.644174515
+											x = -143021.35436338,
+											y = 470283.92442017
 										}
 									},
 									spans = {}
@@ -3366,7 +3360,7 @@ mission = {
 								tasks = {},
 								units = {
 									{
-										heading = 2.4434609527921,
+										heading = 2.6354471705114,
 										name = "DictKey_UnitName_229",
 										playerCanDrive = true,
 										skill = "Average",
@@ -3375,13 +3369,13 @@ mission = {
 										},
 										type = "ZU-23 Emplacement",
 										unitId = 90,
-										x = -394326.65365035,
-										y = -61580.644174515
+										x = -143021.35436338,
+										y = 470283.92442017
 									}
 								},
 								visible = false,
-								x = -394326.65365035,
-								y = -61580.644174515
+								x = -143021.35436338,
+								y = 470283.92442017
 							},
 							{
 								groupId = 57,
@@ -3392,7 +3386,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 2370,
+											alt = 825,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -3407,8 +3401,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -395801.22507891,
-											y = -73508.644174515
+											x = -144541.85335008,
+											y = 473057.51090255
 										}
 									},
 									routeRelativeTOT = true,
@@ -3420,7 +3414,7 @@ mission = {
 								tasks = {},
 								units = {
 									{
-										heading = 5.218534463463,
+										heading = 1.0122909661567,
 										name = "DictKey_UnitName_289",
 										playerCanDrive = true,
 										skill = "Good",
@@ -3429,13 +3423,13 @@ mission = {
 										},
 										type = "Ural-375 ZU-23",
 										unitId = 111,
-										x = -395801.22507891,
-										y = -73508.644174515
+										x = -144541.85335008,
+										y = 473057.51090255
 									}
 								},
 								visible = false,
-								x = -395801.22507891,
-								y = -73508.644174515
+								x = -144541.85335008,
+								y = 473057.51090255
 							},
 							{
 								groupId = 58,
@@ -3446,7 +3440,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 2314,
+											alt = 964,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -3461,20 +3455,20 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -396692.36793606,
-											y = -72210.072745943
+											x = -141942.99852437,
+											y = 469473.1149407
 										}
 									},
 									routeRelativeTOT = true,
 									spans = {
 										{
 											{
-												x = -396692.36793606,
-												y = -72210.072745943
+												x = -348409.14009074,
+												y = 736626.09704269
 											},
 											{
-												x = -395802.08222177,
-												y = -73508.358460229
+												x = -347518.85437645,
+												y = 735327.8113284
 											}
 										}
 									}
@@ -3494,13 +3488,13 @@ mission = {
 										},
 										type = "Ural-375 ZU-23",
 										unitId = 112,
-										x = -396692.36793606,
-										y = -72210.072745943
+										x = -141942.99852437,
+										y = 469473.1149407
 									}
 								},
 								visible = false,
-								x = -396692.36793606,
-								y = -72210.072745943
+								x = -141942.99852437,
+								y = 469473.1149407
 							},
 							{
 								groupId = 59,
@@ -3511,7 +3505,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 2600,
+											alt = 253,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -3526,8 +3520,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394855.79650749,
-											y = -75235.787031658
+											x = -143245.31505169,
+											y = 471856.18742916
 										}
 									},
 									routeRelativeTOT = true,
@@ -3548,13 +3542,13 @@ mission = {
 										},
 										type = "Ural-375 ZU-23",
 										unitId = 113,
-										x = -394855.79650749,
-										y = -75235.787031658
+										x = -143245.31505169,
+										y = 471856.18742916
 									}
 								},
 								visible = false,
-								x = -394855.79650749,
-								y = -75235.787031658
+								x = -143245.31505169,
+								y = 471856.18742916
 							}
 						}
 					}
@@ -3575,21 +3569,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 1,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 606,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_271",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -3612,9 +3598,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -360846.40625,
-											y = -74766.1171875
+											type = "Turning Point",
+											x = -82532.237600264,
+											y = 471116.46323645
 										}
 									}
 								},
@@ -3624,8 +3610,8 @@ mission = {
 								uncontrolled = false,
 								units = {
 									{
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 606,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 1,
 											[2] = 1,
@@ -3636,26 +3622,31 @@ mission = {
 										heading = 0,
 										name = "DictKey_UnitName_270",
 										onboard_num = "060",
-										parking = 3,
-										parking_id = "A27",
 										payload = {
 											chaff = 0,
 											flare = 0,
 											fuel = 586,
 											gun = 100,
-											pylons = {}
+											pylons = {
+												{
+													CLSID = "FAB_100M"
+												},
+												{
+													CLSID = "FAB_100M"
+												}
+											}
 										},
 										psi = 0,
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "MiG-15bis",
 										unitId = 105,
-										x = -360846.40625,
-										y = -74766.1171875
+										x = -82532.237600264,
+										y = 471116.46323645
 									}
 								},
-								x = -360846.40625,
-								y = -74766.1171875
+								x = -82532.237600264,
+								y = 471116.46323645
 							},
 							{
 								communication = true,
@@ -3668,21 +3659,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 1,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 610,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_274",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -3705,9 +3688,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -360846.28125,
-											y = -74698.109375
+											type = "Turning Point",
+											x = -82466.576825673,
+											y = 470927.6885095
 										}
 									}
 								},
@@ -3717,37 +3700,43 @@ mission = {
 								uncontrolled = false,
 								units = {
 									{
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 610,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 2,
 											[2] = 1,
 											[3] = 1,
 											name = "Springfield11"
 										},
+										hardpoint_racks = true,
 										heading = 0,
 										name = "DictKey_UnitName_273",
 										onboard_num = "010",
-										parking = "2",
-										parking_id = "A28",
 										payload = {
 											chaff = 0,
 											flare = 0,
 											fuel = 586,
 											gun = 100,
-											pylons = {}
+											pylons = {
+												{
+													CLSID = "FAB_100M"
+												},
+												{
+													CLSID = "FAB_100M"
+												}
+											}
 										},
 										psi = 0,
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "MiG-15bis",
 										unitId = 106,
-										x = -360846.28125,
-										y = -74698.109375
+										x = -82466.576825673,
+										y = 470927.6885095
 									}
 								},
-								x = -360846.28125,
-								y = -74698.109375
+								x = -82466.576825673,
+								y = 470927.6885095
 							},
 							{
 								communication = true,
@@ -3760,21 +3749,13 @@ mission = {
 								route = {
 									points = {
 										{
-											action = "From Parking Area",
-											airdromeId = 1,
-											alt = 1876,
-											alt_type = "BARO",
+											action = "Fly Over Point",
+											alt = 506,
+											alt_type = "RADIO",
 											ETA = 0,
 											ETA_locked = true,
 											formation_template = "",
 											name = "DictKey_WptName_278",
-											properties = {
-												angle = 0,
-												scale = 0,
-												steer = 2,
-												vangle = 0,
-												vnav = 1
-											},
 											speed = 138.88888888889,
 											speed_locked = true,
 											task = {
@@ -3797,9 +3778,9 @@ mission = {
 													}
 												}
 											},
-											type = "TakeOffParking",
-											x = -360733.96875,
-											y = -75144.9375
+											type = "Turning Point",
+											x = -82359.878066963,
+											y = 471075.42525233
 										}
 									}
 								},
@@ -3809,37 +3790,43 @@ mission = {
 								uncontrolled = false,
 								units = {
 									{
-										alt = 1876,
-										alt_type = "BARO",
+										alt = 506,
+										alt_type = "RADIO",
 										callsign = {
 											[1] = 3,
 											[2] = 1,
 											[3] = 1,
 											name = "Uzi11"
 										},
+										hardpoint_racks = true,
 										heading = 0,
 										name = "DictKey_UnitName_277",
 										onboard_num = "061",
-										parking = 39,
-										parking_id = "A07",
 										payload = {
 											chaff = 0,
 											flare = 0,
 											fuel = 586,
 											gun = 100,
-											pylons = {}
+											pylons = {
+												{
+													CLSID = "FAB_100M"
+												},
+												{
+													CLSID = "FAB_100M"
+												}
+											}
 										},
 										psi = 0,
 										skill = "Client",
 										speed = 138.88888888889,
 										type = "MiG-15bis",
 										unitId = 107,
-										x = -360733.96875,
-										y = -75144.9375
+										x = -82359.878066963,
+										y = 471075.42525233
 									}
 								},
-								x = -360733.96875,
-								y = -75144.9375
+								x = -82359.878066963,
+								y = 471075.42525233
 							}
 						}
 					},
@@ -3848,7 +3835,7 @@ mission = {
 							{
 								dead = false,
 								groupId = 23,
-								heading = 2.3038346126325,
+								heading = 1.3439035240356,
 								name = "DictKey_GroupName_93",
 								route = {
 									points = {
@@ -3859,30 +3846,29 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -396200.93936463,
-											y = -72895.501317369
+											x = -142443.34597264,
+											y = 471960.66016176
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 2.3038346126325,
+										heading = 1.3439035240356,
 										name = "DictKey_GroupName_93",
 										type = "outpost_road",
 										unitId = 25,
-										x = -396200.93936463,
-										y = -72895.501317369
+										x = -142443.34597264,
+										y = 471960.66016176
 									}
 								},
-								x = -396200.93936463,
-								y = -72895.501317369
+								x = -142443.34597264,
+								y = 471960.66016176
 							},
 							{
 								dead = false,
 								groupId = 25,
-								heading = 3.2986722862693,
+								heading = 2.0071286397935,
 								name = "DictKey_GroupName_104",
 								route = {
 									points = {
@@ -3893,30 +3879,29 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394392.08222178,
-											y = -75669.215603084
+											x = -143005.37442004,
+											y = 472082.23378435
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 3.2986722862693,
+										heading = 2.0071286397935,
 										name = "DictKey_GroupName_104",
 										type = "houseA_arm",
 										unitId = 29,
-										x = -394392.08222178,
-										y = -75669.215603084
+										x = -143005.37442004,
+										y = 472082.23378435
 									}
 								},
-								x = -394392.08222178,
-								y = -75669.215603084
+								x = -143005.37442004,
+								y = 472082.23378435
 							},
 							{
 								dead = false,
 								groupId = 26,
-								heading = 0.61086523819802,
+								heading = 3.8222710618676,
 								name = "DictKey_GroupName_108",
 								route = {
 									points = {
@@ -3927,30 +3912,29 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -396177.22507892,
-											y = -73888.644174513
+											x = -142423.3639323,
+											y = 471592.47924124
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 0.61086523819802,
+										heading = 3.8222710618676,
 										name = "DictKey_GroupName_108",
 										type = "Sandbox",
 										unitId = 30,
-										x = -396177.22507892,
-										y = -73888.644174513
+										x = -142423.3639323,
+										y = 471592.47924124
 									}
 								},
-								x = -396177.22507892,
-								y = -73888.644174513
+								x = -142423.3639323,
+								y = 471592.47924124
 							},
 							{
 								dead = false,
 								groupId = 27,
-								heading = 0.069813170079773,
+								heading = 0.71558499331767,
 								name = "DictKey_GroupName_111",
 								route = {
 									points = {
@@ -3961,31 +3945,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -396199.22507892,
-											y = -73804.072745941
+											x = -140656.46130095,
+											y = 472772.82739679
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 0.069813170079773,
+										heading = 0.71558499331767,
 										name = "DictKey_GroupName_111",
 										rate = 10,
 										type = "house2arm",
 										unitId = 31,
-										x = -396199.22507892,
-										y = -73804.072745941
+										x = -140656.46130095,
+										y = 472772.82739679
 									}
 								},
-								x = -396199.22507892,
-								y = -73804.072745941
+								x = -140656.46130095,
+								y = 472772.82739679
 							},
 							{
 								dead = false,
 								groupId = 28,
-								heading = 3.6128315516283,
+								heading = 2.8099800957109,
 								name = "DictKey_GroupName_114",
 								route = {
 									points = {
@@ -3996,31 +3979,30 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -395792.65365034,
-											y = -73491.787031656
+											x = -142342.15106863,
+											y = 471990.43431419
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 3.6128315516283,
+										heading = 2.8099800957109,
 										name = "DictKey_GroupName_114",
 										rate = 5,
 										type = "Bunker",
 										unitId = 32,
-										x = -395792.65365034,
-										y = -73491.787031656
+										x = -142342.15106863,
+										y = 471990.43431419
 									}
 								},
-								x = -395792.65365034,
-								y = -73491.787031656
+								x = -142342.15106863,
+								y = 471990.43431419
 							},
 							{
 								dead = false,
 								groupId = 29,
-								heading = 3.3684854563491,
+								heading = 4.9567350756639,
 								name = "DictKey_GroupName_117",
 								route = {
 									points = {
@@ -4031,25 +4013,24 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -395786.08222177,
-											y = -73512.072745941
+											x = -144540.13828153,
+											y = 473003.29177442
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
-										heading = 3.3684854563491,
+										heading = 4.9567350756639,
 										name = "DictKey_GroupName_117",
 										type = "house2arm",
 										unitId = 33,
-										x = -395786.08222177,
-										y = -73512.072745941
+										x = -144540.13828153,
+										y = 473003.29177442
 									}
 								},
-								x = -395786.08222177,
-								y = -73512.072745941
+								x = -144540.13828153,
+								y = 473003.29177442
 							},
 							{
 								dead = false,
@@ -4065,14 +4046,13 @@ mission = {
 											name = "",
 											speed = 0,
 											type = "",
-											x = -394338.08222178,
-											y = -61608.072745944
+											x = -142399.82565151,
+											y = 471982.70268516
 										}
 									}
 								},
 								units = {
 									{
-										canCargo = false,
 										category = "Fortifications",
 										heading = 2.2689280275926,
 										name = "DictKey_GroupName_182",
@@ -4080,12 +4060,12 @@ mission = {
 										shape_name = "PalatkaB",
 										type = "FARP Tent",
 										unitId = 56,
-										x = -394338.08222178,
-										y = -61608.072745944
+										x = -142399.82565151,
+										y = 471982.70268516
 									}
 								},
-								x = -394338.08222178,
-								y = -61608.072745944
+								x = -142399.82565151,
+								y = 471982.70268516
 							}
 						}
 					},
@@ -4099,7 +4079,7 @@ mission = {
 									points = {
 										{
 											action = "Off Road",
-											alt = 1726,
+											alt = 813,
 											alt_type = "BARO",
 											ETA = 0,
 											ETA_locked = true,
@@ -4114,8 +4094,8 @@ mission = {
 												}
 											},
 											type = "Turning Point",
-											x = -394324.65365035,
-											y = -61592.929888801
+											x = -142833.92215373,
+											y = 470212.30901232
 										}
 									},
 									spans = {}
@@ -4126,7 +4106,7 @@ mission = {
 								tasks = {},
 								units = {
 									{
-										heading = 3.8746309394274,
+										heading = 2.3387411976724,
 										name = "DictKey_UnitName_180",
 										playerCanDrive = false,
 										skill = "Good",
@@ -4135,13 +4115,13 @@ mission = {
 										},
 										type = "house2arm",
 										unitId = 55,
-										x = -394324.65365035,
-										y = -61592.929888801
+										x = -142833.92215373,
+										y = 470212.30901232
 									}
 								},
 								visible = false,
-								x = -394324.65365035,
-								y = -61592.929888801
+								x = -142833.92215373,
+								y = 470212.30901232
 							}
 						}
 					}
@@ -4224,10 +4204,10 @@ mission = {
 			49
 		}
 	},
-	currentKey = 25598,
+	currentKey = 48425,
 	date = {
 		Day = 14,
-		Month = 11,
+		Month = 6,
 		Year = 1965
 	},
 	descriptionBlueTask = "DictKey_descriptionBlueTask_3",
@@ -4283,11 +4263,11 @@ mission = {
 		}
 	},
 	map = {
-		centerX = -394502.93936464,
-		centerY = -68144.358460229,
-		zoom = 50000
+		centerX = -164124.685258,
+		centerY = 499577.46257164,
+		zoom = 495144.17588204
 	},
-	maxDictId = 297,
+	maxDictId = 299,
 	pictureFileNameB = {
 		"ResKey_ImageBriefing_231",
 		"ResKey_ImageBriefing_232",
@@ -4318,11 +4298,11 @@ mission = {
 	},
 	sortie = "DictKey_sortie_4",
 	start_time = 38100,
-	theatre = "Nevada",
+	theatre = "Caucasus",
 	trig = {
 		actions = {
 			"a_do_script_file(getValueResourceByKey(\"ResKey_Action_5\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_46\"));",
-			"a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30); mission.trig.func[2]=nil;",
+			"a_set_flag(1);a_set_flag(2);a_set_flag(3);a_set_flag(30);a_unit_emission_on(46); mission.trig.func[2]=nil;",
 			"a_inc_flag(1, 1);",
 			"a_inc_flag(2, 1);",
 			"a_inc_flag(3, 1);",
@@ -4466,8 +4446,8 @@ mission = {
 				hidden = false,
 				name = "1/7 Cav",
 				radius = 13.1064,
-				x = -394513.79650748,
-				y = -55198.072745939,
+				x = -133993.29714929,
+				y = 468631.24313882,
 				zoneId = 46
 			},
 			{
@@ -4480,8 +4460,8 @@ mission = {
 				hidden = false,
 				name = "Cav",
 				radius = 43.5864,
-				x = -394516.65365034,
-				y = -55228.358460225,
+				x = -134035.54401185,
+				y = 468641.66011551,
 				zoneId = 92
 			},
 			{
@@ -4494,8 +4474,8 @@ mission = {
 				hidden = false,
 				name = "2/7 Cav",
 				radius = 13.1064,
-				x = -394538.36793606,
-				y = -55206.358460225,
+				x = -134063.90978972,
+				y = 468609.0026036,
 				zoneId = 138
 			},
 			{
@@ -4508,8 +4488,8 @@ mission = {
 				hidden = false,
 				name = "2/5 Cav",
 				radius = 13.1064,
-				x = -394546.93936463,
-				y = -55230.644174511,
+				x = -134021.58847469,
+				y = 468600.68249798,
 				zoneId = 184
 			},
 			{
@@ -4522,8 +4502,8 @@ mission = {
 				hidden = false,
 				name = "VPA",
 				radius = 3396.3864,
-				x = -396174.36793606,
-				y = -73039.501317369,
+				x = -142460.39694086,
+				y = 471885.90311878,
 				zoneId = 230
 			},
 			{
@@ -4536,8 +4516,8 @@ mission = {
 				hidden = false,
 				name = "1/33 VPA",
 				radius = 13.1064,
-				x = -395787.79650748,
-				y = -73490.644174512,
+				x = -142321.07967085,
+				y = 471985.70343613,
 				zoneId = 231
 			},
 			{
@@ -4550,8 +4530,8 @@ mission = {
 				hidden = false,
 				name = "3/33 VPA",
 				radius = 13.1064,
-				x = -396180.08222176,
-				y = -73898.072745941,
+				x = -142977.95630777,
+				y = 472025.98251094,
 				zoneId = 277
 			},
 			{
@@ -4564,8 +4544,8 @@ mission = {
 				hidden = false,
 				name = "7/66 VPA",
 				radius = 13.1064,
-				x = -394411.5107932,
-				y = -75629.501317369,
+				x = -142404.25586164,
+				y = 471596.29610578,
 				zoneId = 323
 			}
 		}
@@ -4636,6 +4616,14 @@ mission = {
 					KeyDict_text = "DictKey_ActionText_140",
 					predicate = "a_set_flag",
 					text = "DictKey_ActionText_140"
+				},
+				{
+					ai_task = {
+						"",
+						""
+					},
+					predicate = "a_unit_emission_on",
+					unit = 46
 				}
 			},
 			comment = "After 3 Seconds",
@@ -5480,22 +5468,22 @@ mission = {
 		},
 		cyclones = {
 			{
-				centerX = -323707.70359737,
-				centerZ = -201858.77666604,
-				ellipticity = 0.95896879244585,
-				pressure_excess = -1279,
-				pressure_spread = 842553.16070292,
-				rotation = 0.8031917238797
+				centerX = -119097.61183486,
+				centerZ = 324303.01583406,
+				ellipticity = 0.93086346662806,
+				pressure_excess = -1258,
+				pressure_spread = 900722.83613543,
+				rotation = 1.012968287179
 			}
 		},
 		dust_density = 0,
-		enable_dust = false,
+		enable_dust = true,
 		enable_fog = true,
 		fog = {
-			thickness = 0,
-			visibility = 25
+			thickness = 220,
+			visibility = 370
 		},
-		groundTurbulence = 0,
+		groundTurbulence = 2.1336,
 		name = "Winter, clean sky",
 		qnh = 760,
 		season = {
